@@ -1,0 +1,146 @@
+---
+title: "Core Agent Types & Architecture"
+description: "LaunchPulse doesn’t rely on one “giant” AI that tries to do everything. Every project is built by a specialised team of agents, each with a clear role, shared context, and access to its own tools. Most vibe-coding tools just throw a big prompt at a single model and hope for the best. LaunchPulse is different: it was designed from the ground up as agent-first infrastructure: "
+---
+
+- Each agent has a **specific specialisation** (product, UX, frontend, backend, database, QA, etc.).
+- Agents work inside a **shared project brain** where requirements, code, schema, and tests are all linked.
+- A **validation and QA layer** constantly checks and corrects the work of other agents.
+- Browser-based QA agents actually **use your app like a real user**, not just scan the code.
+
+**That’s why LaunchPulse can ship complex, multi-feature apps that feel like a real team built them.**
+
+# **Product Manager Agent**
+
+The Product Manager Agent is the “brains” at the requirements level.\
+It turns your idea into clear, buildable specifications before a single line of code is generated.
+
+### **What it does:**
+
+- Translates your prompt into clear product goals and user stories.
+- Defines scope, edge cases, and non-functional requirements.
+- Keeps all downstream agents aligned on what “done” looks like.
+
+## **Sub-agents / Sub-tasks:**
+
+- **PRD Agent** – Generates a detailed Product Requirements Document (PRD) covering users, use cases, and success criteria.
+- **FRD Agent** – Produces a Functional Requirements Document (FRD) describing each feature, inputs/outputs, and system behavior.
+- **DRD Agent** – Creates a Database Requirements / Design Document (DRD) defining entities, relationships, and data constraints.
+- **BRD Agent** – Builds a Backend Requirements Document (BRD) that specifies APIs, business rules, and integration points.
+
+These documents are not just “nice to have”. They are **live inputs** into the engineering agents, so the build is traceable from idea → spec → implementation.
+
+# **Database Agent**
+
+The Database Agent owns the data layer end-to-end.
+
+**What it does:**
+
+- Designs normalised, scalable schemas based on the DRD and feature requirements.
+- Keeps the database in sync as features and requirements evolve.
+- Ensures queries and structure won’t collapse once you have real traffic.
+
+## **Sub-agents:**
+
+- **SCHEMAS Agent** – Generates and evolves database schemas, relations, and constraints, keeping them aligned with the functional and backend requirements.
+- **POSTGRES Agent** – Specializes in PostgreSQL: query generation, migrations, indexing strategies, and performance-aware patterns.
+
+Instead of letting an LLM improvise tables on the fly, LaunchPulse treats your data layer as a **first-class system** with its own expert agents.
+
+# **Backend Software Engineer Agent (BACKEND)**
+
+The Backend Agent is responsible for business logic, security, and reliability.
+
+**What it does:**
+
+- Implements backend services according to the BRD and API contracts.
+- Handles authentication, authorization, workflows, background tasks, and integrations.
+- Connects the database, APIs, and external services into a single coherent system.
+
+## **Sub-agents:**
+
+- **SERVER Agent** – Generates backend server setup, routing, middleware, and service layers following best practices.
+- **TESTS Agent** – Produces backend test suites (unit, integration, API tests) and keeps them updated as the code evolves.
+
+Together, they give you **real backend architecture** instead of one giant fragile file of generated logic.
+
+# **API Architect Layer Agent**
+
+The API Architect Layer Agent is responsible for how everything talks to everything else.
+
+**What it does:**
+
+- Designs API boundaries between frontend, backend, and external services.
+- Defines endpoint structures, request/response formats, and error models.
+- Keeps APIs consistent, versionable, and secure across the entire app.
+
+This agent gives the frontend and backend a **clean, contract-driven interface** to build against, rather than a mess of ad-hoc endpoints.
+
+# **Frontend Software Engineer Agent (WEBAPP)**
+
+The Frontend Agent builds everything users see and interact with.
+
+**What it does:**
+
+- Implements UX flows using production-grade components and responsive layouts.
+- Handles state management, routing, forms, validation, and loading/error states.
+- Connects to the API layer using the contracts defined by the API Architect Agent.
+
+Because it works off structured UX and API specs, this agent delivers **real product surfaces**, not just pretty but broken UIs.
+
+# **UX Design Agent**
+
+The UX Design Agent is your built-in experience designer.
+
+**What it does:**
+
+- Turns product requirements into user flows, navigation maps, and screen hierarchies.
+- Focuses on clarity, reduced friction, and high-value actions (like conversion or activation).
+- Produces UX guidance that the Frontend Agent can translate into real components and layouts.
+
+Instead of random screens stitched together, the UX Design Agent makes your app feel **coherent, intentional, and product-ready**.
+
+# **Validation Agent**
+
+The Validation Agent is the internal gatekeeper that keeps other agents honest.
+
+**What it does:**
+
+- Compares the current build against PRD/FRD/BRD to catch mismatches.
+- Checks for missing flows, broken contracts, and inconsistent assumptions.
+- Flags risky or incomplete changes before they spread across the codebase.
+
+Think of it as the **internal reviewer** constantly asking, “Does this still match what we agreed to build?”
+
+# **QA Automation Engineer – Self-Testing Browser Agent 🔍**
+
+This is one of LaunchPulse’s biggest superpowers: an AI QA engineer that actually runs your app in a browser.
+
+**Instead of only reading source code, this agent behaves like a real user.**
+
+**What it does:**
+
+- Launches your app in a browser, navigates flows, and performs core user actions.
+- Watches for runtime errors, crashes, broken links, and UX dead-ends.
+- Generates bug reports and feeds them back into the engineering agents for fixes.
+
+**Sub-agents:**
+
+- **REVIEW Agent** – Performs automated code review and quality checks, looking for code smells, anti-patterns, and possible regressions.
+- **TEST Agent** – Orchestrates test runs (backend, API, end-to-end), tracks failures, and ensures coverage for critical flows.
+- **Browser Agent** – Drives an actual browser session, collects console logs, screenshots, and error traces while walking through the app.
+
+Where many vibe coding tools stop at “it compiles”, LaunchPulse’s QA stack is pushing toward
+
+ **“it works, it flows, and it’s ready for real users.”**
+
+## **Why this agent infrastructure is different**
+
+Putting it all together:
+
+- LaunchPulse runs **multiple expert agents in sequence and in parallel**, instead of a single generic chatbot doing everything.
+- All agents share a **unified project memory** – requirements, design, code, tests, and logs are tightly linked, not scattered across tools.
+
+Validation and QA are **built into the pipeline**, not bolted on at the end.\
+\
+That’s what lets LaunchPulse deliver **complex, production-grade apps** in one go, while most vibe-coding tools are still stuck on half-finished prototypes.
