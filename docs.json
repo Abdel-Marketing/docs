@@ -9,17 +9,26 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
-      {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
+  "tabs": [
+    {
+      "tab": "Docs",
+      "groups": [
+        {
+          "group": "Getting started",
+          "pages": [
+            "introduction-to-launchpulse",
+            "quickstart-guide",
+            "agents",
+            "projects",
+            "storage",
+            "launchpulse-cloud",
+            "troubleshooting"
+          ]
+        }
+      ]
+    }
+  ]
+}
           },
           {
             "group": "Customization",
