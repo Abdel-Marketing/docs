@@ -17,11 +17,21 @@
           "group": "Getting started",
           "pages": [
             "introduction-to-launchpulse",
-            "quickstart-guide",
+            "quickstart-guide"
+          ]
+        },
+        {
+          "group": "Core concepts",
+          "pages": [
             "agents",
             "projects",
             "storage",
-            "launchpulse-cloud",
+            "launchpulse-cloud"
+          ]
+        },
+        {
+          "group": "Support",
+          "pages": [
             "troubleshooting"
           ]
         }
