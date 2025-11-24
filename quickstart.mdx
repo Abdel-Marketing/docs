@@ -1,79 +1,156 @@
 ---
-title: "Quickstart test" 
-description: "Start building awesome documentation in minutes"
+title: Quickstart
+description: Turn your idea into a production-ready web app with a single prompt in LaunchPulse.
 ---
 
-## Get started in three steps
+# Quickstart: from idea to live app
 
-helo worlldhhh
+Turn your idea into a **production-ready web app with just one prompt.**
 
-### Step 1: Set up your local environment
+LaunchPulse works like a small product team made of AI agents: Product, UX, Frontend, Backend, Database, Validation, and Browser QA all collaborate on a single build so you don’t have to juggle tools or handoffs.
 
-<AccordionGroup>
-  <Accordion title="Clone your docs locally" icon="copy">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
+<Check>
+<strong><a href="/dashboard">Open LaunchPulse and start a new project</a></strong> to follow this Quickstart as you read.
+</Check>
 
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
-  </Accordion>
-  <Accordion title="Start the preview server" icon="rectangle-terminal">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
+---
 
-    <Tip>
-      Your preview updates automatically as you edit files.
-    </Tip>
-  </Accordion>
-</AccordionGroup>
+## What LaunchPulse gives you in one run
 
-### Step 2: Deploy your changes
-
-<AccordionGroup>
-  <Accordion title="Install our GitHub app" icon="github">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
-
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-  </Accordion>
-  <Accordion title="Update your site name and colors" icon="palette">
-    For a first change, let's update the name and colors of your docs site.
-
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
-
-    <Tip>
-      Try changing the primary color to see an immediate difference!
-    </Tip>
-  </Accordion>
-</AccordionGroup>
-
-### Step 3: Go live
-
-<Accordion title="Publish your docs" icon="rocket">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
-</Accordion>
-
-## Next steps
-
-Now that you have your docs running, explore these key features:
-
-<CardGroup cols={2}>
-  <Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-    Learn MDX syntax and start writing your documentation.
+<CardGroup cols={3}>
+  <Card title="Full-stack applications">
+    Frontend, backend, and database generated in one coordinated project — not three separate tools.
   </Card>
-  <Card title="Customize style" icon="palette" href="/essentials/settings">
-    Make your docs match your brand perfectly.
+  <Card title="Web apps you can publish">
+    Launch live web platforms, connect domains, and share a URL the same day the app is generated.
   </Card>
-  <Card title="Add code examples" icon="square-code" href="/essentials/code">
-    Include syntax-highlighted code blocks.
-  </Card>
-  <Card title="API documentation" icon="code" href="/api-reference/introduction">
-    Auto-generate API docs from OpenAPI specs.
+  <Card title="AI-powered development">
+    Multiple specialised agents plan, build, repair, and validate your app instead of a single “do-everything” model.
   </Card>
 </CardGroup>
 
-<Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
-</Note>
+---
+
+## How the product works (high level)
+
+Here’s what happens behind the scenes when you create a project:
+
+- The **Product Manager agent** turns your idea into structured docs (PRD, FRD, DRD, BRD).  
+- Those docs are passed to **UX, Frontend, Backend, and Database agents**, which implement flows, APIs, and schemas.  
+- A **Validation layer** checks that the build still matches the agreed spec.  
+- A **Browser agent** runs through the app like a real user, finds non-working elements, and helps fix them.
+
+You describe the product once. The agents do the heavy lifting.
+
+---
+
+## Step 1 – Describe your idea
+
+From the homepage, start by typing what you want to build in natural language.  
+There’s no hard limit on detail — the more context you give, the better the result.
+
+<Steps>
+  <Step title="Write your product brief">
+    In the **“Describe your idea…”** box, explain:
+
+    - Who the app is for  
+    - What core flows it needs (e.g. onboarding, dashboard, bookings, messaging)  
+    - Any must-have features, integrations, or constraints  
+
+    Example ideas:
+
+    - “Food delivery marketplace for local restaurants with drivers and customer tracking.”  
+    - “B2B SaaS dashboard for agencies to manage client campaigns.”  
+    - “Real estate platform for diplomats to browse and book high-end rentals.”
+  </Step>
+
+  <Step title="Submit your prompt">
+    When you’re happy with your brief, hit **Enter** or click the send button.  
+    This creates a new LaunchPulse project and kicks off the agent pipeline.
+  </Step>
+</Steps>
+
+<Frame>
+  <img
+    src="/images/quickstart-idea.png"
+    alt="LaunchPulse idea input box with example templates and monthly usage indicator"
+  />
+</Frame>
+
+---
+
+## Step 2 – Watch your project being built
+
+After you submit your idea, you’re taken to the **project page**.  
+This is where you’ll see your app getting generated live.
+
+<Steps>
+  <Step title="Follow the agent pipeline">
+    On the left, you’ll see **agent tasks** progressing:
+
+    - Product Manager Agent  
+    - Database Agent  
+    - Backend Agent  
+    - API Architect Layer Agent  
+    - UX, Frontend, and other agents depending on your project
+
+    Each one moves from “in progress” to “done” as it finishes its part of the build.
+  </Step>
+
+  <Step title="Explore the structure view">
+    In the main panel, the **Structure** tab shows your agent graph — how each agent fits into the pipeline for this project.
+
+    You can use this to understand:
+
+    - Which agents ran  
+    - What they produced  
+    - How far along your project is (e.g. “Ready to deploy”)
+  </Step>
+</Steps>
+
+<Frame>
+  <img
+    src="/images/quickstart-structure.png"
+    alt="LaunchPulse agent structure view showing Product Manager, Database, Backend, and other agents"
+  />
+</Frame>
+
+---
+
+## Step 3 – Validate, iterate, and test
+
+Once the initial build is done, LaunchPulse moves into validation and refinement.
+
+<CardGroup cols={3}>
+  <Card title="Automatic validation">
+    A validation agent checks the build against the original requirements (PRD/FRD/BRD) and flags gaps or inconsistencies.
+  </Card>
+  <Card title="Browser QA runs your app">
+    A Browser agent opens your app, navigates through flows, and catches runtime errors and broken experiences.
+  </Card>
+  <Card title="Chat-based iterations">
+    Use chat to request high-impact changes: add features, adjust flows, or clean up UX. Each iteration keeps your project history intact.
+  </Card>
+</CardGroup>
+
+Use the chat panel on the project page to refine:
+
+- “Add a multi-step onboarding for new users.”  
+- “Simplify the pricing page to two plans and update the navigation.”  
+- “Add a basic billing settings page with plan name and renewal date.”
+
+---
+
+## When you’re happy: publish
+
+After validation and a few iterations:
+
+1. Preview your app in the **Preview** tab.  
+2. When it looks good and flows correctly, click **Deploy**.  
+3. Get a live URL immediately, and connect a custom domain when you’re ready.
+
+<Check>
+You now know the full loop:  
+<strong>Describe → Watch agents build → Validate & iterate → Deploy.</strong>  
+<a href="/dashboard">Start your first LaunchPulse project and walk through these steps.</a>
+</Check>

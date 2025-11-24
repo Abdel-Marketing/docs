@@ -1,168 +1,246 @@
+----
+Introduction to LaunchPulse
+
+Meet LaunchPulse, the multi-agent platform and cloud runtime that turns product briefs into live, full-stack web apps.
 ---
-title: "Introduction"
-description: "Example section for showcasing API endpoints"
+
+# Introduction to LaunchPulse
+
+LaunchPulse is your **AI software team + runtime platform** in the browser.
+
+You describe the product you want to ship, and LaunchPulse:
+
+- Plans it like a product squad  
+- Builds it like an engineering team  
+- Tests it like a QA department  
+- Hosts it like a managed cloud platform  
+
+All inside a single, integrated system.
+
+<Check>
+Want to see it end-to-end?  
+<strong><a href="/quickstart">Follow the Quickstart guide with a real idea as you read this page.</a></strong>
+</Check>
+
 ---
 
-<Note>
-  - Each agent has a **specific specialisation** (product, UX, frontend, backend, database, QA, etc.).
-  - Agents work inside a **shared project brain** where requirements, code, schema, and tests are all linked.
-  - A **validation and QA layer** constantly checks and corrects the work of other agents.
-  - Browser-based QA agents actually **use your app like a real user**, not just scan the code.
+## What makes LaunchPulse different?
 
-  **That’s why LaunchPulse can ship complex, multi-feature apps that feel like a real team built them.**
+Most “AI coding” tools are an editor with a model bolted on. LaunchPulse is **infrastructure-first**:
 
-  # **Product Manager Agent**
+<CardGroup cols={3}>
+  <Card title="Agent-native architecture">
+    Multiple specialised agents share a single project brain - product, UX, frontend, backend, database, QA, and ops.
+  </Card>
+  <Card title="Integrated cloud runtime">
+    Hosting, databases, domains, auth, and test users are wired into the platform from day one.
+  </Card>
+  <Card title="Continuous validation">
+    Browser-based QA, validation agents, and structured docs keep the build aligned with the spec as it evolves.
+  </Card>
+</CardGroup>
 
-  The Product Manager Agent is the “brains” at the requirements level.\
-  It turns your idea into clear, buildable specifications before a single line of code is generated.
+The result feels less like “I asked for some code” and more like:
 
-  ### **What it does:**
+> “I spun up a small product team and a managed cloud just for this app.”
 
-  - Translates your prompt into clear product goals and user stories.
-  - Defines scope, edge cases, and non-functional requirements.
-  - Keeps all downstream agents aligned on what “done” looks like.
+---
 
-  ## **Sub-agents / Sub-tasks:**
+## From idea to running app
 
-  - **PRD Agent** – Generates a detailed Product Requirements Document (PRD) covering users, use cases, and success criteria.
-  - **FRD Agent** – Produces a Functional Requirements Document (FRD) describing each feature, inputs/outputs, and system behavior.
-  - **DRD Agent** – Creates a Database Requirements / Design Document (DRD) defining entities, relationships, and data constraints.
-  - **BRD Agent** – Builds a Backend Requirements Document (BRD) that specifies APIs, business rules, and integration points.
+At the very top of LaunchPulse is a simple box:
 
-  These documents are not just “nice to have”. They are **live inputs** into the engineering agents, so the build is traceable from idea → spec → implementation.
+<Frame>
+  <img
+    src="/images/intro-idea-box.png"
+    alt="LaunchPulse idea input box with example templates for food delivery, fitness platform, and real estate"
+  />
+</Frame>
 
-  # **Database Agent**
+You describe your idea in natural language - as detailed as you like. Behind that input sits the rest of the system:
 
-  The Database Agent owns the data layer end-to-end.
+- A **Product & UX layer** that turns your description into specs and flows  
+- An **Engineering layer** of agents that compile those specs into code, APIs, and schemas  
+- An **Infrastructure layer** (LaunchPulse Cloud) that runs the app, manages data, and exposes a live URL
 
-  **What it does:**
+You focus on the idea and the outcome. LaunchPulse orchestrates everything between.
 
-  - Designs normalised, scalable schemas based on the DRD and feature requirements.
-  - Keeps the database in sync as features and requirements evolve.
-  - Ensures queries and structure won’t collapse once you have real traffic.
+---
 
-  ## **Sub-agents:**
+## The LaunchPulse architecture
 
-  - **SCHEMAS Agent** – Generates and evolves database schemas, relations, and constraints, keeping them aligned with the functional and backend requirements.
-  - **POSTGRES Agent** – Specializes in PostgreSQL: query generation, migrations, indexing strategies, and performance-aware patterns.
+Conceptually, LaunchPulse is three tightly connected layers.
 
-  Instead of letting an LLM improvise tables on the fly, LaunchPulse treats your data layer as a **first-class system** with its own expert agents.
+### 1. Product intelligence layer
 
-  # **Backend Software Engineer Agent (BACKEND)**
+This is where your idea becomes something the system can build.
 
-  The Backend Agent is responsible for business logic, security, and reliability.
+- Product Manager, UX, and architecture agents create PRDs, FRDs, DRDs, and BRDs.  
+- Requirements, edge cases, and non-functional constraints are captured up front.  
+- This documentation becomes the source of truth for downstream agents.
 
-  **What it does:**
+### 2. App assembly layer
 
-  - Implements backend services according to the BRD and API contracts.
-  - Handles authentication, authorization, workflows, background tasks, and integrations.
-  - Connects the database, APIs, and external services into a single coherent system.
+This is the “AI team” people usually see - but running on top of that shared brain.
 
-  ## **Sub-agents:**
+<Frame>
+  <img
+    src="/images/intro-structure-overview.png"
+    alt="LaunchPulse structure overview graph showing CEO, Product Manager, UX, Frontend, Backend, and Database agents"
+  />
+</Frame>
 
-  - **SERVER Agent** – Generates backend server setup, routing, middleware, and service layers following best practices.
-  - **TESTS Agent** – Produces backend test suites (unit, integration, API tests) and keeps them updated as the code evolves.
+- Frontend, Backend, Database, API Architect, and Ops agents work from the same spec.  
+- Code, schemas, and APIs are generated as a single coherent system.  
+- Validation agents keep checking: *does this still match the spec?*
 
-  Together, they give you **real backend architecture** instead of one giant fragile file of generated logic.
+### 3. Cloud runtime layer
 
-  # **API Architect Layer Agent**
+Once the app is assembled, it has somewhere to live — **LaunchPulse Cloud**.
 
-  The API Architect Layer Agent is responsible for how everything talks to everything else.
+- Managed hosting for your frontend and backend  
+- Managed database attached to your project  
+- Domains, certificates, and auth wired in  
+- Browser QA and monitoring integrated into the same UI
 
-  **What it does:**
+You don’t jump between a model, GitHub, a database dashboard, and a cloud console.  
+It’s one environment.
 
-  - Designs API boundaries between frontend, backend, and external services.
-  - Defines endpoint structures, request/response formats, and error models.
-  - Keeps APIs consistent, versionable, and secure across the entire app.
+---
 
-  This agent gives the frontend and backend a **clean, contract-driven interface** to build against, rather than a mess of ad-hoc endpoints.
+## Infrastructure that’s already there
 
-  # **Frontend Software Engineer Agent (WEBAPP)**
+### Managed database per project
 
-  The Frontend Agent builds everything users see and interact with.
+Every project ships with a fully managed database that grows with your app.
 
-  **What it does:**
+<Frame>
+  <img
+    src="/images/intro-database-overview.png"
+    alt="LaunchPulse database tab showing tables list and a menu_categories table with editable rows"
+  />
+</Frame>
 
-  - Implements UX flows using production-grade components and responsive layouts.
-  - Handles state management, routing, forms, validation, and loading/error states.
-  - Connects to the API layer using the contracts defined by the API Architect Agent.
+- Tables and schemas are generated by the Database Agent.  
+- You can browse, filter, edit, and add rows directly from the **Database** tab.  
+- No separate DB provisioning, connection strings, or migrations to set up manually.
 
-  Because it works off structured UX and API specs, this agent delivers **real product surfaces**, not just pretty but broken UIs.
+For quick fixes or demos, you can even click into a cell and update data inline — ideal for testing flows.
 
-  # **UX Design Agent**
+<Frame>
+  <img
+    src="/images/intro-database-edit.png"
+    alt="LaunchPulse database view showing how to edit a booking row and add rows"
+  />
+</Frame>
 
-  The UX Design Agent is your built-in experience designer.
+---
 
-  **What it does:**
+### Preview & live app in one click
 
-  - Turns product requirements into user flows, navigation maps, and screen hierarchies.
-  - Focuses on clarity, reduced friction, and high-value actions (like conversion or activation).
-  - Produces UX guidance that the Frontend Agent can translate into real components and layouts.
+When agents finish a build, your app is already runnable.
 
-  Instead of random screens stitched together, the UX Design Agent makes your app feel **coherent, intentional, and product-ready**.
+<Frame>
+  <img
+    src="/images/intro-preview-app.png"
+    alt="LaunchPulse preview tab showing a barbershop booking app and Live Application status"
+  />
+</Frame>
 
-  # **Validation Agent**
+- Use the **Preview** tab to interact with the latest build without deploying.  
+- Click **View App** to open the live preview in a new window.  
+- See exactly what users will experience before you press Deploy.
 
-  The Validation Agent is the internal gatekeeper that keeps other agents honest.
+---
 
-  **What it does:**
+### Auth, test users & roles baked in
 
-  - Compares the current build against PRD/FRD/BRD to catch mismatches.
-  - Checks for missing flows, broken contracts, and inconsistent assumptions.
-  - Flags risky or incomplete changes before they spread across the codebase.
+Authentication isn’t an afterthought. LaunchPulse creates real accounts and roles for you.
 
-  Think of it as the **internal reviewer** constantly asking, “Does this still match what we agreed to build?”
+<Frame>
+  <img
+    src="/images/intro-test-users.png"
+    alt="LaunchPulse sidebar showing a list of test users with emails, passwords, and copy buttons"
+  />
+</Frame>
 
-  # **QA Automation Engineer – Self-Testing Browser Agent 🔍**
+- Built-in signups, logins, and password resets.  
+- Test users generated automatically, visible in the left sidebar.  
+- Copy credentials and log in as different user types to test flows quickly.
 
-  This is one of LaunchPulse’s biggest superpowers: an AI QA engineer that actually runs your app in a browser.
+This lets you validate permissions, dashboards, and role-specific flows before inviting real users.
 
-  **Instead of only reading source code, this agent behaves like a real user.**
+---
 
-  **What it does:**
+### Browser QA & AI test engineer
 
-  - Launches your app in a browser, navigates flows, and performs core user actions.
-  - Watches for runtime errors, crashes, broken links, and UX dead-ends.
-  - Generates bug reports and feeds them back into the engineering agents for fixes.
+On top of normal validation, LaunchPulse can actively **use your app** to test it.
 
-  **Sub-agents:**
+<Frame>
+  <img
+    src="/images/intro-qa-testing.png"
+    alt="LaunchPulse structure overview with an AI Testing Your App panel showing tests passing and running"
+  />
+</Frame>
 
-  - **REVIEW Agent** – Performs automated code review and quality checks, looking for code smells, anti-patterns, and possible regressions.
-  - **TEST Agent** – Orchestrates test runs (backend, API, end-to-end), tracks failures, and ensures coverage for critical flows.
-  - **Browser Agent** – Drives an actual browser session, collects console logs, screenshots, and error traces while walking through the app.
+- A self-testing browser agent navigates through key flows.  
+- It captures runtime errors, broken journeys, and layout issues.  
+- Results feed back into the build pipeline so agents can fix issues in context.
 
-  Where many vibe coding tools stop at “it compiles”, LaunchPulse’s QA stack is pushing toward
+Instead of stopping at “it compiles,” LaunchPulse pushes toward **“it behaves correctly for real users.”**
 
-   **“it works, it flows, and it’s ready for real users.”**
+---
 
-  ## **Why this agent infrastructure is different**
+## Who LaunchPulse is for
 
-  Putting it all together:
+LaunchPulse is built for people who care about shipping real products, not just demos:
 
-  - LaunchPulse runs **multiple expert agents in sequence and in parallel**, instead of a single generic chatbot doing everything.
-  - All agents share a **unified project memory** – requirements, design, code, tests, and logs are tightly linked, not scattered across tools.
+- **Founders & solo entrepreneurs** launching serious MVPs without assembling a full dev team.  
+- **Agencies & freelancers** delivering more client projects without scaling headcount linearly.  
+- **Product & growth teams** running experiments with production-grade foundations.  
+- **Developers** who want to offload boilerplate while keeping control over critical logic.
 
-  Validation and QA are **built into the pipeline**, not bolted on at the end.\
-  \
-  That’s what lets LaunchPulse deliver **complex, production-grade apps** in one go, while most vibe-coding tools are still stuck on half-finished prototypes.If you're not looking to build API reference documentation, you can delete this section by removing the api-reference folder.
-</Note>
+If you can describe the product clearly, LaunchPulse can give you a live app with infrastructure you’re not embarrassed to show to users (or other engineers).
 
-## Welcome
+---
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+## What you can build
 
-<Card title="Plant Store Endpoints" icon="leaf" href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json">
-  View the OpenAPI specification file
-</Card>
+LaunchPulse focuses on **multi-feature, full-stack apps** rather than single-page experiments:
 
-## Authentication
+- SaaS dashboards and admin panels  
+- Booking and scheduling platforms  
+- Marketplaces and listing platforms  
+- Internal tools and operational dashboards  
+- Customer portals, tenant portals, or partner portals
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+Typical builds include:
 
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
-```
+- Responsive frontend with navigation, forms, dashboards, and onboarding flows  
+- Backend APIs, business logic, auth, and background tasks  
+- Database schemas wired to the app’s flows  
+- Built-in pages like terms, privacy, and basic policy content  
+- Dozens of features in a single coordinated build, depending on your brief
+
+---
+
+## How this docs site fits into the product
+
+Use the rest of the docs to go deeper into each layer:
+
+<CardGroup cols={3}>
+  <Card title="Quickstart" href="/quickstart">
+    Walk through your first project from idea → agents → live app.
+  </Card>
+  <Card title="Agents" href="/agents">
+    Meet the full multi-agent team, their roles, and how they collaborate.
+  </Card>
+  <Card title="LaunchPulse Cloud" href="/launchpulse-cloud">
+    Learn how hosting, domains, and infrastructure work behind the scenes.
+  </Card>
+</CardGroup>
+
+<Check>
+<strong><a href="/quickstart">Ready to see the infrastructure in action?</a></strong>  
+Start a new project, describe a real idea, and watch LaunchPulse build, test, and host the app for you.
+</Check>

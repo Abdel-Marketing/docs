@@ -1,37 +1,271 @@
+LaunchPulse combines the speed of vibe coding with guardrails that catch a lot of problems before they hit production:
+
+<CardGroup cols={2}>
+  <Card title="Advanced QA testing">
+    Every build runs through a browser agent that simulates user interactions and catches functional issues before you publish.
+  </Card>
+  <Card title="Secure architecture">
+    Projects use trusted hosting and database platforms. Roles and permissions are baked in, reducing the need to roll your own auth from scratch.
+  </Card>
+</CardGroup>
+
+<CardGroup cols={2}>
+  <Card title="Transparent iterations">
+    Each chat iteration preserves state and shows a diff, so you can see what changed and revert if needed.
+  </Card>
+  <Card title="Scalable infrastructure">
+    Databases and hosting are designed to grow with your user base, so you can focus on fixing product issues — not servers.
+  </Card>
+</CardGroup>
+
+<Info>
+Even with these guardrails, AI doesn’t eliminate bugs or misalignment entirely.  
+You’ll still need to validate flows, review changes, and handle edge cases.
+</Info>
+
+<Check>
+Have a live issue right now?  
+<strong><a href="/dashboard">Open your project, reproduce the bug, and start a new troubleshooting iteration.</a></strong>
+</Check>
+
 ---
-<<<<<<< HEAD
-title: "Troubleshooting"
-description: "Description of your new file."
+
+## Quick triage: what’s going wrong?
+
+Most issues fall into a few buckets:
+
+<CardGroup cols={3}>
+  <Card title="Functionality bugs">
+    Features not working as expected, broken forms, navigation errors, or flows that get stuck.
+  </Card>
+  <Card title="Performance problems">
+    Slow pages, high memory usage, long loading spinners, or timeouts.
+  </Card>
+  <Card title="Integration failures">
+    External APIs failing, webhooks not firing, or data not being saved/loaded correctly.
+  </Card>
+</CardGroup>
+
+<CardGroup cols={3}>
+  <Card title="Security concerns">
+    Secrets exposed, improper access control, or unexpected behaviours around permissions and auth.
+  </Card>
+  <Card title="Design & UX issues">
+    Cluttered layouts, confusing flows, or inconsistent styling that makes the product hard to use.
+  </Card>
+  <Card title="“Something feels off”">
+    The app technically works, but the flow doesn’t match your intent or users get lost.
+  </Card>
+</CardGroup>
+
 ---
-=======
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-title: "Troubleshooting"
-description: "Description of your new file."
+
+## Step-by-step troubleshooting flow
+
+<Steps>
+  <Step title="1. Reproduce the issue">
+    Use LaunchPulse’s preview or staging environment to replicate the problem.
+
+    - Follow the same steps your users took.  
+    - Note the exact page, action, and any error message.  
+    - Let the browser agent run the flow as well — it can surface hidden console errors and crashes.
+  </Step>
+
+  <Step title="2. Inspect logs & errors">
+    Check what the app is telling you:
+
+    - Look at browser console errors for missing dependencies, invalid inputs, or failed network requests.  
+    - Review server logs (if available) around the time of the failure.  
+    - Capture screenshots or copy error messages for later.
+  </Step>
+
+  <Step title="3. Iterate with a clear prompt">
+    Turn what you found into a precise iteration request:
+
+    - Describe the bug and expected behaviour:  
+      _“Users cannot reset their password; an error appears after submitting the form.”_  
+    - Mention the affected page/flow and any error text.  
+    - Ask the agent to regenerate or patch the relevant logic, not the whole app.
+
+    The agent can then update code, flows, or validation to address the specific issue.
+  </Step>
+
+  <Step title="4. Request refactors for messy areas">
+    If the problem is maintainability or complexity:
+
+    - Ask for a targeted refactor, e.g.  
+      _“Refactor the user registration flow to improve error handling and make the code easier to extend.”_  
+    - Focus on one module or flow at a time.
+
+    Refactors help reduce follow-up bugs and make future iterations smoother.
+  </Step>
+
+  <Step title="5. Edit manually when necessary">
+    If repeated AI attempts don’t fully resolve the issue:
+
+    - Open the code editor and adjust code manually.  
+    - Pair with a developer for tricky edge cases or advanced integrations.  
+    - Use the agent as a helper (for suggestions and explanations), not the final authority.
+  </Step>
+
+  <Step title="6. Re-test end-to-end">
+    Once changes are in place:
+
+    - Re-run the browser QA agent to walk through the affected flows.  
+    - Manually test the same scenarios users experienced.  
+    - Confirm the fix didn’t introduce regressions elsewhere.
+  </Step>
+</Steps>
+
 ---
-=======
->>>>>>> Stashed changes
-title: Troubleshooting
-description: Diagnose and fix common issues with generation, deployment, and runtime behavior in LaunchPulse.
+
+## Troubleshooting by issue type
+
+<AccordionGroup>
+
+  <Accordion title="Functionality bugs">
+    Common symptoms:
+
+    - Buttons that don’t do anything.  
+    - Forms that never submit or always error.  
+    - Navigation that loops or sends users to the wrong page.
+
+    **How to approach**
+
+    - Reproduce the exact flow step by step.  
+    - Inspect form validation, required fields, and API responses.  
+    - Use a clear iteration prompt:  
+      _“Fix the profile update form so it saves changes and shows a success message.”_
+  </Accordion>
+
+  <Accordion title="Performance problems">
+    Common symptoms:
+
+    - Slow initial page loads.  
+    - Pages that freeze on heavy operations.  
+    - Timeouts on API calls.
+
+    **How to approach**
+
+    - Check network requests for large payloads or repeated calls.  
+    - Ask the agent to optimise specific areas:  
+      _“Optimise the dashboard data fetching and add loading states so it doesn’t block the UI.”_  
+    - Consider pagination, caching, or background jobs for heavy tasks.
+  </Accordion>
+
+  <Accordion title="Integration failures">
+    Common symptoms:
+
+    - Data not syncing with external services.  
+    - Webhooks not firing or being rejected.  
+    - 4xx/5xx errors from third-party APIs.
+
+    **How to approach**
+
+    - Verify the external service is reachable and properly configured.  
+    - Double-check API keys and environment variables (never paste them into prompts).  
+    - Ask the agent to log request/response details (without logging secrets) for easier debugging.  
+    - For unsupported integrations, you may need custom code or middleware.
+  </Accordion>
+
+  <Accordion title="Security concerns">
+    Common symptoms:
+
+    - Users seeing data they shouldn’t.  
+    - Admin-only actions available to regular users.  
+    - Secrets appearing in logs or code.
+
+    **How to approach**
+
+    - Ensure all secrets are stored in environment variables, not hard-coded.  
+    - Re-check roles and permissions in your auth layer.  
+    - Ask the agent explicitly:  
+      _“Review access control for the admin dashboard and lock it down to admin users only.”_  
+    - For high-stakes apps, integrate static analysis (SAST) or an external security scanner.
+  </Accordion>
+
+  <Accordion title="Design & UX issues">
+    Common symptoms:
+
+    - Users get lost in the flow.  
+    - Layout feels cluttered or inconsistent.  
+    - Important actions are hidden or unclear.
+
+    **How to approach**
+
+    - Identify the specific screens that feel heavy or confusing.  
+    - Prompt the agent to simplify:  
+      _“Simplify the onboarding flow to 3 clear steps and remove unnecessary fields.”_  
+    - Focus on a smaller number of high-value actions per screen.
+  </Accordion>
+
+</AccordionGroup>
+
 ---
 
-# Troubleshooting
+## Best practices to avoid recurring issues
 
-Things won’t always go perfectly on the first run — and that’s expected. The Troublshooting section is your guide to understanding what went wrong and how to fix it quickly.
+<CardGroup cols={3}>
+  <Card title="Prompt clearly & iteratively">
+    Break complex tasks into smaller steps. Provide concrete requirements, examples, and constraints instead of vague instructions.
+  </Card>
+  <Card title="Treat AI like a junior dev">
+    Generated code is powerful, but you should still review it, run tests, and make sure it matches your standards.
+  </Card>
+  <Card title="Test early & often">
+    Use staging/preview environments to exercise key flows before pushing changes to production.
+  </Card>
+</CardGroup>
 
-Most issues fall into a few categories:
+<CardGroup cols={3}>
+  <Card title="Protect secrets">
+    Never paste API keys or credentials into prompts. Configure them through environment settings and keep them out of logs.
+  </Card>
+  <Card title="Document & version">
+    Keep track of what each iteration changes. Use diffs and history to roll back if a change introduces new problems.
+  </Card>
+  <Card title="Design with constraints">
+    Ask for simpler flows and fewer steps when in doubt — complexity breeds bugs and UX issues.
+  </Card>
+</CardGroup>
 
-- **Generation issues** – An agent got stuck, produced unexpected behavior, or the app doesn’t match your requirements.
-- **Deployment issues** – A build fails to deploy to LaunchPulse Cloud or behaves differently once deployed.
-- **Runtime issues** – Errors, crashes, or broken flows when real users interact with your app.
-- **Account & billing issues** – Problems related to limits, subscriptions, or access.
+---
 
-LaunchPulse gives you useful signals: agent logs, error messages, version history, and environment diagnostics. Combined with a few common patterns, you can usually resolve issues in minutes, not days.
+## When to contact support
 
-On this page, you’ll find step-by-step guides for the most common problems, along with tips on when to rerun agents, when to adjust your prompt, and when to contact support.
-<<<<<<< Updated upstream
-=======
->>>>>>> e610374 (new)
->>>>>>> Stashed changes
->>>>>>> 8ec28f0 (new)
+Sometimes the fastest path is to bring in a human.
+
+<Info>
+If you’re blocked by something that doesn’t make sense, reach out with:
+</Info>
+
+- A short description of the issue.  
+- The URL or name of the affected project.  
+- Any error messages or logs you’ve captured.  
+- The last prompt/iteration that preceded the issue.
+
+This context helps support (and future you) pinpoint what’s going on.
+
+---
+
+## Keep the speed, keep the quality
+
+Vibe coding unlocks rapid prototyping and removes a lot of boilerplate — but it also introduces risks like:
+
+- Security vulnerabilities  
+- Maintainability challenges  
+- Debugging complexity  
+- Limited integrations  
+- UX/design pitfalls
+
+LaunchPulse is built to offset those risks with:
+
+- Secure infrastructure  
+- Automated testing and QA agents  
+- Built-in roles and permissions  
+- Transparent, diffable iterations
+
+<Check>
+<strong><a href="/dashboard">Open your project, run through a key user flow, and start a troubleshooting iteration.</a></strong>  
+The more you pair LaunchPulse’s speed with these practices, the more “AI-built” will still feel “production-grade”.
+</Check>

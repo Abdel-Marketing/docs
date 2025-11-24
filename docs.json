@@ -16,32 +16,25 @@
           {
             "group": "Getting started",
             "pages": [
-              "index",
-              "quickstart",
-              "development",
               "introduction",
+              "quickstart",
+              "launchpulse-cloud"
+            ]
+          },
+          {
+            "group": "Core concepts",
+            "pages": [
               "projects",
-              "storage",
-              "launchpulse-cloud",
+              "agents",
+              "storage"
+            ]
+          },
+          {
+            "group": "Operations & admin",
+            "pages": [
+              "development",
               "troubleshooting",
-              "accounts-and-subscriptions",
-              "agents"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "accounts-and-subscriptions"
             ]
           }
         ]
