@@ -1,4 +1,19 @@
 ---
-title: "Storage"
-description: "Description of your new file."
+title: Storage
+description: How LaunchPulse stores your app data, code, and configuration, and how you can manage it safely.
 ---
+
+# Storage
+
+LaunchPulse manages several types of storage behind the scenes so your applications stay consistent, reproducible, and safe.
+
+At a high level, we store:
+
+- **Code & assets** – The frontend, backend, and generated artefacts for each project and version.
+- **Application data** – Databases and schemas created by the Database Agent or configured in your project.
+- **Configuration** – Environment variables, secrets, and settings required for your app to run.
+- **Metadata & history** – Agent logs, build history, and previous iterations so you can trace how a project evolved.
+
+You don’t need to manage infrastructure directly, but you *do* control what’s stored, what’s deployed, and how environments are configured. This gives you the safety of managed infrastructure with the clarity of knowing where everything lives.
+
+On this page, you’ll learn how storage is structured in LaunchPulse, what limits and best practices apply, and how to manage data for different environments (development, staging, production).
