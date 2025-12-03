@@ -3,77 +3,43 @@
   "theme": "mint",
   "name": "Mint Starter Kit",
   "colors": {
-    "primary": "#FF9800",
-    "light": "#FFD180",
-    "dark": "#F57C00"
+    "primary": "#C3FF3C",
+    "light": "#FFF7E3",
+    "dark": "#020617"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Docs",
         "groups": [
           {
             "group": "Getting started",
             "pages": [
-              "introduction",
-              "quickstart",
+              "what-is-launchpulse",
+              "Quickstart: ship your first app",
               "launchpulse-cloud"
             ]
           },
           {
             "group": "Core concepts",
             "pages": [
-              "projects",
-              "agents",
-              "storage"
+              "Projects",
+              "Agents",
+              "Storage",
+              "QA Agent"
             ]
           },
           {
             "group": "Operations & admin",
             "pages": [
-              "development",
-              "troubleshooting",
-              "accounts-and-subscriptions"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "Troubleshooting",
+              "Accounts-and-Subscriptions"
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",

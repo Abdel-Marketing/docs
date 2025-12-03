@@ -1,0 +1,187 @@
+# QA Agent
+
+<Info>
+  The QA Agent is your always-on test engineer. It opens your app in a real
+  browser, clicks around like a user, and pushes fixes back to the agents
+  – all without you writing a single test script.
+</Info>
+
+<Columns cols={3}>
+  <Card title="Behaves like a real user" icon="mouse-pointer-click">
+    Navigates your app in a real browser, filling forms, clicking buttons, and
+    following links the way a real user would.
+  </Card>
+  <Card title="Finds & fixes issues" icon="bug">
+    Logs broken flows, passes them back to build agents, and keeps re-testing
+    until the issue is actually fixed.
+  </Card>
+  <Card title="Runs on every build" icon="refresh-ccw">
+    Attach QA runs to your build flow so every new app version is actively
+    tested before you share it with users.
+  </Card>
+</Columns>
+
+---
+
+## Why this QA Agent is different
+
+Most “AI builders” stop at *it compiled*. LaunchPulse keeps going:
+
+<Columns cols={2}>
+  <Card title="Full user journeys" icon="route">
+    Tests end-to-end flows like sign-up, login, checkout, and dashboards –
+    not just individual screens.
+  </Card>
+  <Card title="Self-healing loop" icon="repeat-2">
+    Every failure goes back to the agents, who attempt a fix.
+    QA then re-runs the same flow until it passes or is marked as blocked.
+  </Card>
+</Columns>
+
+<Columns cols={2}>
+  <Card title="Zero test scripting" icon="wand-2">
+    No need to write Cypress/Playwright tests. Scenarios are generated from
+    your app and product brief automatically.
+  </Card>
+  <Card title="Watch it work" icon="eye">
+    See live QA activity in the sidebar – which page it’s on, what it’s
+    trying, and what it found – in human-readable notes.
+  </Card>
+</Columns>
+
+---
+
+## How a QA run works
+
+<Steps>
+  <Step title="Start a QA session">
+    Trigger a QA run from your project. The QA Agent launches a real browser
+    pointed at the latest build of your app.
+  </Step>
+  <Step title="Walk through key flows">
+    It executes realistic flows such as user login, onboarding, checkout,
+    project creation, shopping cart, or order tracking – just like a user.
+  </Step>
+  <Step title="Capture anything that breaks">
+    For each failed step it records:
+    - The action it tried (e.g. “submit login form”)
+    - What actually happened (error, wrong page, broken layout)
+    - A severity level (critical, high, or medium)
+  </Step>
+  <Step title="Send issues back to agents">
+    Failing cases are sent back to the build agents, who attempt to fix the
+    code, schema, or config that caused the issue.
+  </Step>
+  <Step title="Re-test until it passes">
+    QA re-runs the same flow:
+    - If the issue is fixed → the test turns **green**
+    - If it still fails → QA logs another attempt and keeps it in the queue
+  </Step>
+</Steps>
+
+---
+
+## What you see in the QA panel
+
+<Columns cols={3}>
+  <Card title="Run summary" icon="list-checks">
+    See total tests, passes, and failures for the current run at a glance.
+    Great for a quick “are we safe to share this?” check.
+  </Card>
+  <Card title="Per-test details" icon="clipboard-list">
+    Each test case shows the flow name (e.g. “User login flow”) plus its
+    current status, last attempt time, and a short explanation.
+  </Card>
+  <Card title="Control actions" icon="refresh-cw">
+    For failing cases, click <b>Reset</b> to re-run just those tests once
+    the agents have applied new fixes.
+  </Card>
+</Columns>
+
+### Severity levels
+
+<Columns cols={3}>
+  <Card title="Critical" icon="alert-triangle">
+    Blocks users or core revenue flows – login, checkout, core dashboards.
+    Fix these before you demo or go live.
+  </Card>
+  <Card title="High" icon="triangle-alert">
+    Serious UX or correctness issues that don’t fully block users but will
+    create frustration or confusion.
+  </Card>
+  <Card title="Medium" icon="info">
+    Minor issues: rough edges, layout glitches, or non-essential flows.
+    Good to fix, but they don’t stop you shipping.
+  </Card>
+</Columns>
+
+Each test also shows how many **attempts** the system has made to fix it, so
+you can tell at a glance which issues are stubborn and may need human input.
+
+---
+
+## Sidebar activity
+
+While a run is in progress, the sidebar shows QA’s to-do list:
+
+- **Completed tests** – flows the agent has already finished running  
+- **Upcoming tests** – flows that are queued next  
+- **Current action** – a short note like “filling checkout form” or
+  “verifying password reset email”
+
+Keeping this panel open once or twice helps you build intuition for how QA sees
+your app.
+
+---
+
+## Examples of flows QA covers
+
+Some typical scenarios the QA Agent generates and maintains for you:
+
+<Columns cols={2}>
+  <Card title="Account & auth" icon="user-round">
+    - User login & logout  
+    - Sign-up and onboarding  
+    - Password reset and account recovery
+  </Card>
+  <Card title="Commerce flows" icon="shopping-cart">
+    - Add to cart / update quantities  
+    - Checkout and payment steps  
+    - Order tracking and status timeline
+  </Card>
+</Columns>
+
+<Columns cols={2}>
+  <Card title="Productivity flows" icon="kanban">
+    - Creating and editing projects or tasks  
+    - Assigning items to users or teams  
+    - Filtering and searching data views
+  </Card>
+  <Card title="Custom flows" icon="puzzle">
+    Flows unique to your app, like supplier registration, tenant onboarding,
+    or internal approval workflows based on your brief.
+  </Card>
+</Columns>
+
+You don’t need to manually maintain these scenarios – they’re generated from
+your app and updated as your product evolves.
+
+---
+
+## How to get the most out of QA Agent
+
+<Tip>
+  Treat the QA Agent as a teammate that never gets tired of regression tests.
+</Tip>
+
+- **Run it after major changes** – especially when you change auth, payments,
+  or navigation.
+- **Scan severity first** – clear all **critical** items before you demo or
+  share the app with customers.
+- **Use attempts as a signal** – if something has many failed attempts, add a
+  quick human review to unblock the agents.
+- **Keep it in the loop** – let QA run on every big iteration so your app
+  gets safer over time, not riskier.
+
+With QA Agent running in the background, LaunchPulse doesn’t just generate an
+app – it gives you something that’s actively tested and constantly improving.
