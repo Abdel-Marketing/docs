@@ -19,13 +19,13 @@ LaunchPulse combines the speed of vibe coding with guardrails that catch a lot o
 </CardGroup>
 
 <Info>
-Even with these guardrails, AI doesn’t eliminate bugs or misalignment entirely.  
-You’ll still need to validate flows, review changes, and handle edge cases.
+  Even with these guardrails, AI doesn’t eliminate bugs or misalignment entirely.\
+  You’ll still need to validate flows, review changes, and handle edge cases.
 </Info>
 
 <Check>
-Have a live issue right now?  
-<strong><a href="/dashboard">Open your project, reproduce the bug, and start a new troubleshooting iteration.</a></strong>
+  Have a live issue right now?\
+  <strong><a href="/dashboard">Open your project, reproduce the bug, and start a new troubleshooting iteration.</a></strong>
 </Check>
 
 ---
@@ -66,53 +66,48 @@ Most issues fall into a few buckets:
   <Step title="1. Reproduce the issue">
     Use LaunchPulse’s preview or staging environment to replicate the problem.
 
-    - Follow the same steps your users took.  
-    - Note the exact page, action, and any error message.  
+    - Follow the same steps your users took.
+    - Note the exact page, action, and any error message.
     - Let the browser agent run the flow as well — it can surface hidden console errors and crashes.
   </Step>
-
   <Step title="2. Inspect logs & errors">
     Check what the app is telling you:
 
-    - Look at browser console errors for missing dependencies, invalid inputs, or failed network requests.  
-    - Review server logs (if available) around the time of the failure.  
+    - Look at browser console errors for missing dependencies, invalid inputs, or failed network requests.
+    - Review server logs (if available) around the time of the failure.
     - Capture screenshots or copy error messages for later.
   </Step>
-
   <Step title="3. Iterate with a clear prompt">
     Turn what you found into a precise iteration request:
 
-    - Describe the bug and expected behaviour:  
-      _“Users cannot reset their password; an error appears after submitting the form.”_  
-    - Mention the affected page/flow and any error text.  
+    - Describe the bug and expected behaviour:\
+      _“Users cannot reset their password; an error appears after submitting the form.”_
+    - Mention the affected page/flow and any error text.
     - Ask the agent to regenerate or patch the relevant logic, not the whole app.
 
     The agent can then update code, flows, or validation to address the specific issue.
   </Step>
-
   <Step title="4. Request refactors for messy areas">
     If the problem is maintainability or complexity:
 
-    - Ask for a targeted refactor, e.g.  
-      _“Refactor the user registration flow to improve error handling and make the code easier to extend.”_  
+    - Ask for a targeted refactor, e.g.\
+      _“Refactor the user registration flow to improve error handling and make the code easier to extend.”_
     - Focus on one module or flow at a time.
 
     Refactors help reduce follow-up bugs and make future iterations smoother.
   </Step>
-
   <Step title="5. Edit manually when necessary">
     If repeated AI attempts don’t fully resolve the issue:
 
-    - Open the code editor and adjust code manually.  
-    - Pair with a developer for tricky edge cases or advanced integrations.  
+    - Open the code editor and adjust code manually.
+    - Pair with a developer for tricky edge cases or advanced integrations.
     - Use the agent as a helper (for suggestions and explanations), not the final authority.
   </Step>
-
   <Step title="6. Re-test end-to-end">
     Once changes are in place:
 
-    - Re-run the browser QA agent to walk through the affected flows.  
-    - Manually test the same scenarios users experienced.  
+    - Re-run the browser QA agent to walk through the affected flows.
+    - Manually test the same scenarios users experienced.
     - Confirm the fix didn’t introduce regressions elsewhere.
   </Step>
 </Steps>
@@ -122,83 +117,77 @@ Most issues fall into a few buckets:
 ## Troubleshooting by issue type
 
 <AccordionGroup>
-
   <Accordion title="Functionality bugs">
     Common symptoms:
 
-    - Buttons that don’t do anything.  
-    - Forms that never submit or always error.  
+    - Buttons that don’t do anything.
+    - Forms that never submit or always error.
     - Navigation that loops or sends users to the wrong page.
 
     **How to approach**
 
-    - Reproduce the exact flow step by step.  
-    - Inspect form validation, required fields, and API responses.  
-    - Use a clear iteration prompt:  
+    - Reproduce the exact flow step by step.
+    - Inspect form validation, required fields, and API responses.
+    - Use a clear iteration prompt:\
       _“Fix the profile update form so it saves changes and shows a success message.”_
   </Accordion>
-
   <Accordion title="Performance problems">
     Common symptoms:
 
-    - Slow initial page loads.  
-    - Pages that freeze on heavy operations.  
+    - Slow initial page loads.
+    - Pages that freeze on heavy operations.
     - Timeouts on API calls.
 
     **How to approach**
 
-    - Check network requests for large payloads or repeated calls.  
-    - Ask the agent to optimise specific areas:  
-      _“Optimise the dashboard data fetching and add loading states so it doesn’t block the UI.”_  
+    - Check network requests for large payloads or repeated calls.
+    - Ask the agent to optimise specific areas:\
+      _“Optimise the dashboard data fetching and add loading states so it doesn’t block the UI.”_
     - Consider pagination, caching, or background jobs for heavy tasks.
   </Accordion>
-
   <Accordion title="Integration failures">
     Common symptoms:
 
-    - Data not syncing with external services.  
-    - Webhooks not firing or being rejected.  
+    - Data not syncing with external services.
+    - Webhooks not firing or being rejected.
     - 4xx/5xx errors from third-party APIs.
 
     **How to approach**
 
-    - Verify the external service is reachable and properly configured.  
-    - Double-check API keys and environment variables (never paste them into prompts).  
-    - Ask the agent to log request/response details (without logging secrets) for easier debugging.  
+    - Verify the external service is reachable and properly configured.
+    - Double-check API keys and environment variables (never paste them into prompts).
+    - Ask the agent to log request/response details (without logging secrets) for easier debugging.
     - For unsupported integrations, you may need custom code or middleware.
   </Accordion>
-
   <Accordion title="Security concerns">
     Common symptoms:
 
-    - Users seeing data they shouldn’t.  
-    - Admin-only actions available to regular users.  
+    - Users seeing data they shouldn’t.
+    - Admin-only actions available to regular users.
     - Secrets appearing in logs or code.
 
     **How to approach**
 
-    - Ensure all secrets are stored in environment variables, not hard-coded.  
-    - Re-check roles and permissions in your auth layer.  
-    - Ask the agent explicitly:  
-      _“Review access control for the admin dashboard and lock it down to admin users only.”_  
+    - Ensure all secrets are stored in environment variables, not hard-coded.
+    - Re-check roles and permissions in your auth layer.
+    - Ask the agent explicitly:\
+      _“Review access control for the admin dashboard and lock it down to admin users only.”_
     - For high-stakes apps, integrate static analysis (SAST) or an external security scanner.
   </Accordion>
-
   <Accordion title="Design & UX issues">
     Common symptoms:
 
-    - Users get lost in the flow.  
-    - Layout feels cluttered or inconsistent.  
+    - Users get lost in the flow.
+    - Layout feels cluttered or inconsistent.
     - Important actions are hidden or unclear.
 
     **How to approach**
 
-    - Identify the specific screens that feel heavy or confusing.  
-    - Prompt the agent to simplify:  
-      _“Simplify the onboarding flow to 3 clear steps and remove unnecessary fields.”_  
+    - Identify the specific screens that feel heavy or confusing.
+    - Prompt the agent to simplify:\
+      _“Simplify the onboarding flow to 3 clear steps and remove unnecessary fields.”_
     - Focus on a smaller number of high-value actions per screen.
   </Accordion>
-
 </AccordionGroup>
 
 ---
@@ -236,12 +225,12 @@ Most issues fall into a few buckets:
 Sometimes the fastest path is to bring in a human.
 
 <Info>
-If you’re blocked by something that doesn’t make sense, reach out with:
+  If you’re blocked by something that doesn’t make sense, reach out with:
 </Info>
 
-- A short description of the issue.  
-- The URL or name of the affected project.  
-- Any error messages or logs you’ve captured.  
+- A short description of the issue.
+- The URL or name of the affected project.
+- Any error messages or logs you’ve captured.
 - The last prompt/iteration that preceded the issue.
 
 This context helps support (and future you) pinpoint what’s going on.
@@ -252,44 +241,35 @@ This context helps support (and future you) pinpoint what’s going on.
 
 Vibe coding unlocks rapid prototyping and removes a lot of boilerplate — but it also introduces risks like:
 
-- Security vulnerabilities  
-- Maintainability challenges  
-- Debugging complexity  
-- Limited integrations  
+- Security vulnerabilities
+- Maintainability challenges
+- Debugging complexity
+- Limited integrations
 - UX/design pitfalls
 
 LaunchPulse is built to offset those risks with:
 
-- Secure infrastructure  
-- Automated testing and QA agents  
-- Built-in roles and permissions  
+- Secure infrastructure
+- Automated testing and QA agents
+- Built-in roles and permissions
 - Transparent, diffable iterations
 
 <Check>
-<strong><a href="/dashboard">Open your project, run through a key user flow, and start a troubleshooting iteration.</a></strong>  
-The more you pair LaunchPulse's speed with these practices, the more "AI-built" will still feel "production-grade".
+  <strong><a href="/dashboard">Open your project, run through a key user flow, and start a troubleshooting iteration.</a></strong>
+   \
+  The more you pair LaunchPulse’s speed with these practices, the more “AI-built” will still feel “production-grade”.
 </Check>
 
-<Callout title="Need more help?">
+<Info>
+  If you ever run into something unexpected, feel stuck, or simply want to share feedback, you can always reach us at [info@launchpulse.ai](mailto:info@launchpulse.ai).
 
-  If you ever run into something unexpected, feel stuck, or simply want to share
+  We genuinely value every message. LaunchPulse is built **for** our community,- your insights directly shape how the platform evolves.
 
-  feedback, you can always reach us at <b>info@launchpulse.ai</b>.
+  We’re committed to giving you the best possible experience and we work closely with builders, founders, and teams to help them ship successful applications. You’re not navigating this alone.
 
-  We genuinely value every message. LaunchPulse is built <b>with</b> our community,
+  **\*\*When you grow, we grow with you.  \*\***
 
-  not just for it — your insights directly shape how the platform evolves.
+  Together, we’re building a community of creators who push what’s possible -
 
-  We're committed to giving you the best possible experience and we work closely
-
-  with builders, founders, and teams to help them ship successful applications.
-
-  You're not navigating this alone.
-
-  <b>When you grow, we grow with you.</b>  
-
-  Together, we're building a community of creators who push what's possible —
-
-  one successful app at a time.
-
-</Callout>
+  one successful app at a time. 
+</Info>
