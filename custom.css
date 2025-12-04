@@ -1,0 +1,20 @@
+/* Balanced logo sizing for navbar */
+img[src*="logo"],
+img[src*="launchpulse"],
+nav img,
+header img,
+[class*="nav"] img,
+[class*="Nav"] img,
+[class*="Navbar"] img,
+[class*="navbar"] img,
+[class*="logo"] img,
+[class*="Logo"] img,
+a[href="/"] img,
+nav a img,
+header a img {
+  height: 60px !important;
+  max-height: 60px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+

@@ -1,13 +1,14 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "LaunchPulse.ai",
   "colors": {
     "primary": "#C3FF3C",
     "light": "#FFF7E3",
     "dark": "#020617"
   },
   "favicon": "/favicon.svg",
+  "css": "/custom.css",
   "navigation": {
     "tabs": [
       {
@@ -42,8 +43,9 @@
     ]
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/launchpulse-light.png",
+    "dark": "/logo/launchpulse-dark.png",
+    "height": 60
   },
   "navbar": {
     "links": [
