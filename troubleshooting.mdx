@@ -1,44 +1,32 @@
 ---
 title: "Troubleshooting"
-description: "Issue-by-issue troubleshooting guide for common LaunchPulse problems."
+description: "Fix common LaunchPulse blockers with practical diagnosis and recovery steps."
 ---
 # Troubleshooting
 
-## Overview
-Use this page when builds, billing, deployment, or access workflows are not behaving as expected.
+When velocity drops, this guide helps you identify the likely cause quickly and recover without guesswork.
 
-## Issue triage table
+## When to use this
+- Build appears stuck
+- Billing/credits block progress
+- Deploy or publish flow fails
 
-| Issue | Likely cause | Fix |
+## How it works
+1. Reproduce issue clearly
+2. Match to issue category
+3. Apply one fix at a time
+4. Escalate with context if still blocked
+
+## Common issues
+
+| Issue | Likely cause | First fix |
 | --- | --- | --- |
-| Build appears stuck | Credits depleted or interrupted run | Refresh workspace, check credits, retry from latest approved plan step |
-| Preview not updating | Build still running or failed step | Check build status/logs, then refresh preview |
-| iOS publish failed | Credential/team/app ID mismatch | Recheck iOS credentials and identifiers |
-| Android publish failed | Service account/package mismatch | Recheck Play service account JSON and package name |
-| Custom domain not live | DNS not propagated or record mismatch | Verify DNS records and wait for propagation |
-| Teammate cannot access project | Missing permission/invite issue | Recheck invite and access role |
+| Build stuck | Credits depleted or interrupted run | Check credits and rerun from latest approved step |
+| Preview stale | Build in progress or failed task | Review build status then refresh preview |
+| Domain not live | DNS mismatch/propagation | Verify records and wait propagation window |
 
-## Quick workflow
-
-<Steps>
-  <Step title="1) Reproduce exactly">
-    Capture the exact action, screen, and expected result.
-  </Step>
-  <Step title="2) Check the matching issue row">
-    Use the table above to identify likely cause.
-  </Step>
-  <Step title="3) Apply one fix at a time">
-    Re-test after each fix.
-  </Step>
-  <Step title="4) Escalate with context">
-    If still blocked, share project ID and clear reproduction steps with support.
-  </Step>
-</Steps>
-
-## Related pages
-
-<CardGroup cols={3}>
-  <Card title="Accounts & Subscriptions" href="/accounts-and-subscriptions" />
-  <Card title="Publishing to App Store & Play Store" href="/publishing-to-app-store-and-play-store" />
-  <Card title="Custom Domain" href="/custom-domain" />
-</CardGroup>
+## Support handoff checklist
+- Project ID
+- Exact steps to reproduce
+- Expected vs actual behaviour
+- Timestamp and affected environment

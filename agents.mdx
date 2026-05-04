@@ -1,30 +1,59 @@
 ---
 title: "Agents"
-description: "Compare LaunchPulse build modes and agent options in one page."
+description: "Understand LaunchPulse build modes and choose the right agent workflow for your product stage."
 ---
 
 # Agents
 
-## Overview
-LaunchPulse supports different agent workflows depending on your project size and style.
+LaunchPulse agents are your build system: they transform product intent into scoped plans, implementation steps, and quality loops. Choosing the right mode keeps your team faster and your outputs more predictable.
 
-## Comparison
+## How the LaunchPulse build system works
 
-| Option | Best for | What it does | Status |
+<Steps>
+  <Step title="Plan">
+    Your prompt is converted into a structured feature plan.
+  </Step>
+  <Step title="Prioritise">
+    You remove, reorder, and clarify scope before execution.
+  </Step>
+  <Step title="Build">
+    Agent workflows execute implementation based on approved priorities.
+  </Step>
+  <Step title="Validate">
+    Testing and review agents help catch gaps before launch.
+  </Step>
+</Steps>
+
+## Agent comparison
+
+| Option | Best for | How it works | When to start with it |
 | --- | --- | --- | --- |
-| Autonomous AI Software Engineer | First build, fast MVP | One primary agent plans and builds end-to-end | Live |
-| Feature Builder | Better planning before build | Generates a structured feature plan you can edit | Live |
-| Custom Agents | Repeated specialist tasks | Reusable agents for roles like QA/review/copy | Live |
-| AI Multi-Agent Mode | Larger/complex projects | Specialist agents collaborate with handoffs | Beta / in progress |
-| Testing Agent | Extra QA depth | Structured test planning and validation loops | Beta / in progress |
-| LaunchPulseClaw | Advanced extension use | Early hosted OpenClaw-based agent workflow | New / early |
+| Autonomous AI Software Engineer | First MVP builds | One primary agent handles plan-to-build flow | Day 1 for most founders |
+| Feature Builder | Better scoping before coding | Generates editable feature plan and priorities | Before approving a build |
+| Custom Agents | Repeated specialist tasks | Reusable role-based agents with custom prompts/tools | When workflows repeat |
+| AI Multi-Agent Mode | Larger or complex projects | Specialist agents collaborate via handoffs | When work needs role separation |
+| Testing Agent | Higher release confidence | Structured test planning and validation loops | Before major launches |
+| LaunchPulseClaw | Early advanced extension workflow | Hosted OpenClaw-based extension path | If you need experimental advanced control |
 
-## When to use what
+## Which one should I use?
 
-- Start with **Autonomous AI Software Engineer** for your first project
-- Use **Feature Builder** to tighten scope before building
-- Add **Custom Agents** when you repeat the same workflows
-- Explore **Multi-Agent Mode** and **Testing Agent** for larger builds
+- **I'm launching first MVP quickly:** start with **Autonomous AI Software Engineer**
+- **My prompts are broad and messy:** add **Feature Builder** before build approval
+- **My team repeats QA/review prompts:** create **Custom Agents**
+- **My product has many modules/owners:** explore **AI Multi-Agent Mode**
+- **I'm preparing for launch week:** run **Testing Agent**
+
+## Example scenarios
+
+- Solo founder shipping a B2B SaaS MVP in one focused sprint
+- Product team splitting planning, implementation, and QA responsibilities
+- Agency reusing custom review/testing agent setups across client projects
+
+## Screenshot placeholders
+
+> [Screenshot placeholder: Agent selection screen during project setup]
+
+> [Screenshot placeholder: Multi-agent workflow or handoff view]
 
 ## Related pages
 

@@ -1,26 +1,30 @@
 ---
 title: "Custom Agents"
-description: "Create reusable LaunchPulse agents for recurring tasks like QA, review, and product planning."
+description: "Create reusable specialist agents for recurring product workflows."
 ---
-
 # Custom Agents
 
-## Overview
-Custom Agents let you save role-specific helpers for repeated work.
+Custom Agents let you package repeatable expertise (QA, product review, copy, release checks) into reusable workflows.
 
-## When to use it
-- You keep repeating the same instructions
-- You want a dedicated reviewer or QA helper
+## When to use this
+- Your team repeats the same instructions often
+- You need consistent review quality across projects
 
 ## How it works
-Create an agent with a name, short description, prompt, model setting, and tools. Keep tool access minimal for safety and predictability.
+- Define role, objective, and prompt template
+- Set model/tools with least-privilege access
+- Reuse agent across projects and iterations
 
-## Example use cases
-- Code Reviewer agent
-- QA Tester agent
-- Product Manager agent
+## What you can do with it
+- Standardise QA output format
+- Enforce release readiness checks
+- Speed up team handoffs
 
-## Related pages
+## Example prompt template
+```text
+You are a release QA agent. Validate onboarding, checkout, and error states. Return: issues, severity, reproduction steps, recommended fix.
+```
+
+## Next steps
 - [Agents](/agents)
-- [AI Multi-Agent Mode](/ai-multi-agent-mode)
 - [Testing Agent](/testing-agent)
