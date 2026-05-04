@@ -2,81 +2,20 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "LaunchPulse.ai",
-  "colors": {
-    "primary": "#C3FF3C",
-    "light": "#FFF7E3",
-    "dark": "#020617"
-  },
+  "colors": {"primary": "#C3FF3C", "light": "#FFF7E3", "dark": "#020617"},
   "favicon": "/favicon.svg",
   "css": "/custom.css",
-  "navigation": {
-    "tabs": [
-      {
-        "tab": "Docs",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "what-is-launchpulse",
-              "Quickstart: ship your first app",
-              "launchpulse-cloud",
-              "test"
-            ]
-          },
-          {
-            "group": "Core concepts",
-            "pages": [
-              "Projects",
-              "Agents",
-              "Storage",
-              "QA Agent"
-            ]
-          },
-          {
-            "group": "Operations & admin",
-            "pages": [
-              "Troubleshooting",
-              "accounts-and-subscriptions"
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  "logo": {
-    "light": "/logo/launchpulse-light.png",
-    "dark": "/logo/launchpulse-dark.png",
-    "height": 60
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:info@launchpulse.ai"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://Launchpulse.ai"
-    }
-  },
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
-  },
-  "footer": {
-    "socials": {
-      "linkedin": "https://www.linkedin.com/company/launchpulse-ai/?viewAsMember=true",
-      "website": "https://www.tiktok.com/@launchpulse?_r=1&_t=ZN-91x6TkjE1by"
-    }
-  }
+  "navigation": {"tabs": [{"tab": "Docs", "groups": [
+    {"group": "Getting started", "pages": ["what-is-launchpulse", "quickstart", "projects-dashboard", "write-a-good-prompt"]},
+    {"group": "Use cases", "pages": ["build-a-saas-mvp", "build-an-internal-tool", "build-a-mobile-app-mvp"]},
+    {"group": "Build with LaunchPulse", "pages": ["autonomous-ai-software-engineer", "feature-builder", "agents", "custom-agents", "ai-multi-agent-mode", "testing-agent"]},
+    {"group": "Platforms", "pages": ["web-app-development", "mobile-app-development"]},
+    {"group": "App capabilities", "pages": ["authentication", "storage-and-database", "ai-services", "payments-and-monetisation", "collaboration"]},
+    {"group": "Deployment", "pages": ["custom-domain", "publishing-to-app-store-and-play-store"]},
+    {"group": "Account & billing", "pages": ["accounts-and-subscriptions"]},
+    {"group": "Extensions", "pages": ["launchpulseclaw"]},
+    {"group": "Support", "pages": ["troubleshooting"]}
+  ]}]},
+  "logo": {"light": "/logo/launchpulse-light.png", "dark": "/logo/launchpulse-dark.png", "height": 60},
+  "navbar": {"links": [{"label": "Support", "href": "mailto:info@launchpulse.ai"}], "primary": {"type": "button", "label": "Dashboard", "href": "https://Launchpulse.ai"}}
 }
