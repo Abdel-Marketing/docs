@@ -1,19 +1,356 @@
 ---
-title: "Build a SaaS MVP"
-description: "A practical LaunchPulse playbook for shipping your first SaaS MVP fast."
+title: "Testing Agent"
+description: "See how LaunchPulse automatically reviews, cleans, and fixes your app after each build task."
 ---
-# Build a SaaS MVP
 
-## When to use this
-When you need to validate a business problem with a working, revenue-capable product quickly.
+# Testing Agent
 
-## How it works
-- Start with Quickstart
-- Use Feature Builder to keep scope tight
-- Build with Autonomous mode
-- Add auth + payments
+Every time LaunchPulse completes a build task, the Testing Agent helps check the work before you move forward.
 
-## Example MVP scope
-- Signup/login
-- One core user workflow
-- Simple billing plans
+It reviews what changed, looks for issues, cleans up messy code, fixes obvious problems, and helps keep your app stable as it grows. You do not need to turn it on. It is built directly into the LaunchPulse build workflow.
+
+<Info>
+Think of the Testing Agent as your automatic quality pass after every task. You build, LaunchPulse reviews, issues get cleaned up, and then you keep moving.
+</Info>
+
+## Why it matters
+
+Building software with AI is powerful, but every new feature can introduce small issues: broken buttons, messy code, layout bugs, missing states, or flows that do not connect properly.
+
+The Testing Agent helps reduce that risk.
+
+<CardGroup cols={3}>
+  <Card title="Cleaner builds">
+    After a task is completed, the Testing Agent helps clean up code and reduce unnecessary complexity.
+  </Card>
+
+  <Card title="Fewer broken flows">
+    It helps check whether the latest change has affected important user journeys.
+  </Card>
+
+  <Card title="Faster fixes">
+    When issues are found, LaunchPulse can repair them before you continue building more features.
+  </Card>
+
+  <Card title="Better momentum">
+    You spend less time guessing what broke and more time improving the product.
+  </Card>
+
+  <Card title="Safer iteration">
+    Each change gets reviewed before you stack more work on top of it.
+  </Card>
+
+  <Card title="Launch confidence">
+    Before publishing, you can ask for a final testing and cleanup pass.
+  </Card>
+</CardGroup>
+
+## How the Testing Agent works
+
+<Steps>
+  <Step title="You ask LaunchPulse to build or update something">
+    This could be a new page, a mobile screen, a payment flow, a dashboard feature, a design improvement, or a bug fix.
+  </Step>
+
+  <Step title="LaunchPulse completes the task">
+    The app is updated based on your request.
+  </Step>
+
+  <Step title="The Testing Agent checks the result">
+    After the task finishes, the Testing Agent reviews what changed and looks for issues, messy code, missing states, or broken logic.
+  </Step>
+
+  <Step title="Issues are cleaned up">
+    If clear problems are found, LaunchPulse helps fix them and clean up the output.
+  </Step>
+
+  <Step title="You preview the app">
+    Open the live preview and test the main flow like a real user.
+  </Step>
+
+  <Step title="You continue with the next focused task">
+    Once the app looks good, ask LaunchPulse for the next feature, improvement, or launch step.
+  </Step>
+</Steps>
+
+## What it helps check
+
+| Area | What the Testing Agent helps with |
+|---|---|
+| Code cleanup | Removes messy, duplicated, or unnecessary code from recent changes |
+| Build issues | Looks for errors that stop the app from working properly |
+| Broken flows | Helps catch journeys that no longer connect correctly |
+| UI problems | Reviews layout issues, missing states, and inconsistent screens |
+| Feature logic | Checks whether the latest feature behaves as expected |
+| Regressions | Helps reduce cases where a new task breaks something that worked before |
+| Launch readiness | Supports final cleanup before publishing or app store preparation |
+
+## The best workflow
+
+The strongest way to build with LaunchPulse is not to ask for everything at once.
+
+Use this rhythm:
+
+<CardGroup cols={4}>
+  <Card title="1. Build">
+    Ask LaunchPulse to add or improve one focused part of the app.
+  </Card>
+
+  <Card title="2. Review">
+    Let the Testing Agent check the task and clean up issues.
+  </Card>
+
+  <Card title="3. Preview">
+    Test the result in the live preview like a real user.
+  </Card>
+
+  <Card title="4. Continue">
+    Move to the next feature only after the current flow works.
+  </Card>
+</CardGroup>
+
+<Tip>
+Build one feature, test it, then continue. This keeps your app easier to understand, easier to fix, and easier to launch.
+</Tip>
+
+## Example: after adding a booking flow
+
+Imagine you ask LaunchPulse:
+
+```text
+Add a booking flow to my fitness coach mobile app.
+
+Users should be able to:
+- choose a coach
+- select a date and time
+- confirm the session
+- see a booking confirmation screen
+```
+
+After LaunchPulse builds the booking flow, the Testing Agent helps check the result.
+
+It may look for issues like:
+
+- the booking screen was added but not linked correctly
+- the confirm button does not lead to a success screen
+- the date and time selection is unclear
+- the mobile layout needs cleanup
+- the new flow broke an existing page
+- the code needs cleanup after the change
+
+## When to ask for a focused test
+
+The Testing Agent works automatically, but you can still guide LaunchPulse with a focused testing prompt.
+
+Use a focused test after:
+
+- adding a new feature
+- changing a core user flow
+- adding payments or subscriptions
+- updating authentication
+- adding a mobile screen
+- connecting dashboard actions
+- preparing to publish
+- fixing a bug
+- making a big design change
+
+## Useful testing prompts
+
+### Test the last task
+
+```text
+Review the changes from the last task and fix any issues you find.
+
+Focus on:
+- broken buttons
+- missing states
+- layout problems
+- incomplete logic
+- anything that could break the main user flow
+```
+
+### Test a specific flow
+
+```text
+Test the booking flow from start to finish.
+
+Check that a user can:
+1. open the booking page
+2. choose a date and time
+3. confirm the booking
+4. see a success state
+
+Fix anything that prevents this flow from working.
+```
+
+### Clean up the code
+
+```text
+Clean up the code from the last feature.
+
+Do not add new features.
+
+Focus only on:
+- removing duplication
+- fixing errors
+- improving structure
+- keeping the same user experience
+```
+
+### Final pre-launch check
+
+```text
+Run a final testing and cleanup pass before launch.
+
+Check:
+- main user journey
+- navigation
+- broken buttons or links
+- layout issues
+- mobile responsiveness
+- empty states
+- authentication flow, if included
+- payment or subscription flow, if included
+- obvious bugs or unfinished screens
+
+Fix clear issues and tell me what still needs manual review.
+```
+
+## Testing by task type
+
+| Task type | Good testing prompt |
+|---|---|
+| New page | “Check the new page for layout issues, broken links, and missing empty states.” |
+| New feature | “Test this feature end-to-end and fix anything that blocks the main flow.” |
+| Design update | “Review the page on desktop and mobile sizes and fix spacing or layout issues.” |
+| Payment flow | “Check the payment journey from pricing to confirmation and identify anything incomplete.” |
+| Authentication | “Test sign-up, login, logout, and protected page behavior.” |
+| Mobile app flow | “Check the mobile screens, navigation, tap targets, and success states.” |
+| Pre-launch | “Review the app for broken flows, obvious bugs, unfinished states, and launch blockers.” |
+
+## What the Testing Agent does not replace
+
+The Testing Agent improves quality, but you should still review your app yourself.
+
+Before sharing or publishing, you should:
+
+- click through the live preview
+- test the main user journey
+- check desktop and mobile layouts
+- review important copy
+- test login if your app uses authentication
+- test payments if your app includes subscriptions or checkout
+- check mobile publishing flows if you are building a mobile app
+- ask a teammate or test user to try the product
+
+<Warning>
+The Testing Agent helps catch and fix issues, but no automated review can guarantee every edge case, business rule, or user expectation is perfect. Always test the product like a real user before launch.
+</Warning>
+
+## Common mistakes
+
+| Mistake | Why it causes problems | Better approach |
+|---|---|---|
+| Adding many features before testing | Bugs stack up and become harder to find | Build one feature, then preview it |
+| Asking for vague testing | The review may miss the flow you care about | Ask LaunchPulse to test a specific journey |
+| Ignoring preview | You may miss obvious user experience issues | Click through after major changes |
+| Continuing after a broken task | New work gets built on top of problems | Fix the issue before expanding |
+| Mixing redesign and bug fixes | The task becomes too broad | Separate cleanup, testing, and design polish |
+| Publishing without a final pass | Users may hit unfinished flows | Run a final testing prompt before launch |
+
+## What good testing looks like
+
+A good testing request is specific.
+
+Instead of this:
+
+```text
+Test the app.
+```
+
+Use this:
+
+```text
+Test the client booking flow from start to finish.
+
+The user should be able to:
+1. open the app
+2. choose a coach
+3. select a time
+4. confirm the booking
+5. see a success screen
+
+Fix anything that prevents this flow from working.
+```
+
+Specific testing prompts help LaunchPulse focus on the flow that matters most.
+
+## What the workspace looks like
+
+<Note>
+Add a clean screenshot here showing a task finishing and LaunchPulse moving into review or cleanup.
+</Note>
+
+<Note>
+Add a clean screenshot here showing the live preview after a tested task.
+</Note>
+
+<Note>
+Add a clean screenshot here showing a user asking LaunchPulse to test and fix a specific flow.
+</Note>
+
+## Best practice: build in smaller loops
+
+The Testing Agent works best when your tasks are focused.
+
+<CardGroup cols={2}>
+  <Card title="Good task">
+    “Add a client profile page with notes, progress, and upcoming bookings.”
+  </Card>
+
+  <Card title="Harder task">
+    “Build the full app with client profiles, payments, chat, AI, analytics, admin, and launch setup.”
+  </Card>
+
+  <Card title="Good testing request">
+    “Test the client profile flow and fix anything broken.”
+  </Card>
+
+  <Card title="Harder testing request">
+    “Test everything and make it perfect.”
+  </Card>
+</CardGroup>
+
+Keep the loop simple:
+
+```text
+Build one thing → let LaunchPulse review it → preview it → fix issues → continue
+```
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Quickstart" href="/quickstart">
+    Learn the full build, preview, improve, and publish workflow.
+  </Card>
+
+  <Card title="Write a good prompt" href="/write-a-good-prompt">
+    Learn how to make testing and cleanup requests more specific.
+  </Card>
+
+  <Card title="Agents" href="/agents">
+    Understand how LaunchPulse agents support planning, building, reviewing, and improving.
+  </Card>
+
+  <Card title="Web App Development" href="/web-app-development">
+    Build, preview, test, and publish browser-based apps.
+  </Card>
+
+  <Card title="Mobile App Development" href="/mobile-app-development">
+    Build mobile-first apps and prepare them for iOS and Android publishing.
+  </Card>
+
+  <Card title="Troubleshooting" href="/troubleshooting">
+    Learn what to do when something is broken or unclear.
+  </Card>
+</CardGroup>
