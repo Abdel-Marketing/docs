@@ -18,9 +18,27 @@
             "group": "Getting started",
             "pages": [
               "what-is-launchpulse",
+              "Quickstart: ship your first app",
+              "launchpulse-cloud",
               "quickstart",
               "projects-dashboard",
               "write-a-good-prompt"
+            ]
+          },
+          {
+            "group": "Core concepts",
+            "pages": [
+              "Projects",
+              "Agents",
+              "Storage",
+              "QA Agent"
+            ]
+          },
+          {
+            "group": "Operations & admin",
+            "pages": [
+              "Troubleshooting",
+              "accounts-and-subscriptions"
             ]
           },
           {
@@ -104,6 +122,24 @@
       "type": "button",
       "label": "Dashboard",
       "href": "https://Launchpulse.ai"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+  "footer": {
+    "socials": {
+      "linkedin": "https://www.linkedin.com/company/launchpulse-ai/?viewAsMember=true",
+      "website": "https://www.tiktok.com/@launchpulse?_r=1&_t=ZN-91x6TkjE1by"
     }
   }
 }
