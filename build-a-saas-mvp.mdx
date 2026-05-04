@@ -1,356 +1,344 @@
 ---
-title: "Testing Agent"
-description: "See how LaunchPulse automatically reviews, cleans, and fixes your app after each build task."
+title: "Build a SaaS MVP"
+description: "Use LaunchPulse to turn a SaaS idea into a focused MVP with dashboards, authentication, payments, workflows, and launch-ready foundations."
 ---
 
-# Testing Agent
+# Build a SaaS MVP
 
-Every time LaunchPulse completes a build task, the Testing Agent helps check the work before you move forward.
+LaunchPulse helps you turn a SaaS idea into a working first version without starting from a blank codebase.
 
-It reviews what changed, looks for issues, cleans up messy code, fixes obvious problems, and helps keep your app stable as it grows. You do not need to turn it on. It is built directly into the LaunchPulse build workflow.
+Instead of trying to build the full product in one step, the best approach is to create a focused MVP first: one clear user, one clear problem, and a few core features that prove the product can work.
 
 <Info>
-Think of the Testing Agent as your automatic quality pass after every task. You build, LaunchPulse reviews, issues get cleaned up, and then you keep moving.
+A strong SaaS MVP is not the final product. It is the first useful version that helps you test demand, collect feedback, and decide what to build next.
 </Info>
 
-## Why it matters
-
-Building software with AI is powerful, but every new feature can introduce small issues: broken buttons, messy code, layout bugs, missing states, or flows that do not connect properly.
-
-The Testing Agent helps reduce that risk.
+## What you can build
 
 <CardGroup cols={3}>
-  <Card title="Cleaner builds">
-    After a task is completed, the Testing Agent helps clean up code and reduce unnecessary complexity.
+  <Card title="Customer dashboards">
+    Build dashboards where users can view data, manage activity, and complete key actions.
   </Card>
 
-  <Card title="Fewer broken flows">
-    It helps check whether the latest change has affected important user journeys.
+  <Card title="Admin panels">
+    Create internal admin areas to manage users, records, settings, and product activity.
   </Card>
 
-  <Card title="Faster fixes">
-    When issues are found, LaunchPulse can repair them before you continue building more features.
+  <Card title="Subscription products">
+    Build SaaS products with pricing pages, upgrade flows, paid access, and account-based experiences.
   </Card>
 
-  <Card title="Better momentum">
-    You spend less time guessing what broke and more time improving the product.
+  <Card title="Client portals">
+    Give customers a secure place to log in, view information, submit requests, and manage their account.
   </Card>
 
-  <Card title="Safer iteration">
-    Each change gets reviewed before you stack more work on top of it.
+  <Card title="Workflow tools">
+    Turn repeated business processes into structured flows with statuses, forms, approvals, and dashboards.
   </Card>
 
-  <Card title="Launch confidence">
-    Before publishing, you can ask for a final testing and cleanup pass.
+  <Card title="AI-powered SaaS">
+    Add assistants, summaries, content generation, recommendations, or smart workflows to your SaaS idea.
   </Card>
 </CardGroup>
 
-## How the Testing Agent works
+## When to use this use case
+
+Use this guide if you want to build:
+
+- a SaaS dashboard
+- a B2B software product
+- a subscription-based web app
+- a customer portal
+- an internal business platform
+- an AI-powered SaaS tool
+- a workflow automation product
+- an MVP for a startup idea
+
+<Tip>
+Start with the smallest useful version. Your first SaaS MVP should prove the main workflow before adding advanced features.
+</Tip>
+
+## The SaaS MVP build path
 
 <Steps>
-  <Step title="You ask LaunchPulse to build or update something">
-    This could be a new page, a mobile screen, a payment flow, a dashboard feature, a design improvement, or a bug fix.
+  <Step title="Define the user and problem">
+    Start with one target user and one problem. Avoid building for everyone at the beginning.
   </Step>
 
-  <Step title="LaunchPulse completes the task">
-    The app is updated based on your request.
+  <Step title="Choose the core workflow">
+    Decide the main action users need to complete. This could be managing clients, tracking projects, booking services, creating reports, or using an AI assistant.
   </Step>
 
-  <Step title="The Testing Agent checks the result">
-    After the task finishes, the Testing Agent reviews what changed and looks for issues, messy code, missing states, or broken logic.
+  <Step title="Build the foundation">
+    Create the first version with authentication, dashboard structure, key pages, and the main workflow.
   </Step>
 
-  <Step title="Issues are cleaned up">
-    If clear problems are found, LaunchPulse helps fix them and clean up the output.
+  <Step title="Add only must-have features">
+    Add 3–5 features that are required for the MVP to be useful. Save advanced features for later.
   </Step>
 
-  <Step title="You preview the app">
-    Open the live preview and test the main flow like a real user.
+  <Step title="Preview and test">
+    Use the live preview to test the product like a real user. Check the main journey before adding more.
   </Step>
 
-  <Step title="You continue with the next focused task">
-    Once the app looks good, ask LaunchPulse for the next feature, improvement, or launch step.
+  <Step title="Add payments or subscriptions">
+    Once the core product works, add pricing, checkout, subscriptions, or paid access if your SaaS needs monetisation.
+  </Step>
+
+  <Step title="Publish and connect a domain">
+    When the MVP is ready, publish the web app and connect a custom domain for a more professional launch.
   </Step>
 </Steps>
 
-## What it helps check
+## What a good SaaS MVP includes
 
-| Area | What the Testing Agent helps with |
-|---|---|
-| Code cleanup | Removes messy, duplicated, or unnecessary code from recent changes |
-| Build issues | Looks for errors that stop the app from working properly |
-| Broken flows | Helps catch journeys that no longer connect correctly |
-| UI problems | Reviews layout issues, missing states, and inconsistent screens |
-| Feature logic | Checks whether the latest feature behaves as expected |
-| Regressions | Helps reduce cases where a new task breaks something that worked before |
-| Launch readiness | Supports final cleanup before publishing or app store preparation |
+| Area | What to include in v1 | What to save for later |
+|---|---|---|
+| User accounts | Sign-up, login, basic account area | Advanced roles and permissions |
+| Dashboard | Main overview and key actions | Complex analytics |
+| Core workflow | The main thing users came to do | Multiple secondary workflows |
+| Data | Essential records, lists, and details | Advanced filters and automation |
+| Payments | Basic pricing and subscription flow if needed | Complex billing rules |
+| Admin | Simple management tools | Full enterprise admin system |
+| Design | Clean, usable, responsive UI | Heavy animation and advanced branding |
 
-## The best workflow
+## Example SaaS MVP prompt
 
-The strongest way to build with LaunchPulse is not to ask for everything at once.
+```text
+Build a SaaS dashboard for real estate agencies to manage properties, tenant inquiries, and monthly performance.
 
-Use this rhythm:
+The app helps small real estate teams keep listings, renter leads, and follow-ups in one place.
 
-<CardGroup cols={4}>
-  <Card title="1. Build">
-    Ask LaunchPulse to add or improve one focused part of the app.
+For version one, include:
+1. Landing page
+2. Sign-up and login
+3. Agency dashboard
+4. Property management
+5. Tenant inquiry tracking
+6. Basic account settings
+
+The main user journey should be:
+1. Agency signs up
+2. Adds properties
+3. Receives or adds tenant inquiries
+4. Tracks inquiry status
+5. Reviews monthly performance from the dashboard
+
+Design style:
+Modern, premium, clean, and easy for non-technical real estate teams to use.
+
+For v1, success means:
+An agency can add properties, manage inquiries, and understand what needs follow-up from one dashboard.
+```
+
+## SaaS MVP examples
+
+<CardGroup cols={2}>
+  <Card title="Real estate agency SaaS">
+    Manage property listings, tenant inquiries, viewing requests, and agency performance from one dashboard.
   </Card>
 
-  <Card title="2. Review">
-    Let the Testing Agent check the task and clean up issues.
+  <Card title="Fitness coach SaaS">
+    Manage clients, workout plans, bookings, progress notes, and subscription payments.
   </Card>
 
-  <Card title="3. Preview">
-    Test the result in the live preview like a real user.
+  <Card title="AI customer support SaaS">
+    Help businesses answer customer questions, summarize tickets, and manage support workflows.
   </Card>
 
-  <Card title="4. Continue">
-    Move to the next feature only after the current flow works.
+  <Card title="Recruiting SaaS">
+    Track candidates, interview stages, feedback, hiring workflows, and team collaboration.
+  </Card>
+
+  <Card title="Invoice and finance SaaS">
+    Manage clients, invoices, payments, reports, and reminders for small businesses.
+  </Card>
+
+  <Card title="Creator membership SaaS">
+    Let creators manage paid content, members, subscriptions, and private resources.
   </Card>
 </CardGroup>
 
-<Tip>
-Build one feature, test it, then continue. This keeps your app easier to understand, easier to fix, and easier to launch.
-</Tip>
+## Build in phases
 
-## Example: after adding a booking flow
+Do not try to build the final SaaS product in one prompt.
 
-Imagine you ask LaunchPulse:
+Use this phased approach:
+
+| Phase | Goal | Example prompt |
+|---|---|---|
+| Foundation | Create the first usable product structure | “Build the dashboard, login, and main workflow first.” |
+| Feature one | Add the most important feature | “Add property management with create, edit, and status fields.” |
+| Feature two | Add the next required workflow | “Add inquiry tracking with follow-up status.” |
+| Monetisation | Add pricing or subscriptions | “Add a pricing page and monthly subscription checkout.” |
+| Polish | Improve product feel | “Make the dashboard feel more premium and easier to scan.” |
+| Testing | Check the main flow | “Test the agency sign-up to inquiry tracking flow and fix issues.” |
+| Launch | Prepare for public use | “Prepare the app for publishing and custom domain setup.” |
+
+## Strong follow-up prompts
+
+### Add a feature
 
 ```text
-Add a booking flow to my fitness coach mobile app.
+Add property management to the SaaS dashboard.
 
 Users should be able to:
-- choose a coach
-- select a date and time
-- confirm the session
-- see a booking confirmation screen
+- create a property
+- edit property details
+- set availability status
+- view all properties in a table
+- open a property detail page
+
+Keep the design clean and consistent with the existing dashboard.
 ```
 
-After LaunchPulse builds the booking flow, the Testing Agent helps check the result.
-
-It may look for issues like:
-
-- the booking screen was added but not linked correctly
-- the confirm button does not lead to a success screen
-- the date and time selection is unclear
-- the mobile layout needs cleanup
-- the new flow broke an existing page
-- the code needs cleanup after the change
-
-## When to ask for a focused test
-
-The Testing Agent works automatically, but you can still guide LaunchPulse with a focused testing prompt.
-
-Use a focused test after:
-
-- adding a new feature
-- changing a core user flow
-- adding payments or subscriptions
-- updating authentication
-- adding a mobile screen
-- connecting dashboard actions
-- preparing to publish
-- fixing a bug
-- making a big design change
-
-## Useful testing prompts
-
-### Test the last task
+### Improve the dashboard
 
 ```text
-Review the changes from the last task and fix any issues you find.
+Improve the main dashboard so it is easier to understand.
 
-Focus on:
-- broken buttons
-- missing states
-- layout problems
-- incomplete logic
-- anything that could break the main user flow
+Add:
+- summary cards
+- recent activity
+- clear next actions
+- better spacing
+- empty states for new users
+
+Do not add new major features. Focus on clarity and usability.
 ```
 
-### Test a specific flow
+### Add payments
 
 ```text
-Test the booking flow from start to finish.
+Add subscription payments to this SaaS app.
 
-Check that a user can:
-1. open the booking page
-2. choose a date and time
-3. confirm the booking
-4. see a success state
+Include:
+- pricing page
+- monthly subscription option
+- upgrade button
+- billing status inside account settings
+- paid access for dashboard features
 
-Fix anything that prevents this flow from working.
+Keep the flow simple for version one.
 ```
 
-### Clean up the code
+### Prepare for launch
 
 ```text
-Clean up the code from the last feature.
-
-Do not add new features.
-
-Focus only on:
-- removing duplication
-- fixing errors
-- improving structure
-- keeping the same user experience
-```
-
-### Final pre-launch check
-
-```text
-Run a final testing and cleanup pass before launch.
+Prepare this SaaS MVP for launch.
 
 Check:
-- main user journey
-- navigation
-- broken buttons or links
-- layout issues
+- sign-up and login
+- main dashboard flow
+- core feature pages
+- payment flow if included
 - mobile responsiveness
+- broken buttons or links
 - empty states
-- authentication flow, if included
-- payment or subscription flow, if included
-- obvious bugs or unfinished screens
+- public-facing copy
 
-Fix clear issues and tell me what still needs manual review.
+Fix clear issues and list anything that still needs manual review.
 ```
 
-## Testing by task type
+## Common SaaS MVP mistakes
 
-| Task type | Good testing prompt |
-|---|---|
-| New page | “Check the new page for layout issues, broken links, and missing empty states.” |
-| New feature | “Test this feature end-to-end and fix anything that blocks the main flow.” |
-| Design update | “Review the page on desktop and mobile sizes and fix spacing or layout issues.” |
-| Payment flow | “Check the payment journey from pricing to confirmation and identify anything incomplete.” |
-| Authentication | “Test sign-up, login, logout, and protected page behavior.” |
-| Mobile app flow | “Check the mobile screens, navigation, tap targets, and success states.” |
-| Pre-launch | “Review the app for broken flows, obvious bugs, unfinished states, and launch blockers.” |
+| Mistake | Why it hurts | Better approach |
+|---|---|---|
+| Building too many features | The MVP becomes hard to test | Start with 3–5 must-have features |
+| Targeting everyone | The product feels vague | Pick one clear customer type |
+| Adding payments too early | The core value may not be proven | Build the main workflow first |
+| Skipping dashboard clarity | Users do not know what to do | Add clear actions and useful empty states |
+| Building advanced roles too soon | Complexity grows quickly | Start with simple account access |
+| Publishing without testing | Users may hit broken flows | Test the main journey before launch |
 
-## What the Testing Agent does not replace
+## SaaS MVP checklist
 
-The Testing Agent improves quality, but you should still review your app yourself.
+Before publishing, check that you have:
 
-Before sharing or publishing, you should:
-
-- click through the live preview
-- test the main user journey
-- check desktop and mobile layouts
-- review important copy
-- test login if your app uses authentication
-- test payments if your app includes subscriptions or checkout
-- check mobile publishing flows if you are building a mobile app
-- ask a teammate or test user to try the product
+- one clear target user
+- one clear problem
+- a working sign-up/login flow if needed
+- a dashboard or main workspace
+- one strong core workflow
+- useful empty states
+- basic settings or account area
+- payment/subscription flow if needed
+- clean responsive design
+- tested main user journey
+- custom domain plan for launch
 
 <Warning>
-The Testing Agent helps catch and fix issues, but no automated review can guarantee every edge case, business rule, or user expectation is perfect. Always test the product like a real user before launch.
+Do not judge your MVP by how many features it has. Judge it by whether the main user can complete the main job without confusion.
 </Warning>
-
-## Common mistakes
-
-| Mistake | Why it causes problems | Better approach |
-|---|---|---|
-| Adding many features before testing | Bugs stack up and become harder to find | Build one feature, then preview it |
-| Asking for vague testing | The review may miss the flow you care about | Ask LaunchPulse to test a specific journey |
-| Ignoring preview | You may miss obvious user experience issues | Click through after major changes |
-| Continuing after a broken task | New work gets built on top of problems | Fix the issue before expanding |
-| Mixing redesign and bug fixes | The task becomes too broad | Separate cleanup, testing, and design polish |
-| Publishing without a final pass | Users may hit unfinished flows | Run a final testing prompt before launch |
-
-## What good testing looks like
-
-A good testing request is specific.
-
-Instead of this:
-
-```text
-Test the app.
-```
-
-Use this:
-
-```text
-Test the client booking flow from start to finish.
-
-The user should be able to:
-1. open the app
-2. choose a coach
-3. select a time
-4. confirm the booking
-5. see a success screen
-
-Fix anything that prevents this flow from working.
-```
-
-Specific testing prompts help LaunchPulse focus on the flow that matters most.
 
 ## What the workspace looks like
 
 <Note>
-Add a clean screenshot here showing a task finishing and LaunchPulse moving into review or cleanup.
+Add a clean screenshot here showing a SaaS dashboard built in LaunchPulse.
 </Note>
 
 <Note>
-Add a clean screenshot here showing the live preview after a tested task.
+Add a clean screenshot here showing the live web app preview.
 </Note>
 
 <Note>
-Add a clean screenshot here showing a user asking LaunchPulse to test and fix a specific flow.
+Add a clean screenshot here showing a published web app or custom domain setup.
 </Note>
 
-## Best practice: build in smaller loops
+## Recommended first build
 
-The Testing Agent works best when your tasks are focused.
+For most SaaS MVPs, start with this foundation:
 
 <CardGroup cols={2}>
-  <Card title="Good task">
-    “Add a client profile page with notes, progress, and upcoming bookings.”
+  <Card title="Landing page">
+    Explain the product, target user, main benefit, and call to action.
   </Card>
 
-  <Card title="Harder task">
-    “Build the full app with client profiles, payments, chat, AI, analytics, admin, and launch setup.”
+  <Card title="Authentication">
+    Let users sign up, log in, and access their workspace.
   </Card>
 
-  <Card title="Good testing request">
-    “Test the client profile flow and fix anything broken.”
+  <Card title="Dashboard">
+    Give users a central place to understand status and take action.
   </Card>
 
-  <Card title="Harder testing request">
-    “Test everything and make it perfect.”
+  <Card title="Core workflow">
+    Build the main action that makes the product valuable.
+  </Card>
+
+  <Card title="Settings">
+    Add basic account, profile, or workspace settings.
+  </Card>
+
+  <Card title="Payment flow">
+    Add subscriptions or checkout when the product is ready to monetise.
   </Card>
 </CardGroup>
-
-Keep the loop simple:
-
-```text
-Build one thing → let LaunchPulse review it → preview it → fix issues → continue
-```
 
 ## Next steps
 
 <CardGroup cols={2}>
   <Card title="Quickstart" href="/quickstart">
-    Learn the full build, preview, improve, and publish workflow.
+    Learn how to start your first LaunchPulse build.
   </Card>
 
   <Card title="Write a good prompt" href="/write-a-good-prompt">
-    Learn how to make testing and cleanup requests more specific.
-  </Card>
-
-  <Card title="Agents" href="/agents">
-    Understand how LaunchPulse agents support planning, building, reviewing, and improving.
+    Learn how to prompt in phases instead of asking for everything at once.
   </Card>
 
   <Card title="Web App Development" href="/web-app-development">
-    Build, preview, test, and publish browser-based apps.
+    Build, preview, publish, and connect a custom domain for your SaaS web app.
   </Card>
 
-  <Card title="Mobile App Development" href="/mobile-app-development">
-    Build mobile-first apps and prepare them for iOS and Android publishing.
+  <Card title="Authentication" href="/authentication">
+    Add sign-up, login, and private user areas.
   </Card>
 
-  <Card title="Troubleshooting" href="/troubleshooting">
-    Learn what to do when something is broken or unclear.
+  <Card title="Payments & Monetisation" href="/payments-and-monetisation">
+    Add subscriptions, checkout, paid access, or monetisation flows.
+  </Card>
+
+  <Card title="Custom Domain" href="/custom-domain">
+    Connect a branded domain when your SaaS MVP is ready to share.
   </Card>
 </CardGroup>
