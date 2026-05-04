@@ -1,156 +1,60 @@
 ---
 title: "Quickstart: ship your first app"
-description: Turn your idea into a production-ready web app with a single prompt in LaunchPulse.
+description: "Build your first LaunchPulse app in a few clear steps."
 ---
 
-# Quickstart: from idea to live app
+# Quickstart: ship your first app
 
-Turn your idea into a **production-ready web app with just one prompt.**
+This guide is for first-time users.
 
-LaunchPulse works like a small product team made of AI agents: Product, UX, Frontend, Backend, Database, Validation, and Browser QA all collaborate on a single build so you don’t have to juggle tools or handoffs.
+Goal: get a working first version live fast, then improve it.
+
+## Step 1) Start a new project
+
+Open LaunchPulse and create a new project.
+
+## Step 2) Paste a clear first prompt
+
+Use this simple template:
+
+```text
+Build a web app for [who it is for].
+
+Main problem:
+[one sentence]
+
+Core features:
+1) ...
+2) ...
+3) ...
+
+Must-have pages:
+- ...
+- ...
+
+Success for v1:
+- ...
+```
+
+## Step 3) Wait for the first build
+
+Let LaunchPulse run the build.
+
+When it finishes, open the preview and test the 2-3 most important flows.
+
+## Step 4) Request one focused improvement
+
+Ask for one change at a time, for example:
+
+- "Improve the onboarding flow to 3 simple steps."
+- "Add a basic admin page for managing users."
+
+## Step 5) Repeat until v1 is usable
+
+Keep changes small and clear.
+
+Ship once your core flow works end-to-end.
 
 <Check>
-<strong><a href="/dashboard">Open LaunchPulse and start a new project</a></strong> to follow this Quickstart as you read.
-</Check>
-
----
-
-## What LaunchPulse gives you in one run
-
-<CardGroup cols={3}>
-  <Card title="Full-stack applications">
-    Frontend, backend, and database generated in one coordinated project - not three separate tools.
-  </Card>
-  <Card title="Web apps you can publish">
-    Launch live web platforms, connect domains, and share a URL the same day the app is generated.
-  </Card>
-  <Card title="AI-powered development">
-    Multiple specialised agents plan, build, repair, and validate your app instead of a single “do-everything” model.
-  </Card>
-</CardGroup>
-
----
-
-## How the product works (high level)
-
-Here’s what happens behind the scenes when you create a project:
-
-- The **Product Manager agent** turns your idea into structured docs (PRD, FRD, DRD, BRD).  
-- Those docs are passed to **UX, Frontend, Backend, and Database agents**, which implement flows, APIs, and schemas.  
-- A **Validation layer** checks that the build still matches the agreed spec.  
-- A **Browser agent** runs through the app like a real user, finds non-working elements, and helps fix them.
-
-You describe the product once. The agents do the heavy lifting.
-
----
-
-## Step 1 – Describe your idea
-
-From the homepage, start by typing what you want to build in natural language.  
-There’s no hard limit on detail - the more context you give, the better the result.
-
-<Steps>
-  <Step title="Write your product brief">
-    In the **“Describe your idea…”** box, explain:
-
-    - Who the app is for  
-    - What core flows it needs (e.g. onboarding, dashboard, bookings, messaging)  
-    - Any must-have features, integrations, or constraints  
-
-    Example ideas:
-
-    - “Food delivery marketplace for local restaurants with drivers and customer tracking.”  
-    - “B2B SaaS dashboard for agencies to manage client campaigns.”  
-    - “Real estate platform for diplomats to browse and book high-end rentals.”
-  </Step>
-
-  <Step title="Submit your prompt">
-    When you’re happy with your brief, hit **Enter** or click the send button.  
-    This creates a new LaunchPulse project and kicks off the agent pipeline.
-  </Step>
-</Steps>
-
-<Frame>
-  <img
-    src="/images/quickstart-idea.png"
-    alt="LaunchPulse idea input box with example templates and monthly usage indicator"
-  />
-</Frame>
-
----
-
-## Step 2 – Watch your project being built
-
-After you submit your idea, you’re taken to the **project page**.  
-This is where you’ll see your app getting generated live.
-
-<Steps>
-  <Step title="Follow the agent pipeline">
-    On the left, you’ll see **agent tasks** progressing:
-
-    - Product Manager Agent  
-    - Database Agent  
-    - Backend Agent  
-    - API Architect Layer Agent  
-    - UX, Frontend, and other agents depending on your project
-
-    Each one moves from “in progress” to “done” as it finishes its part of the build.
-  </Step>
-
-  <Step title="Explore the structure view">
-    In the main panel, the **Structure** tab shows your agent graph - how each agent fits into the pipeline for this project.
-
-    You can use this to understand:
-
-    - Which agents ran  
-    - What they produced  
-    - How far along your project is (e.g. “Ready to deploy”)
-  </Step>
-</Steps>
-
-<Frame>
-  <img
-    src="/images/quickstart-structure.png"
-    alt="LaunchPulse agent structure view showing Product Manager, Database, Backend, and other agents"
-  />
-</Frame>
-
----
-
-## Step 3 – Validate, iterate, and test
-
-Once the initial build is done, LaunchPulse moves into validation and refinement.
-
-<CardGroup cols={3}>
-  <Card title="Automatic validation">
-    A validation agent checks the build against the original requirements (PRD/FRD/BRD) and flags gaps or inconsistencies.
-  </Card>
-  <Card title="Browser QA runs your app">
-    A Browser agent opens your app, navigates through flows, and catches runtime errors and broken experiences.
-  </Card>
-  <Card title="Chat-based iterations">
-    Use chat to request high-impact changes: add features, adjust flows, or clean up UX. Each iteration keeps your project history intact.
-  </Card>
-</CardGroup>
-
-Use the chat panel on the project page to refine:
-
-- “Add a multi-step onboarding for new users.”  
-- “Simplify the pricing page to two plans and update the navigation.”  
-- “Add a basic billing settings page with plan name and renewal date.”
-
----
-
-## When you’re happy: publish
-
-After validation and a few iterations:
-
-1. Preview your app in the **Preview** tab.  
-2. When it looks good and flows correctly, click **Deploy**.  
-3. Get a live URL immediately, and connect a custom domain when you’re ready.
-
-<Check>
-You now know the full loop:  
-<strong>Describe → Watch agents build → Validate & iterate → Deploy.</strong>  
-<a href="/dashboard">Start your first LaunchPulse project and walk through these steps.</a>
+Need help writing your first prompt? Read <a href="/write-a-good-prompt">Write a good prompt</a>.
 </Check>

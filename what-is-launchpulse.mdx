@@ -1,225 +1,62 @@
 ---
 title: "What is LaunchPulse?"
-description: "Meet LaunchPulse, the multi-agent platform and cloud runtime that turns product briefs into live, full-stack web apps."
+description: "A simple overview of LaunchPulse for founders shipping their first web or mobile app."
 ---
 
-# Introduction to LaunchPulse 
+# What is LaunchPulse?
 
-LaunchPulse is your **AI software team + runtime platform** in the browser.
+LaunchPulse is a workspace that helps you go from idea to a working app.
 
-You describe the product you want to ship, and LaunchPulse:
+## When to use it
 
-- Plans it like a product squad
-- Builds it like an engineering team
-- Tests it like a QA department
-- Hosts it like a managed cloud platform
+- You want to ship an MVP quickly
+- You want one place for build, iteration, and launch workflows
+- You prefer plain-English prompts over tool-by-tool setup
 
-All inside a single, integrated system.
+## How it works
 
-<Check>
-  Want to see it end-to-end?\
-  <strong><a href="/quickstart">Follow the Quickstart guide with a real idea as you read this page.</a></strong>
-</Check>
+<Steps>
+  <Step title="Describe your idea">
+    Start a project and explain what you want to build.
+  </Step>
+  <Step title="Review the plan">
+    LaunchPulse generates a plan and feature list. You can edit priorities before build starts.
+  </Step>
+  <Step title="Build, test, and iterate">
+    LaunchPulse builds your app, then you request focused improvements.
+  </Step>
+  <Step title="Launch">
+    Publish your app when your core user flow is ready.
+  </Step>
+</Steps>
 
----
+## Main product areas
 
-## What makes LaunchPulse different?
-
-Most “AI coding” tools are an editor with a model bolted on. LaunchPulse is **infrastructure-first**:
-
-<CardGroup cols={3}>
-  <Card title="Agent-native architecture">
-    Multiple specialised agents share a single project brain - product, UX, frontend, backend, database, QA, and ops.
+<CardGroup cols={2}>
+  <Card title="Build modes" href="/autonomous-ai-software-engineer">
+    Choose Autonomous mode or explore Multi-Agent workflows.
   </Card>
-  <Card title="Integrated cloud runtime">
-    Hosting, databases, domains, auth, and test users are wired into the platform from day one.
+  <Card title="Platforms" href="/web-app-development">
+    Build web apps or mobile apps based on your goal.
   </Card>
-  <Card title="Continuous validation">
-    Browser-based QA, validation agents, and structured docs keep the build aligned with the spec as it evolves.
+  <Card title="App capabilities" href="/authentication">
+    Add auth, storage, AI services, and monetisation.
   </Card>
-</CardGroup>
-
-The result feels less like “I asked for some code” and more like:
-
-> “I spun up a small product team and a managed cloud just for this app.”
-
----
-
-## From idea to running app
-
-At the very top of LaunchPulse is a simple box:
-
-<Frame>
-  <img src="/Screenshot2025-11-12at23.13.40.png" alt="LaunchPulse idea input box with example templates" />
-</Frame>
-
-You describe your idea in natural language - as detailed as you like. Behind that input sits the rest of the system:
-
-- A **Product & UX layer** that turns your description into specs and flows
-- An **Engineering layer** of agents that compile those specs into code, APIs, and schemas
-- An **Infrastructure layer** (LaunchPulse Cloud) that runs the app, manages data, and exposes a live URL
-
-You focus on the idea and the outcome. LaunchPulse orchestrates everything between.
-
----
-
-## The LaunchPulse architecture
-
-Conceptually, LaunchPulse is three tightly connected layers.
-
-### 1. Product intelligence layer
-
-This is where your idea becomes something the system can build.
-
-- Product Manager, UX, and architecture agents create PRDs, FRDs, DRDs, and BRDs.
-- Requirements, edge cases, and non-functional constraints are captured up front.
-- This documentation becomes the source of truth for downstream agents.
-
-### 2. App assembly layer
-
-This is the “AI team” people usually see - but running on top of that shared brain.
-
-<Frame>
-  <img src="/Screenshot2025-11-14at21.04.48.png" alt="LaunchPulse structure overview graph" />
-</Frame>
-
-- Frontend, Backend, Database, API Architect, and Ops agents work from the same spec.
-- Code, schemas, and APIs are generated as a single coherent system.
-- Validation agents keep checking: _does this still match the spec?_
-
-### 3. Cloud runtime layer
-
-Once the app is assembled, it has somewhere to live - **LaunchPulse Cloud**.
-
-- Managed hosting for your frontend and backend
-- Managed database attached to your project
-- Domains, certificates, and auth wired in
-- Browser QA and monitoring integrated into the same UI
-
-You don’t jump between a model, GitHub, a database dashboard, and a cloud console.\
-It’s one environment.
-
----
-
-## Infrastructure that’s already there
-
-### Managed database per project
-
-Every project ships with a fully managed database that grows with your app.
-
-<Frame>
-  <img src="/Screenshot2025-11-13at06.21.54.png" alt="LaunchPulse database tab" />
-</Frame>
-
-- Tables and schemas are generated by the Database Agent.
-- You can browse, filter, edit, and add rows directly from the **Database** tab.
-- No separate DB provisioning, connection strings, or migrations to set up manually.
-
-For quick fixes or demos, you can even click into a cell and update data inline - ideal for testing flows.
-
-<Frame>
-  <img src="/Screenshot2025-11-13at23.45.50.png" alt="LaunchPulse database view" />
-</Frame>
-
----
-
-### Preview & live app in one click
-
-When agents finish a build, your app is already runnable.
-
-<Frame>
-  <img src="/Screenshot2025-11-13at23.37.13.png" alt="LaunchPulse preview tab" />
-</Frame>
-
-- Use the **Preview** tab to interact with the latest build without deploying.
-- Click **View App** to open the live preview in a new window.
-- See exactly what users will experience before you press Deploy.
-
----
-
-### Auth, test users & roles baked in
-
-Authentication isn’t an afterthought. LaunchPulse creates real accounts and roles for you.
-
-<Frame>
-  <img src="/Screenshot2025-11-14at18.10.41.png" alt="LaunchPulse test users sidebar" />
-</Frame>
-
-- Built-in signups, logins, and password resets.
-- Test users generated automatically, visible in the left sidebar.
-- Copy credentials and log in as different user types to test flows quickly.
-
-This lets you validate permissions, dashboards, and role-specific flows before inviting real users.
-
----
-
-### Browser QA & AI test engineer
-
-On top of normal validation, LaunchPulse can actively **use your app** to test it.
-
-<Frame>
-  <img src="/Screenshot2025-11-07at23.47.07.png" alt="LaunchPulse AI Testing panel" />
-</Frame>
-
-- A self-testing browser agent navigates through key flows.
-- It captures runtime errors, broken journeys, and layout issues.
-- Results feed back into the build pipeline so agents can fix issues in context.
-
-Instead of stopping at “it compiles,” LaunchPulse pushes toward **“it behaves correctly for real users.”**
-
----
-
-## Who LaunchPulse is for
-
-LaunchPulse is built for people who care about shipping real products, not just demos:
-
-- **Founders & solo entrepreneurs** launching serious MVPs without assembling a full dev team.
-- **Agencies & freelancers** delivering more client projects without scaling headcount linearly.
-- **Product & growth teams** running experiments with production-grade foundations.
-- **Developers** who want to offload boilerplate while keeping control over critical logic.
-
-If you can describe the product clearly, LaunchPulse can give you a live app with infrastructure you’re not embarrassed to show to users (or other engineers).
-
----
-
-## What you can build
-
-LaunchPulse focuses on **multi-feature, full-stack apps** rather than single-page experiments:
-
-- SaaS dashboards and admin panels
-- Booking and scheduling platforms
-- Marketplaces and listing platforms
-- Internal tools and operational dashboards
-- Customer portals, tenant portals, or partner portals
-
-Typical builds include:
-
-- Responsive frontend with navigation, forms, dashboards, and onboarding flows
-- Backend APIs, business logic, auth, and background tasks
-- Database schemas wired to the app’s flows
-- Built-in pages like terms, privacy, and basic policy content
-- Dozens of features in a single coordinated build, depending on your brief
-
----
-
-## How this docs site fits into the product
-
-Use the rest of the docs to go deeper into each layer:
-
-<CardGroup cols={3}>
-  <Card title="Quickstart" href="/quickstart">
-    Walk through your first project from idea → agents → live app.
-  </Card>
-  <Card title="Agents" href="/agents">
-    Meet the full multi-agent team, their roles, and how they collaborate.
-  </Card>
-  <Card title="LaunchPulse Cloud" href="/launchpulse-cloud">
-    Learn how hosting, domains, and infrastructure work behind the scenes.
+  <Card title="Deployment" href="/custom-domain">
+    Connect a custom domain or publish mobile builds.
   </Card>
 </CardGroup>
 
-<Check>
-  <strong><a href="/quickstart">Ready to see the infrastructure in action?</a></strong>
-  \
-  Start a new project, describe a real idea, and watch LaunchPulse build, test, and host the app for you.
-</Check>
+## Example use cases
+
+- Founder launching first SaaS MVP
+- Agency shipping client prototype quickly
+- Team validating a new product idea
+
+## Related pages
+
+<CardGroup cols={3}>
+  <Card title="Quickstart" href="/quickstart" />
+  <Card title="Projects Dashboard" href="/projects-dashboard" />
+  <Card title="Write a good prompt" href="/write-a-good-prompt" />
+</CardGroup>
