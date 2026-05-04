@@ -1,26 +1,278 @@
 ---
 title: "Testing Agent"
-description: "Beta QA workflow for structured test planning, execution support, and reporting."
+description: "Learn how LaunchPulse automatically reviews, cleans, and fixes work after each build task."
 ---
+
 # Testing Agent
 
-<Warning>Beta / in progress: details may change as the feature matures.</Warning>
+The Testing Agent is LaunchPulse’s built-in quality layer.
 
-Testing Agent helps you ship with higher confidence by making quality checks explicit and repeatable.
+After LaunchPulse completes a task, the Testing Agent helps review the result, clean up the code, detect issues, and fix problems before you continue building. It is not a separate beta feature you need to turn on. It works inside the LaunchPulse build process to help keep your project stable as it grows.
 
-## When to use this
-- Before release milestones
-- After major feature changes
+<Info>
+Think of the Testing Agent as an automatic reviewer that checks each task after it is completed, so every change has a better chance of working before you move on to the next one.
+</Info>
 
-## How it works
-- Generates test plan from product context
-- Organises checks by flow and severity
-- Produces actionable failure reports
+## What the Testing Agent does
 
-## What you can do with it
-- Catch regressions earlier
-- Improve reproducibility of bug reports
+<CardGroup cols={3}>
+  <Card title="Reviews completed tasks">
+    After a build step finishes, the Testing Agent checks what changed and looks for obvious issues in the result.
+  </Card>
+
+  <Card title="Cleans up code">
+    It helps remove messy, duplicated, or unnecessary code created during the build process.
+  </Card>
+
+  <Card title="Fixes detected issues">
+    When LaunchPulse finds errors, broken states, or incomplete logic, the Testing Agent helps repair them.
+  </Card>
+
+  <Card title="Checks user flows">
+    It helps verify that important flows still make sense after a new feature or change is added.
+  </Card>
+
+  <Card title="Reduces regressions">
+    It helps catch cases where a new update accidentally breaks something that was already working.
+  </Card>
+
+  <Card title="Improves build quality">
+    It supports cleaner, more reliable output as your app grows from a simple MVP into a larger product.
+  </Card>
+</CardGroup>
+
+## How it fits into the LaunchPulse workflow
+
+The Testing Agent works in the background as part of the build cycle.
+
+<Steps>
+  <Step title="You request a task">
+    You ask LaunchPulse to build, update, fix, or improve part of your app.
+  </Step>
+
+  <Step title="LaunchPulse completes the change">
+    The platform updates the app, code, screens, flow, or product logic based on your request.
+  </Step>
+
+  <Step title="Testing Agent reviews the result">
+    After the task is completed, the Testing Agent checks the work for issues, messy code, broken behavior, or incomplete changes.
+  </Step>
+
+  <Step title="Issues are cleaned or fixed">
+    If problems are detected, LaunchPulse can clean up the code, repair issues, and make the result more stable.
+  </Step>
+
+  <Step title="You preview and continue">
+    You review the app in preview, test the main flow, and continue with the next focused request.
+  </Step>
+</Steps>
+
+## When the Testing Agent helps most
+
+The Testing Agent is especially useful after:
+
+- adding a new feature
+- changing an existing page or screen
+- updating navigation
+- connecting a flow between pages
+- adding authentication, payments, storage, or AI services
+- fixing a bug
+- preparing a web app for publishing
+- preparing a mobile app for iOS or Android publishing
+- making design or layout changes across multiple screens
+
+<Tip>
+The Testing Agent helps automatically, but you should still preview the app yourself. The best workflow is: build → automatic review → preview → focused follow-up prompt.
+</Tip>
+
+## What it checks
+
+| Area | What the Testing Agent helps with |
+|---|---|
+| Code quality | Cleans messy code, reduces duplication, and improves structure |
+| Build errors | Looks for errors that prevent the app from running properly |
+| UI issues | Helps catch broken layouts, missing states, or inconsistent screens |
+| User flows | Checks whether important actions still make sense after changes |
+| Feature logic | Looks for incomplete or conflicting behavior |
+| Regression risk | Helps reduce cases where new changes break existing work |
+| Launch readiness | Supports final cleanup before publishing or app store preparation |
+
+## Example: how it works after a task
+
+Imagine you ask LaunchPulse:
+
+```text
+Add a booking flow to my fitness coach mobile app.
+
+Users should be able to:
+- choose a coach
+- select a date and time
+- confirm the session
+- see a booking confirmation screen
+```
+
+After LaunchPulse builds the booking flow, the Testing Agent helps check the result.
+
+It may look for things like:
+
+- whether the new booking screens were added correctly
+- whether the navigation between screens works
+- whether the confirmation state exists
+- whether the app has obvious broken logic
+- whether the code needs cleanup after the change
+- whether the new flow accidentally affects another part of the app
+
+## How to prompt for stronger testing
+
+Even though the Testing Agent is built in, you can still ask LaunchPulse to focus the review.
+
+Use prompts like:
+
+```text
+Review the changes from the last task and fix any issues you find.
+
+Focus on:
+- broken buttons
+- missing states
+- layout problems
+- incomplete logic
+- anything that could break the main user flow
+```
+
+Or:
+
+```text
+Test the booking flow from start to finish.
+
+Check that a user can:
+1. open the booking page
+2. choose a date and time
+3. confirm the booking
+4. see a success state
+
+Fix anything that prevents this flow from working.
+```
+
+Or:
+
+```text
+Clean up the code from the last feature.
+
+Do not add new features.
+Focus only on:
+- removing duplication
+- fixing errors
+- improving structure
+- keeping the same user experience
+```
+
+## Best way to use the Testing Agent
+
+<CardGroup cols={2}>
+  <Card title="Build one feature at a time">
+    Smaller tasks are easier for LaunchPulse to review, test, and clean up properly.
+  </Card>
+
+  <Card title="Preview after major changes">
+    Use the live preview to check the result like a real user before adding more features.
+  </Card>
+
+  <Card title="Ask for focused checks">
+    If a flow matters, ask LaunchPulse to test that exact flow instead of asking for a generic review.
+  </Card>
+
+  <Card title="Fix before expanding">
+    If something feels broken, fix it before asking LaunchPulse to add more functionality.
+  </Card>
+</CardGroup>
+
+## Testing by task type
+
+| Task type | Good testing prompt |
+|---|---|
+| New page | “Check the new page for layout issues, broken links, and missing empty states.” |
+| New feature | “Test this feature end-to-end and fix anything that blocks the main flow.” |
+| Design update | “Review the page on desktop and mobile sizes and fix spacing or layout issues.” |
+| Payment flow | “Check the payment journey from pricing to confirmation and identify anything incomplete.” |
+| Authentication | “Test sign-up, login, logout, and protected page behavior.” |
+| Mobile app flow | “Check the mobile screens, navigation, tap targets, and success states.” |
+| Pre-launch | “Review the app for broken flows, obvious bugs, unfinished states, and launch blockers.” |
+
+## What the Testing Agent does not replace
+
+The Testing Agent improves quality, but it does not remove the need for human review.
+
+Before launching, you should still:
+
+- click through the live preview yourself
+- test the main user journey
+- check the app on desktop and mobile sizes
+- review important copy and messaging
+- confirm payments or subscriptions if included
+- check authentication if included
+- test mobile publishing flows if building a mobile app
+- ask real users or teammates to try the product
+
+<Warning>
+Automatic testing helps catch issues earlier, but no automated review can guarantee that every product decision, edge case, or user expectation is correct.
+</Warning>
+
+## Common mistakes
+
+| Mistake | Better approach |
+|---|---|
+| Adding many features before testing | Build one feature, let it be reviewed, then preview it |
+| Asking for vague testing | Ask LaunchPulse to test a specific flow |
+| Ignoring the preview | Click through the app after major changes |
+| Continuing after a broken task | Fix the issue before adding more features |
+| Asking for redesign and bug fixes together | Separate design polish from technical cleanup |
+| Publishing without final review | Run one final testing and cleanup pass before launch |
+
+## Final pre-launch testing prompt
+
+Use this before publishing a web app or preparing a mobile app for store release:
+
+```text
+Run a final testing and cleanup pass before launch.
+
+Check:
+- main user journey
+- navigation
+- broken buttons or links
+- layout issues
+- mobile responsiveness
+- empty states
+- authentication flow, if included
+- payment or subscription flow, if included
+- obvious bugs or unfinished screens
+
+Fix clear issues and tell me what still needs manual review.
+```
 
 ## Next steps
-- [Troubleshooting](/troubleshooting)
-- [AI Multi-Agent Mode](/ai-multi-agent-mode)
+
+<CardGroup cols={2}>
+  <Card title="Quickstart" href="/quickstart">
+    Learn the full build, preview, improve, and publish workflow.
+  </Card>
+
+  <Card title="Write a good prompt" href="/write-a-good-prompt">
+    Learn how to make testing and cleanup requests more specific.
+  </Card>
+
+  <Card title="Agents" href="/agents">
+    Understand how LaunchPulse agents work together across planning, building, and refinement.
+  </Card>
+
+  <Card title="Web App Development" href="/web-app-development">
+    Build, preview, test, and publish browser-based apps.
+  </Card>
+
+  <Card title="Mobile App Development" href="/mobile-app-development">
+    Build mobile-first apps and prepare them for iOS and Android publishing.
+  </Card>
+
+  <Card title="Troubleshooting" href="/troubleshooting">
+    Learn what to do when something is broken or unclear.
+  </Card>
+</CardGroup>
