@@ -1,32 +1,26 @@
 ---
 title: "AI Multi-Agent Mode"
-description: "Beta/In-progress mode where specialist agents collaborate on larger builds."
+description: "Beta mode for larger projects that benefit from specialist agent collaboration."
 ---
-
 # AI Multi-Agent Mode
 
-<Warning>
-Beta / in progress: this mode is still being completed and may change.
-</Warning>
+<Warning>Beta / in progress: this workflow may evolve.</Warning>
 
-## Overview
-AI Multi-Agent Mode splits work across specialist agents (planning, building, review, and QA).
+For complex products, Multi-Agent Mode separates planning, build, and review responsibilities to improve quality and control.
 
-## When to use it
-- Larger projects with many features
-- You want stronger separation between build and review
+## When to use this
+- Multi-module products
+- Teams that want explicit review gates
 
 ## How it works
-You select Multi-Agent Mode at project creation. LaunchPulse uses agent handoffs to move work from plan to build to review.
+- Work is split across specialist agents
+- Handoffs move tasks through plan → build → review
+- You keep decision control at checkpoints
 
-## Example use cases
-- Multi-module SaaS app with complex workflows
-- Teams that want explicit review checkpoints
+## What you can do with it
+- Scale coordination on larger builds
+- Reduce single-agent bottlenecks
 
-## Related pages
-- [Autonomous AI Software Engineer](/autonomous-ai-software-engineer)
-- [Testing Agent](/testing-agent)
+## Next steps
 - [Custom Agents](/custom-agents)
-
-## TODO for LaunchPulse team review
-- Confirm final agent handoff flow and UI details before marking GA.
+- [Testing Agent](/testing-agent)

@@ -1,70 +1,90 @@
 ---
 title: "Quickstart"
-description: "Ship your first LaunchPulse app with a clear step-by-step workflow."
+description: "Ship your first LaunchPulse app with a practical, founder-friendly step-by-step workflow."
 ---
 
 # Quickstart: ship your first app
 
-## Overview
-This is the fastest path for first-time users.
+LaunchPulse is built to take you from idea to working product fast. This quickstart gives you a reliable first run so you can ship confidently, not just experiment.
 
-## Before you start
+<Info>
+**Estimated time:** 20-35 minutes for your first working build.
+</Info>
 
-- Decide if you are building a **Web App** or **Mobile App**
-- Prepare a short problem statement and 3-5 must-have features
-- Keep v1 scope small
+## Before you begin
 
-## Step-by-step guide
+- Pick one goal for v1 (for example: "users can sign up and complete one core task")
+- Decide your first platform: **Web App** or **Mobile App**
+- Prepare a short prompt with target user, core problem, and must-have features
+- Keep scope tight: 3-5 features for your first build
+
+## What you'll build
+
+By the end of this guide, you'll have:
+
+- A new LaunchPulse project
+- A generated build plan and feature list
+- A first app build preview
+- A clear iteration prompt for your next improvement
+
+## Step-by-step
 
 <Steps>
   <Step title="1) Create a new project">
-    Open the Projects Dashboard and click new project.
+    Open **Projects Dashboard** and create a project. Name it after the user problem, not the tech stack.
   </Step>
-  <Step title="2) Choose platform and mode">
-    Pick Web App or Mobile App, then select Autonomous AI Software Engineer for your first build.
+  <Step title="2) Choose platform and build mode">
+    Select **Web App** or **Mobile App**. For first-time users, start with **Autonomous AI Software Engineer**.
   </Step>
-  <Step title="3) Write your first prompt">
-    Use a simple structure:
+  <Step title="3) Paste your first prompt">
 
-    ```text
-    Build a [web/mobile] app for [target users].
-    Core problem: [one sentence].
-    Must-have features:
-    1) ...
-    2) ...
-    3) ...
-    Success for v1:
-    - ...
-    ```
+```text
+Build a web app for independent fitness coaches.
+Core problem: Coaches need one place to manage client plans and check-ins.
+Must-have features:
+1) Coach and client login
+2) Weekly plan assignment
+3) Progress check-in form
+Success for v1:
+- A coach can assign a plan and a client can submit one check-in.
+```
   </Step>
-  <Step title="4) Review the generated plan">
-    Remove low-priority features and reorder the backlog to keep MVP scope tight.
+  <Step title="4) Review your generated plan">
+    Remove non-essential features, reorder priorities, and confirm your MVP scope before build starts.
   </Step>
-  <Step title="5) Approve and let it build">
-    LaunchPulse runs the build workflow and produces a preview.
+  <Step title="5) Approve and run build">
+    LaunchPulse executes your approved plan and prepares a preview.
   </Step>
-  <Step title="6) Test your core flow">
-    Validate one end-to-end user journey before adding new features.
+  <Step title="6) Validate one end-to-end flow">
+    Test one full user journey first (signup → main action → confirmation).
   </Step>
-  <Step title="7) Iterate with focused prompts">
-    Ask for one meaningful improvement at a time.
-  </Step>
-  <Step title="8) Deploy">
-    Go live when your main flow works reliably.
+  <Step title="7) Iterate with one focused prompt">
+    Ask for one meaningful improvement at a time for cleaner, faster iterations.
   </Step>
 </Steps>
 
-## What happens next
+## Common mistakes
 
-- Add capabilities like authentication or payments
-- Invite collaborators if needed
-- Move into deployment workflows
+| Mistake | Why it slows you down | Better approach |
+| --- | --- | --- |
+| Starting with 15+ features | Scope explodes before first launch | Limit v1 to 3-5 must-haves |
+| Vague prompts | Leads to unclear plans | Use user + problem + must-have format |
+| Skipping plan review | Wrong priorities get built first | Always review and trim before approval |
+| Testing too broadly too early | Hard to isolate issues | Validate one core flow first |
 
-## Related pages
+## Screenshot placeholders
+
+> [Screenshot placeholder: New project creation modal]
+
+> [Screenshot placeholder: Plan review and feature prioritisation screen]
+
+> [Screenshot placeholder: First build preview]
+
+## What to do next
 
 <CardGroup cols={2}>
-  <Card title="Write a good prompt" href="/write-a-good-prompt" />
-  <Card title="Projects Dashboard" href="/projects-dashboard" />
-  <Card title="Autonomous AI Software Engineer" href="/autonomous-ai-software-engineer" />
-  <Card title="Troubleshooting" href="/troubleshooting" />
+  <Card title="Refine prompts" href="/write-a-good-prompt">Improve build quality with tighter prompts.</Card>
+  <Card title="Understand build modes" href="/agents">Choose the right agent workflow as your project grows.</Card>
+  <Card title="Manage projects" href="/projects-dashboard">Organise and track multiple product ideas.</Card>
+  <Card title="Fix common blockers" href="/troubleshooting">Use guided troubleshooting when stuck.</Card>
 </CardGroup>

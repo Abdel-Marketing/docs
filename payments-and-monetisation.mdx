@@ -1,45 +1,28 @@
 ---
 title: "Payments & Monetisation"
-description: "Understand monetisation paths for web and mobile LaunchPulse apps."
+description: "Design and implement practical monetisation flows for web and mobile LaunchPulse products."
 ---
 # Payments & Monetisation
 
-## Overview
-LaunchPulse supports payment-ready app flows for subscriptions and paid features.
+Monetisation is part of product design, not just checkout. LaunchPulse supports web and mobile payment paths so you can validate revenue early.
 
-## When to use it
-- Subscription pricing
-- Paid feature gating
-- Web or mobile monetisation setup
+## When to use this
+- Subscription or paid feature models
+- Revenue experiments for MVPs
 
 ## How it works
-Request monetisation in plain language, then LaunchPulse wires core payment and access logic.
+- Define plans/access model in your prompt
+- LaunchPulse wires core payment and gating logic
+- Validate purchase and access flows end-to-end
 
 ## Provider paths
 
-| Provider | Best fit | Platform path in source docs |
-| --- | --- | --- |
-| Stripe | Web app checkout/subscriptions | Web |
-| RevenueCat | Mobile subscriptions/IAP | Mobile |
+| Platform path | Provider |
+| --- | --- |
+| Web | Stripe |
+| Mobile | RevenueCat |
 
-## Example prompts
-- "Add a free plan and a Pro monthly plan."
-- "Lock advanced analytics behind paid access."
-- "Add monthly and annual pricing options."
-
-## Key capabilities
-- Subscription flow setup
-- Plan-based feature access
-- Web and mobile monetisation paths
-
-<Info>
-TODO for LaunchPulse team review: confirm public detail level for currencies, taxes, trials, and refunds.
-</Info>
-
-## Related pages
-
-<CardGroup cols={3}>
-  <Card title="Authentication" href="/authentication" />
-  <Card title="Web App Development" href="/web-app-development" />
-  <Card title="Mobile App Development" href="/mobile-app-development" />
-</CardGroup>
+## Example prompt
+```text
+Add Free, Pro Monthly, and Pro Annual plans. Gate advanced analytics behind Pro.
+```
