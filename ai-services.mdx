@@ -1,29 +1,139 @@
 ---
 title: "AI Services"
-description: "Built-in AI capabilities in LaunchPulse without separate provider setup."
+description: "Add AI-powered features to your LaunchPulse apps, from assistants and summaries to smart workflows and content generation."
 ---
+
 # AI Services
 
-## Overview
-LaunchPulse includes built-in AI services so you can add AI features without setting up separate provider accounts.
+LaunchPulse helps you add AI-powered features to the software you build. Instead of starting from a blank technical setup, you can describe the AI experience you want and LaunchPulse helps turn it into part of your web app, mobile app, dashboard, workflow, or internal tool.
 
-## When to use it
-- Chat features
-- Summaries and extraction
-- AI-powered search/recommendations
+Use AI Services when your product needs to understand, generate, summarize, recommend, classify, or assist users inside the app.
 
-## How it works
-You request AI features in plain language. LaunchPulse integrates the required app logic and service connections.
+<Info>
+AI Services are useful when you want your app to do more than store and display information — for example, answering questions, generating content, summarizing data, or helping users complete tasks faster.
+</Info>
+
+## What you can build with AI Services
+
+<CardGroup cols={3}>
+  <Card title="AI assistants">
+    Add in-app assistants that answer questions, guide users, explain features, or help complete tasks.
+  </Card>
+
+  <Card title="Content generation">
+    Generate messages, descriptions, captions, summaries, reports, ideas, or structured content inside your app.
+  </Card>
+
+  <Card title="Smart search">
+    Help users find information faster with AI-powered search, filtering, and recommendations.
+  </Card>
+
+  <Card title="Document summaries">
+    Summarize uploaded files, notes, reports, conversations, support tickets, or internal documents.
+  </Card>
+
+  <Card title="Workflow automation">
+    Use AI to help classify requests, extract important details, draft responses, or move work forward.
+  </Card>
+
+  <Card title="Personalized experiences">
+    Create smarter product flows that adapt to user inputs, goals, preferences, or previous activity.
+  </Card>
+</CardGroup>
+
+## When to use AI Services
+
+Use AI Services when you want your app to:
+
+- answer user questions
+- summarize long information
+- generate text or ideas
+- recommend next actions
+- extract key details from content
+- classify or organize information
+- help users complete complex workflows
+- make a dashboard, portal, or internal tool smarter
+
+Choose a simpler non-AI workflow when the app only needs basic forms, tables, pages, payments, or static content.
+
+## How AI Services work
+
+<Steps>
+  <Step title="Describe the AI feature">
+    Explain what the AI should help with, who will use it, and where it should appear in the app.
+  </Step>
+
+  <Step title="Define the input">
+    Tell LaunchPulse what the AI should use as context, such as user messages, uploaded documents, records, product data, or form responses.
+  </Step>
+
+  <Step title="Choose the output">
+    Decide what the AI should return, such as an answer, summary, recommendation, draft, checklist, score, or structured result.
+  </Step>
+
+  <Step title="Add the feature to your app">
+    LaunchPulse helps connect the AI workflow to the relevant page, dashboard, chat, form, or user journey.
+  </Step>
+
+  <Step title="Test the result">
+    Try real examples, check the quality of the response, and refine the prompt or flow if needed.
+  </Step>
+
+  <Step title="Improve over time">
+    Ask LaunchPulse to adjust tone, formatting, rules, edge cases, or how the AI uses app data.
+  </Step>
+</Steps>
+
+## Common AI feature patterns
+
+| Pattern | What it does | Example |
+|---|---|---|
+| Assistant | Answers questions or guides users | A support assistant inside a customer portal |
+| Summarizer | Turns long content into short insights | Summarizing meeting notes, tickets, or reports |
+| Generator | Creates new content | Writing property descriptions, captions, emails, or app copy |
+| Extractor | Pulls structured details from text | Extracting names, dates, prices, or requirements |
+| Recommender | Suggests next actions or items | Recommending products, workflows, or tasks |
+| Classifier | Organizes information into categories | Labeling support tickets by urgency or topic |
 
 ## Example use cases
-- In-app assistant
-- Document summary workflow
-- Smart content suggestions
 
-## Related pages
-- [Payments & Monetisation](/payments-and-monetisation)
-- [Mobile App Development](/mobile-app-development)
-- [Web App Development](/web-app-development)
+<CardGroup cols={2}>
+  <Card title="Customer support assistant">
+    Add an AI assistant that helps customers find answers, understand your product, or submit better support requests.
+  </Card>
 
-## TODO for LaunchPulse team review
-- Add model/provider transparency section for public docs.
+  <Card title="Real estate content generator">
+    Generate property descriptions, listing summaries, renter messages, and lead follow-up drafts.
+  </Card>
+
+  <Card title="Internal operations copilot">
+    Help your team summarize updates, classify requests, draft replies, and identify next steps.
+  </Card>
+
+  <Card title="AI onboarding guide">
+    Guide new users through setup by asking questions and recommending the next action.
+  </Card>
+
+  <Card title="Document analysis tool">
+    Let users upload or paste content, then summarize it, extract key details, or generate action items.
+  </Card>
+
+  <Card title="AI app idea assistant">
+    Help users explore product ideas, compare opportunities, and turn promising ideas into LaunchPulse builds.
+  </Card>
+</CardGroup>
+
+## Example AI feature prompt
+
+```text
+Add an AI assistant to my customer portal.
+
+The assistant should help users:
+- understand how the product works
+- answer common support questions
+- summarize their account activity
+- suggest the next best action
+- escalate unclear issues to the support team
+
+Keep the assistant friendly, concise, and professional.
+Show it as a chat widget inside the dashboard.
