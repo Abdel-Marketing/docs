@@ -1,54 +1,459 @@
 ---
 title: "Write a good prompt"
-description: "How to write simple prompts that help LaunchPulse build a better first version."
+description: "Learn how to prompt LaunchPulse in phases: start with a strong foundation, then build features, polish, test, and prepare for launch."
 ---
 
 # Write a good prompt
 
-A good prompt is clear, specific, and realistic.
+A good LaunchPulse prompt does not need to be technical. It needs to be clear.
 
-You do **not** need technical words.
+The best way to build with LaunchPulse is to think in **phases**. Your first prompt should create the foundation. After that, you improve the product step by step: add features, refine flows, polish the design, test the experience, and prepare for launch.
 
-## Use this format
+<Info>
+Do not try to build the entire final product in one prompt. Start with a focused first version, then build momentum with smaller follow-up prompts.
+</Info>
+
+## The LaunchPulse prompting mindset
+
+<CardGroup cols={3}>
+  <Card title="Start with the foundation">
+    Your first prompt should explain the product, the target user, the main problem, and the first 3–5 must-have features.
+  </Card>
+
+  <Card title="Build in phases">
+    After the first version is generated, add features one at a time so the product stays clear and easy to test.
+  </Card>
+
+  <Card title="Improve with feedback">
+    Use follow-up prompts to fix flows, improve design, add pages, connect payments, refine copy, and prepare for launch.
+  </Card>
+</CardGroup>
+
+## Why phased prompts work better
+
+When you ask for everything at once, the app can become too large, unclear, or difficult to test.
+
+A stronger approach is:
+
+| Phase | Goal | Example |
+|---|---|---|
+| Foundation | Create the first working version | “Build a web app for real estate agencies to manage properties and inquiries.” |
+| Plan refinement | Tighten the scope | “Remove advanced analytics for now and focus on listings, inquiries, and dashboard.” |
+| Feature build | Add one important feature | “Add tenant profiles with notes and inquiry history.” |
+| Flow improvement | Make the product easier to use | “Improve the onboarding flow so new users understand what to do first.” |
+| Design polish | Make it feel more premium | “Make the dashboard cleaner, with better spacing, cards, and responsive layout.” |
+| Testing | Check the user journey | “Test the property inquiry flow and identify anything broken or confusing.” |
+| Launch prep | Get ready to share | “Prepare this web app for publishing and custom domain setup.” |
+
+<Tip>
+Think of LaunchPulse like a product team. Your prompt is the brief. The clearer your brief, the better the first version.
+</Tip>
+
+## The first prompt should build the foundation
+
+Your first prompt should not be a giant feature wishlist. It should create the **core product foundation**.
+
+A strong first prompt includes:
+
+- who the app is for
+- what problem it solves
+- whether it should be a web app or mobile app
+- the first 3–5 must-have features
+- the main user journey
+- the design style
+- what version one should achieve
+
+## First prompt template
+
+Use this when starting a new project:
 
 ```text
-Build a web app for [target user].
+Build a [web app / mobile app] for [target user].
 
-The app should help them [main job to be done].
+The app helps them [main problem or job to be done].
 
-Include these features:
-1) ...
-2) ...
-3) ...
+For version one, include:
+1. [Feature one]
+2. [Feature two]
+3. [Feature three]
+4. [Feature four, optional]
+5. [Feature five, optional]
 
-Important rules:
-- ...
-- ...
+The main user journey should be:
+1. [First user action]
+2. [Second user action]
+3. [Final outcome]
+
+Design style:
+[Clean, modern, premium, playful, minimal, bold, mobile-first, etc.]
 
 For v1, success means:
-- ...
+[What the app must be able to do before adding more features.]
 ```
 
-## What to include
+## Strong first prompt examples
 
-- Who this app is for
-- The top 3-5 features
-- Any non-negotiables (for example: "must support team logins")
-- What "good enough for v1" means
+### Web app example
+
+```text
+Build a web app for real estate agencies to manage properties, tenant inquiries, and monthly performance.
+
+The app helps agency teams keep all listings, inquiries, and renter details in one dashboard.
+
+For version one, include:
+1. Landing page
+2. Sign-up and login
+3. Agency dashboard
+4. Property management
+5. Inquiry tracking
+
+The main user journey should be:
+1. Agency signs up
+2. Adds properties
+3. Views incoming inquiries
+4. Tracks follow-up status from the dashboard
+
+Design style:
+Modern, premium, clean, and easy for non-technical real estate teams to use.
+
+For v1, success means:
+An agency can add properties, view inquiries, and manage follow-ups from one dashboard.
+```
+
+### Mobile app example
+
+```text
+Build a mobile app for fitness coaches to manage clients, workouts, bookings, and subscriptions.
+
+The app helps coaches run their coaching business from their phone.
+
+For version one, include:
+1. Coach dashboard
+2. Client profiles
+3. Workout plans
+4. Booking flow
+5. Subscription payments
+
+The main user journey should be:
+1. Coach signs in
+2. Adds a client
+3. Creates a workout plan
+4. Schedules a session
+5. Tracks client progress
+
+Design style:
+Mobile-first, clean, energetic, and simple.
+
+For v1, success means:
+A coach can manage clients, assign workouts, and handle basic bookings from the app.
+```
+
+### Game or interactive app example
+
+```text
+Build a mobile-first battle game where users choose a character, view stats, and start a simple battle.
+
+The app should feel fun, bold, and interactive.
+
+For version one, include:
+1. Character selection screen
+2. Character detail screen
+3. Stats display
+4. Battle button
+5. Simple battle result screen
+
+The main user journey should be:
+1. User opens the app
+2. Chooses a character
+3. Reviews stats
+4. Starts a battle
+5. Sees the battle result
+
+Design style:
+Bold, colorful, game-like, with strong animations and clear buttons.
+
+For v1, success means:
+A user can choose a character and complete one simple battle loop.
+```
+
+## After the first build, prompt in phases
+
+Once LaunchPulse creates the first version, use follow-up prompts to improve one thing at a time.
+
+<Steps>
+  <Step title="Phase 1: Foundation">
+    Create the first working version with the core pages, screens, and flows.
+  </Step>
+
+  <Step title="Phase 2: Scope refinement">
+    Remove unnecessary features, simplify the product, and make sure the MVP is focused.
+  </Step>
+
+  <Step title="Phase 3: Feature building">
+    Add one feature at a time, such as payments, authentication, dashboards, AI services, or mobile screens.
+  </Step>
+
+  <Step title="Phase 4: Flow improvement">
+    Improve the user journey so people understand what to do next.
+  </Step>
+
+  <Step title="Phase 5: Design polish">
+    Improve layout, spacing, typography, colors, buttons, cards, responsiveness, and overall product feel.
+  </Step>
+
+  <Step title="Phase 6: Testing and launch prep">
+    Test the main flow, fix issues, publish, connect a custom domain, or prepare mobile app publishing.
+  </Step>
+</Steps>
+
+## Follow-up prompt recipes
+
+<CardGroup cols={2}>
+  <Card title="Add one feature">
+    Use this when the foundation works and you want to add a specific capability.
+  </Card>
+
+  <Card title="Fix a broken flow">
+    Use this when something exists but does not behave the way users expect.
+  </Card>
+
+  <Card title="Improve the design">
+    Use this when the app works but feels too plain, cluttered, or unfinished.
+  </Card>
+
+  <Card title="Prepare for launch">
+    Use this when the core product is ready and you want to publish, connect a domain, or prepare mobile release.
+  </Card>
+</CardGroup>
+
+## Feature prompt template
+
+Use this when adding a new feature:
+
+```text
+Add [feature name] to the app.
+
+This feature should help [target user] do [specific job].
+
+Where it should appear:
+[Page, screen, dashboard, navigation item, or user flow]
+
+What it should include:
+1. [Requirement one]
+2. [Requirement two]
+3. [Requirement three]
+
+How it should behave:
+- [Rule or behavior]
+- [Rule or behavior]
+- [Rule or behavior]
+
+Keep the existing app structure. Do not redesign unrelated pages.
+```
+
+## Example feature prompt
+
+```text
+Add a client profile page to the fitness coach app.
+
+This feature should help coaches view each client’s progress and manage their coaching relationship.
+
+Where it should appear:
+Inside the coach dashboard, linked from the client list.
+
+What it should include:
+1. Client name and contact details
+2. Current workout plan
+3. Progress notes
+4. Upcoming booking
+5. Payment/subscription status
+
+How it should behave:
+- Coaches can open a client from the dashboard
+- Coaches can add notes
+- The page should be clean and mobile-first
+
+Keep the existing app structure. Do not redesign unrelated pages.
+```
+
+## Design improvement prompt template
+
+Use this when the app works but does not feel polished enough:
+
+```text
+Improve the design of [page or screen].
+
+Goal:
+Make it feel [premium / modern / playful / minimal / bold / mobile-first].
+
+Focus on:
+- spacing
+- typography
+- color balance
+- buttons
+- cards
+- navigation
+- empty states
+- responsive layout
+
+Do not change the core functionality.
+Keep the same user journey.
+```
+
+## Bug or issue prompt template
+
+Use this when something is broken or confusing:
+
+```text
+Fix this issue:
+
+[Describe what is wrong.]
+
+Expected behavior:
+[Describe what should happen.]
+
+Where it happens:
+[Page, screen, button, form, or user flow.]
+
+Steps to reproduce:
+1. [Step one]
+2. [Step two]
+3. [Step three]
+
+Please fix the issue without changing unrelated parts of the app.
+```
+
+## Launch prep prompt template
+
+Use this when the app is nearly ready:
+
+```text
+Prepare this app for launch.
+
+Check:
+- main user journey
+- navigation
+- broken buttons or links
+- mobile responsiveness
+- empty states
+- payment or subscription flow, if included
+- sign-up and login flow, if included
+- public-facing copy
+- final polish
+
+Then suggest what should be fixed before publishing.
+```
+
+## Weak prompts vs strong prompts
+
+| Weak prompt | Why it is weak | Stronger version |
+|---|---|---|
+| “Build me an app.” | Too vague | “Build a mobile app for fitness coaches to manage clients, workouts, bookings, and subscriptions.” |
+| “Make a SaaS.” | No user or problem | “Build a SaaS dashboard for real estate agencies to manage properties, renters, and inquiries.” |
+| “Add payments.” | No context | “Add monthly subscription payments for coaches, with a pricing page and upgrade flow.” |
+| “Make it look better.” | No style direction | “Improve the dashboard so it feels premium, clean, and easy to scan on desktop.” |
+| “Fix the app.” | No issue described | “Fix the booking flow. Users should select a date, choose a time, confirm details, then see a success screen.” |
+| “Add AI.” | Too broad | “Add an AI assistant that summarizes client progress and suggests next actions for the coach.” |
+
+## What to include in every prompt
+
+A good prompt usually answers these questions:
+
+- Who is the user?
+- What are they trying to do?
+- What page or screen should change?
+- What should happen when they click or submit?
+- What should the app look and feel like?
+- What should stay the same?
+- What does success look like?
 
 ## What to avoid
 
-- "Build the next unicorn"
-- 20+ features in one request
-- Vague words like "make it perfect"
+<Warning>
+The fastest way to slow down a build is to ask for too much before the foundation works.
+</Warning>
 
-## Good example
+Avoid prompts like:
 
-"Build a web app for local gyms to manage class bookings.
-Users: gym owners and members.
-Core features: class calendar, member booking, cancel booking, and admin dashboard.
-For v1, success means owners can publish classes and members can book from mobile."
+- “Build everything.”
+- “Make it perfect.”
+- “Add all features.”
+- “Create the next Uber.”
+- “Make it viral.”
+- “Fix all issues.”
+- “Add AI everywhere.”
+- “Build 25 features in version one.”
 
-<Tip>
-Start small. A tighter v1 prompt usually ships faster and better.
-</Tip>
+Instead, use prompts like:
+
+- “Build the first working version.”
+- “Add this one feature.”
+- “Improve this specific screen.”
+- “Fix this exact flow.”
+- “Make this page easier to understand.”
+- “Prepare this for publishing.”
+
+## Prompting by product type
+
+| Product type | First prompt should focus on | Add later |
+|---|---|---|
+| SaaS MVP | dashboard, users, core workflow | billing, analytics, teams, advanced roles |
+| Mobile app | main mobile journey, simple navigation | app store assets, subscriptions, deeper settings |
+| Internal tool | forms, records, statuses, admin views | permissions, automations, reporting |
+| Marketplace | listings, profiles, search, inquiry flow | payments, reviews, messaging |
+| Game | core loop, character/action flow | levels, rewards, advanced animations |
+| AI app | main AI interaction and user goal | memory, saved outputs, advanced workflows |
+
+## A good build sequence
+
+If you are unsure what to ask next, follow this order:
+
+1. Build the foundation
+2. Test the main flow
+3. Remove unnecessary scope
+4. Add one feature
+5. Improve the design
+6. Add payments, AI, auth, or database if needed
+7. Test again
+8. Publish or prepare for app store release
+
+## Quick checklist before sending your prompt
+
+Before you send a prompt to LaunchPulse, check:
+
+- Is the target user clear?
+- Is the app type clear?
+- Are there 3–5 must-have features?
+- Is version one realistic?
+- Did you explain the main user journey?
+- Did you mention the desired design style?
+- Did you avoid asking for too many things at once?
+- Is the next request focused on one clear improvement?
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Quickstart" href="/quickstart">
+    Use your first prompt to start a new LaunchPulse project.
+  </Card>
+
+  <Card title="Web App Development" href="/web-app-development">
+    Learn how to build, preview, and publish browser-based apps.
+  </Card>
+
+  <Card title="Mobile App Development" href="/mobile-app-development">
+    Learn how to build mobile-first apps and prepare for iOS and Android publishing.
+  </Card>
+
+  <Card title="AI Services" href="/ai-services">
+    Add AI assistants, summaries, recommendations, and generation flows.
+  </Card>
+
+  <Card title="Payments & Monetisation" href="/payments-and-monetisation">
+    Add subscriptions, paid access, checkout, or monetisation flows.
+  </Card>
+
+  <Card title="Agents" href="/agents">
+    Understand how LaunchPulse uses agents to plan, build, review, and improve apps.
+  </Card>
+</CardGroup>
