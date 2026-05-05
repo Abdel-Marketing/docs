@@ -64,7 +64,9 @@
             "group": "Platforms",
             "pages": [
               "web-app-development",
-              "mobile-app-development"
+              "mobile-app-development",
+              "screenshots-mobile-app",
+              "ai-apps-discovery"
             ]
           },
           {

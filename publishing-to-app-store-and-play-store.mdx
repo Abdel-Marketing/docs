@@ -1,45 +1,479 @@
 ---
 title: "Publishing to App Store & Play Store"
-description: "Use LaunchPulse workflows to publish mobile builds with fewer manual steps."
+description: "Prepare, review, and submit LaunchPulse mobile apps to the App Store and Google Play with a guided publishing workflow."
 ---
+
 # Publishing to App Store & Play Store
 
-## Overview
-LaunchPulse supports app store publishing workflows for mobile projects.
+LaunchPulse helps you prepare mobile apps for iOS and Android publishing with a guided, step-by-step release flow.
 
-## Before you start
-- App store accounts and required credentials
-- App identifiers/package names ready
-- A mobile project that is ready for release testing
+Instead of jumping between scattered setup steps, LaunchPulse walks you through the important parts of mobile publishing: choosing storefronts, adding store details, connecting developer access, reviewing the release, and starting the publish flow.
 
-## Step-by-step guide
+<Info>
+Publishing is the final stage after your mobile app has been built, previewed, tested, and polished. Do not publish before the main user journey works on a real device.
+</Info>
+
+## How LaunchPulse publishing works
+
+LaunchPulse organizes mobile publishing into four steps:
+
+<CardGroup cols={4}>
+  <Card title="1. Platforms">
+    Choose where you want to publish: App Store, Play Store, or both.
+  </Card>
+
+  <Card title="2. Store setup">
+    Add app identity, release settings, app icon, app name, bundle ID, package name, and release track details.
+  </Card>
+
+  <Card title="3. Access">
+    Connect the developer credentials needed to submit the app to the selected storefronts.
+  </Card>
+
+  <Card title="4. Publish">
+    Review the release summary, check missing requirements, and start the publishing flow when ready.
+  </Card>
+</CardGroup>
+
+## Before you publish
+
+Publishing should come after your app is already working.
+
+Before starting the App Store or Play Store flow, check that you have:
+
+- tested the app on a real device
+- completed the main user journey
+- fixed obvious bugs and broken screens
+- prepared your app name and basic store details
+- created or uploaded an app icon
+- prepared store screenshots
+- reviewed privacy and permissions
+- tested payments or subscriptions if included
+- confirmed whether you are publishing to iOS, Android, or both
+
+<Tip>
+Treat publishing as a release checklist, not a shortcut. A clean app with a tested core flow is much easier to submit than an unfinished app with missing screens or unclear behavior.
+</Tip>
+
+## The publishing workflow
 
 <Steps>
-  <Step title="1) Open publish workflow">
-    Start publishing from your mobile project.
+  <Step title="Choose storefronts">
+    Select **App Store**, **Play Store**, or both. LaunchPulse keeps the same mobile build flow and guides you through the selected platform requirements.
   </Step>
-  <Step title="2) Choose targets">
-    Select iOS, Android, or both.
+
+  <Step title="Set up store details">
+    Add the public-facing app information required for the selected platform, such as app name, bundle ID, package name, app icon, and release track.
   </Step>
-  <Step title="3) Enter required store details">
-    Provide the requested account and app configuration fields.
+
+  <Step title="Connect developer access">
+    Add the credentials required for the selected storefront. For iOS, this may include Apple developer access or an App Store Connect API key. For Android, this may include a Google Play service account JSON.
   </Step>
-  <Step title="4) Start publish">
-    LaunchPulse runs build and submission workflow for selected target(s).
+
+  <Step title="Review the release">
+    Check the release overview, selected storefronts, app identity, package details, and checklist items before starting the publish flow.
+  </Step>
+
+  <Step title="Start publishing">
+    When everything is ready, start the publish flow and monitor the release process.
   </Step>
 </Steps>
 
-## What happens next
-- Monitor submission status
-- Resolve any store-side validation issues
+## Platform setup overview
 
-<Info>
-TODO for LaunchPulse team review: add deeper public docs for failure modes and publish history.
-</Info>
+| Platform | What you prepare | Common requirements |
+|---|---|---|
+| App Store | iOS app name, bundle ID, icon, Apple developer access, release details | Apple Developer account, App Store Connect access, app metadata, screenshots, review readiness |
+| Play Store | Android package name, release track, service account access, app details | Google Play Console account, package name, Play Store service account JSON, app signing and release track |
+| Both | Shared app quality, screenshots, privacy details, tested flows | Real-device testing, clear app value, stable build, accurate store information |
 
-## Related pages
+## Step 1: Choose where to publish
+
+The first step is selecting the storefronts for your release.
 
 <CardGroup cols={2}>
-  <Card title="Mobile App Development" href="/mobile-app-development" />
-  <Card title="Troubleshooting" href="/troubleshooting" />
+  <Card title="App Store">
+    Choose App Store when you want to publish an iOS build to TestFlight or App Store Connect.
+  </Card>
+
+  <Card title="Play Store">
+    Choose Play Store when you want to publish an Android build to a Google Play release track.
+  </Card>
+</CardGroup>
+
+You can publish to one platform first, then add the other later when the app is ready.
+
+## Step 2: Set up store details
+
+Store setup is where you prepare the app identity and release settings.
+
+For iOS, LaunchPulse helps you prepare:
+
+- app name
+- bundle ID
+- app icon
+- release setup details
+- App Store identity information
+
+For Android, LaunchPulse helps you prepare:
+
+- package name
+- release track
+- Play Store release setup
+- Android storefront details
+
+<Note>
+Nothing is submitted during store setup. This step prepares the release information before the publish flow starts.
+</Note>
+
+## App icon
+
+A polished app icon helps your app look more credible in store listings and on user devices.
+
+LaunchPulse can help you:
+
+- upload an existing app icon
+- generate an app icon direction
+- prepare a clean icon concept
+- keep the icon aligned with the app’s purpose and brand
+
+Good app icons are:
+
+- simple
+- readable at small sizes
+- brand-aligned
+- not overly detailed
+- not dependent on tiny text
+
+## App name and identity
+
+Your app name should be clear, memorable, and aligned with the product.
+
+For iOS, Apple says app names are limited to 30 characters, and app metadata should be accurate rather than stuffed with irrelevant terms. :contentReference[oaicite:1]{index=1}
+
+Examples:
+
+| Weak name | Stronger name |
+|---|---|
+| Fitness App | CoachFlow |
+| AI Notes App | NotePilot AI |
+| Booking App | Bookly Studio |
+| Battle Game | Pocket Clash |
+
+## Bundle ID and package name
+
+The bundle ID or package name is the technical identity of your mobile app.
+
+| Platform | Identifier | Example |
+|---|---|---|
+| iOS | Bundle ID | `com.company.appname` |
+| Android | Package name | `com.company.appname` |
+
+Use a stable identifier. Changing it later can create release or update complications.
+
+<Warning>
+Choose the app identity carefully before release. The public app name can often be adjusted, but technical identifiers are much harder to change after publishing.
+</Warning>
+
+## Android release tracks
+
+For Play Store publishing, LaunchPulse can guide you through release track setup.
+
+Common Android release tracks include:
+
+| Track | Best for |
+|---|---|
+| Internal | Fast testing with a small trusted group |
+| Closed | Testing with a larger controlled group |
+| Open | Public beta testing |
+| Production | Public release to users |
+
+Google recommends internal testing for initial quality assurance before moving to broader release tracks. :contentReference[oaicite:2]{index=2}
+
+## Step 3: Connect store access
+
+Publishing requires developer access to the selected storefront.
+
+For iOS, LaunchPulse may guide you through:
+
+- Apple developer email
+- Apple ID and 2FA flow
+- App Store Connect API key option
+- App Store record setup
+- TestFlight or App Store submission preparation
+
+For Android, LaunchPulse may guide you through:
+
+- Google Play service account JSON upload
+- package name
+- release track
+- Play Console release setup
+
+Expo’s EAS submit documentation explains that iOS submissions can use App Store Connect API keys, while Android submissions require a Google Service Account Key for Google Play submissions. :contentReference[oaicite:3]{index=3}
+
+<Warning>
+Developer credentials are sensitive. Do not share passwords, API keys, service account files, or screenshots containing real credentials in public docs, support chats, or unsecured places.
+</Warning>
+
+## Apple developer access
+
+LaunchPulse supports a guided iOS access step so you can prepare the submission flow.
+
+Depending on your setup, you may use:
+
+<CardGroup cols={2}>
+  <Card title="Apple ID + 2FA">
+    Useful for first-time setup or when LaunchPulse needs to create or manage the app record with your Apple developer account.
+  </Card>
+
+  <Card title="App Store Connect API Key">
+    Better for repeat submission workflows after your App Store Connect and EAS credentials are already configured.
+  </Card>
+</CardGroup>
+
+## Google Play service account
+
+For Android publishing, LaunchPulse may ask for a Google Play service account JSON.
+
+This helps the publishing workflow connect to your Play Console release process.
+
+Keep this file private. It should not be committed to public repositories or shared in docs screenshots.
+
+## Step 4: Review and publish
+
+The final step is the release review.
+
+Before you start publishing, check:
+
+- selected storefronts
+- app name
+- bundle ID or package name
+- release track
+- app icon
+- developer access
+- required checklist items
+- app screenshots
+- app privacy and store details
+- main app flow
+
+<Check>
+Only start publishing when the release overview looks correct and the checklist is complete.
+</Check>
+
+## What the checklist means
+
+LaunchPulse shows checklist items so you can see what is still missing.
+
+Common checklist items include:
+
+| Checklist item | What it means |
+|---|---|
+| Add an iOS app name | The App Store name has not been entered yet |
+| Enter Apple developer email | iOS developer access is not connected |
+| Add Apple account password | Required for the selected Apple access method |
+| Add Android package name | The Play Store package identity is missing |
+| Upload Play Store service account JSON | Android publish access has not been connected |
+
+## Store screenshots
+
+Before publishing, prepare high-quality screenshots for the selected platform.
+
+LaunchPulse’s App Screenshot Generator can help you create store-ready visuals from real app screens and design references.
+
+Good screenshots should:
+
+- show the real product experience
+- highlight one benefit per image
+- use readable text
+- avoid private user data
+- avoid broken or unfinished screens
+- match App Store or Play Store dimensions
+- feel consistent across the full screenshot set
+
+## App Store and Play Store readiness
+
+| Area | What to check |
+|---|---|
+| App quality | The app should not crash or lead users into dead ends |
+| Main flow | Users should be able to complete the most important action |
+| Screenshots | Store screenshots should be clear, accurate, and polished |
+| Metadata | App name, description, and details should match the real product |
+| Privacy | Permissions and data use should be clear |
+| Payments | Subscriptions or checkout should be tested if included |
+| Support | Users should know how to get help |
+| Testing | Run internal or beta testing before broader release |
+
+Apple positions App Review around ensuring safe and trustworthy app experiences, and Google Play provides internal testing tracks to distribute apps to invited testers before broader rollout. :contentReference[oaicite:4]{index=4}
+
+## Recommended release path
+
+For most LaunchPulse mobile apps, use this path:
+
+```text
+Build mobile app → test on real device → fix issues → generate screenshots → set up store details → connect access → review release → publish
+```
+
+For iOS:
+
+```text
+Mobile preview → TestFlight-ready build → App Store Connect setup → App Review submission
+```
+
+For Android:
+
+```text
+Mobile preview → Play Console setup → internal testing track → broader release track → production
+```
+
+## Common mistakes
+
+| Mistake | Why it causes problems | Better approach |
+|---|---|---|
+| Publishing before testing | Users or reviewers may hit broken flows | Test on a real device first |
+| Using unfinished screenshots | Store listing looks unprofessional | Generate clean screenshots from polished screens |
+| Choosing a weak app name | Users may not understand the product | Use a clear, memorable name |
+| Missing credentials | Publish flow cannot continue | Prepare Apple or Google access before submitting |
+| Ignoring app privacy | Store review may be delayed | Review permissions and data usage |
+| Submitting with broken payments | Monetisation flows may fail | Test subscriptions or checkout first |
+| Using real private data in screenshots | Privacy and trust risk | Use safe demo data |
+| Skipping internal testing | Bugs reach users too early | Use TestFlight or Play internal testing before wider release |
+
+## Final publishing checklist
+
+Before clicking **Start publish**, confirm:
+
+- app works on a real device
+- main flow has been tested
+- app icon is ready
+- app name is final enough for submission
+- bundle ID or package name is correct
+- App Store or Play Store access is connected
+- screenshots are prepared
+- store description and metadata are ready
+- privacy details are reviewed
+- payments/subscriptions are tested if included
+- release overview looks correct
+- checklist has no blockers
+
+<Warning>
+Do not publish using screenshots that expose passwords, API keys, service account files, private emails, real customer data, or internal error states.
+</Warning>
+
+## What the LaunchPulse publishing flow looks like
+
+<Note>
+Add a clean screenshot here showing the **Platforms** step where users choose App Store, Play Store, or both.
+</Note>
+
+<Note>
+Add a clean screenshot here showing the **Store setup** step with app name, bundle ID, package name, release track, and app icon setup.
+</Note>
+
+<Note>
+Add a clean screenshot here showing the **Access** step with Apple developer access or Google Play service account setup. Make sure no real credentials are visible.
+</Note>
+
+<Note>
+Add a clean screenshot here showing the **Review and publish** step with the release overview and checklist.
+</Note>
+
+## Suggested screenshot filenames
+
+If you upload screenshots to Mintlify, use clean filenames like:
+
+```text
+/images/publish-mobile-platforms.png
+/images/publish-mobile-ios-store-setup.png
+/images/publish-mobile-android-store-setup.png
+/images/publish-mobile-ios-access.png
+/images/publish-mobile-android-access.png
+/images/publish-mobile-review.png
+```
+
+Then you can replace the notes above with framed screenshots:
+
+```mdx
+<Frame caption="Choose whether to publish to the App Store, Play Store, or both.">
+  <img src="/images/publish-mobile-platforms.png" alt="LaunchPulse mobile publishing platform selection step" />
+</Frame>
+```
+
+## Useful prompts before publishing
+
+### Final app test
+
+```text
+Run a final mobile publishing readiness check.
+
+Check:
+- main user journey
+- onboarding
+- navigation
+- mobile layout
+- loading and empty states
+- payment or subscription flow if included
+- obvious bugs
+- unfinished screens
+- app store readiness issues
+
+Fix clear issues and list what still needs manual review.
+```
+
+### Store screenshot prep
+
+```text
+Create App Store and Play Store screenshot concepts for this mobile app.
+
+Use the real app screens and highlight:
+- the main value
+- the dashboard
+- the core action
+- the result screen
+- subscription or upgrade flow if included
+
+Keep the screenshots clean, readable, and suitable for a store listing.
+```
+
+### App description prep
+
+```text
+Draft App Store and Play Store listing copy for this mobile app.
+
+Include:
+- short app description
+- long description
+- key benefits
+- target audience
+- feature bullets
+- simple launch tagline
+
+Keep the copy accurate and avoid overclaiming.
+```
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Mobile App Development" href="/mobile-app-development">
+    Build, preview, and test mobile apps before publishing.
+  </Card>
+
+  <Card title="Build a Mobile App MVP" href="/build-a-mobile-app-mvp">
+    Learn how to create a focused mobile MVP before app-store release.
+  </Card>
+
+  <Card title="App Screenshot Generator" href="/app-screenshot-generator">
+    Create polished App Store and Play Store screenshots.
+  </Card>
+
+  <Card title="Payments & Monetisation" href="/payments-and-monetisation">
+    Add subscriptions, checkout, and paid access before publishing.
+  </Card>
+
+  <Card title="Testing Agent" href="/testing-agent">
+    Learn how LaunchPulse reviews and cleans up work after build tasks.
+  </Card>
+
+  <Card title="Write a good prompt" href="/write-a-good-prompt">
+    Learn how to ask for better testing, polish, and publishing preparation.
+  </Card>
 </CardGroup>
