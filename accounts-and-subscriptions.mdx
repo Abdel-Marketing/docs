@@ -1,28 +1,431 @@
 ---
 title: "Accounts & Subscriptions"
-description: "Understand LaunchPulse plans, credits, top-ups, and usage billing basics."
+description: "Understand LaunchPulse plans, AI credits, add-ons, and the features unlocked by each subscription."
 ---
+
 # Accounts & Subscriptions
 
-This page helps you plan spend and avoid build interruptions by understanding how subscriptions and credits work.
+LaunchPulse plans are built around one simple idea: start building for free, then upgrade when you are ready to ship, deploy, publish, collaborate, or scale.
 
-## When to use this
-- Choosing between plans
-- Tracking credit burn during active builds
-- Understanding usage-based costs
+Each plan gives you a monthly AI credit allowance. Credits power the AI workflows inside LaunchPulse, including app building, app updates, screenshot generation, and AI app discovery.
 
-## How it works
-- Monthly plan includes credits
-- Top-ups extend build capacity
-- Storage/database usage billed separately
+<Info>
+Free is for exploring. Starter is for shipping. Builder is for serious builders who need more credits, stronger testing, and faster iteration.
+</Info>
 
-## Plan snapshot
+## Plans at a glance
 
-| Plan | Price |
-| --- | --- |
-| Starter | $20/month |
-| Builder | $50/month |
+<CardGroup cols={3}>
+  <Card title="Free">
+    Start exploring LaunchPulse with **10,000 AI credits/month**, live preview, and access to the AI App Store screenshot generator.
+  </Card>
+
+  <Card title="Starter">
+    Build and ship real projects with **200,000 AI credits/month**, unlimited projects, deployment, custom domains, code download, and mobile publishing.
+  </Card>
+
+  <Card title="Builder">
+    Move faster with **500,000 AI credits/month**, everything in Starter, autobuild, advanced browser testing, priority support, and stronger collaboration.
+  </Card>
+</CardGroup>
+
+## Plan comparison
+
+| Plan | Price | AI credits | Best for |
+|---|---:|---:|---|
+| Free | $0/month | 10,000/month | Trying LaunchPulse and exploring the workflow |
+| Starter | $19/month | 200,000/month | Individual builders shipping real apps |
+| Builder | $49/month | 500,000/month | Serious builders who need more power, testing, and support |
+
+## What each plan unlocks
+
+| Feature | Free | Starter | Builder |
+|---|---|---|---|
+| Monthly AI credits | 10,000 | 200,000 | 500,000 |
+| Live preview | Yes | Yes | Yes |
+| AI App Store screenshot generator | Yes | Yes | Yes |
+| Unlimited projects | No | Yes | Yes |
+| LaunchPulse Cloud | No | Yes | Yes |
+| Live preview & testing | Limited | Yes | Yes |
+| One-click web app deployment | No | Yes | Yes |
+| Custom domains | No | Yes | Yes |
+| Download code | No | Yes | Yes |
+| Publish to iOS App Store & Android Play Store | No | Yes | Yes |
+| Workspace / collaboration | No | Yes | Yes |
+| Unlimited app store screenshot downloads | No | Yes | Yes |
+| Autobuild | No | No | Yes |
+| Advanced browser testing | No | No | Yes |
+| Priority support | No | No | Yes |
+
+<Warning>
+Deployment, custom domains, and code download require a paid subscription. Free users can explore LaunchPulse, but real shipping starts on Starter.
+</Warning>
+
+## Free
+
+Free is designed for trying LaunchPulse before committing to a paid plan.
+
+Use Free when you want to:
+
+- test the LaunchPulse workflow
+- create small experiments
+- preview an app idea
+- try the AI App Store screenshot generator
+- understand how credits work
+- explore before upgrading
+
+Free includes:
+
+- **$0/month**
+- **10,000 AI credits/month**
+- live preview
+- AI App Store screenshot generator
+
+Free is useful for exploration, but it is not designed for launching production apps.
+
+## Starter
+
+Starter is the main plan for builders who are ready to ship.
+
+Use Starter when you want to:
+
+- build real apps
+- create unlimited projects
+- deploy web apps
+- connect custom domains
+- publish mobile apps
+- download generated code
+- collaborate in a workspace
+- generate and download app store screenshots
+
+Starter includes:
+
+- **$19/month**
+- **200,000 AI credits/month**
+- unlimited projects
+- live preview and testing
+- LaunchPulse Cloud
+- publish to iOS App Store and Android Play Store
+- one-click deployment for websites and web apps
+- custom domains
+- workspace / collaboration
+- download code
+- unlimited app store screenshot downloads
+
+<Tip>
+Starter is the best plan for most users who want to move from experimenting to actually launching.
+</Tip>
+
+## Builder
+
+Builder is for users who are building more often, testing more deeply, or running larger workflows.
+
+Use Builder when you want:
+
+- more monthly AI credits
+- faster iteration
+- more advanced browser testing
+- autobuild
+- priority support
+- stronger collaboration and project sharing
+- more room for bigger projects and repeated build sessions
+
+Builder includes:
+
+- **$49/month**
+- everything in Starter
+- **500,000 AI credits/month**
+- autobuild
+- advanced browser testing
+- priority support
+- stronger project sharing and collaboration workflows
+
+## Monthly vs annual billing
+
+LaunchPulse may offer annual billing with savings compared to monthly billing.
+
+| Plan | Monthly | Annual equivalent |
+|---|---:|---:|
+| Starter | $19/month | about $15/month when billed annually |
+| Builder | $49/month | about $39/month when billed annually |
+
+Annual billing is best when LaunchPulse is already part of your normal building workflow.
+
+## What AI credits are used for
+
+AI credits power the parts of LaunchPulse where AI is doing work for you.
+
+Credits are commonly used for:
+
+<CardGroup cols={3}>
+  <Card title="Building apps">
+    Creating pages, screens, dashboards, features, workflows, and product logic.
+  </Card>
+
+  <Card title="Improving apps">
+    Updating designs, fixing issues, refining flows, and adding new features.
+  </Card>
+
+  <Card title="Screenshot generation">
+    Creating App Store and Play Store screenshot concepts from app screens and references.
+  </Card>
+
+  <Card title="AI app discovery">
+    Researching app ideas, exploring niches, and turning opportunities into LaunchPulse builds.
+  </Card>
+
+  <Card title="Mobile AI research">
+    Finding mobile app opportunities, analyzing ideas, and preparing stronger build briefs.
+  </Card>
+
+  <Card title="Bigger iterations">
+    Larger prompts, repeated changes, and more complex builds may use more credits.
+  </Card>
+</CardGroup>
+
+<Tip>
+If you use LaunchPulse heavily for screenshots, app discovery, mobile research, or repeated build iterations, you may use credits faster than someone building a small web app.
+</Tip>
+
+## Credit add-ons
+
+If you run out of credits before your monthly reset, you can buy extra credit packs.
+
+Credit add-ons are useful when:
+
+- you are close to finishing a project
+- you need more build iterations
+- you are generating many app screenshots
+- you are using AI app discovery heavily
+- you want more credits without changing your plan immediately
+
+| Add-on | Price |
+|---|---:|
+| 50K credits | $5 |
+| 100K credits | $9 |
+| 500K credits | $39 |
+| 1M credits | $69 |
+
+<Info>
+Credit add-ons are one-time purchases. They help you keep building when your monthly credits run low.
+</Info>
+
+## What happens when you run out of credits
+
+When you run out of credits, AI-powered actions may be limited until you:
+
+- wait for your monthly credits to reset
+- purchase a credit add-on
+- upgrade to a higher plan
+
+If you often run out of credits, Builder may be a better fit than repeatedly buying smaller add-ons.
+
+## Shipping features require a paid plan
+
+Some LaunchPulse features are designed for users who are ready to launch or take ownership of their app.
+
+These require a paid subscription:
+
+<CardGroup cols={3}>
+  <Card title="Deploy projects">
+    Publish websites and web apps using LaunchPulse deployment workflows.
+  </Card>
+
+  <Card title="Connect custom domains">
+    Attach your own domain to make your project feel professional and production-ready.
+  </Card>
+
+  <Card title="Download code">
+    Export the generated code when you want ownership, backup, or custom development.
+  </Card>
+
+  <Card title="Publish mobile apps">
+    Prepare and publish mobile builds to iOS App Store and Android Play Store.
+  </Card>
+
+  <Card title="Unlimited projects">
+    Keep building multiple apps, products, experiments, and client projects.
+  </Card>
+
+  <Card title="Workspace collaboration">
+    Work with others across projects, reviews, and build workflows.
+  </Card>
+</CardGroup>
+
+## Which plan should you choose?
+
+<CardGroup cols={3}>
+  <Card title="Choose Free if...">
+    You are exploring LaunchPulse, testing the workflow, or trying a small idea before upgrading.
+  </Card>
+
+  <Card title="Choose Starter if...">
+    You want to build, deploy, connect a custom domain, publish mobile apps, or download code.
+  </Card>
+
+  <Card title="Choose Builder if...">
+    You need more credits, advanced browser testing, autobuild, priority support, and stronger collaboration.
+  </Card>
+</CardGroup>
+
+## Example user journeys
+
+### Trying LaunchPulse for the first time
+
+<Steps>
+  <Step title="Start on Free">
+    Use the free monthly credits to explore how LaunchPulse works.
+  </Step>
+
+  <Step title="Preview a small app">
+    Build a simple idea and test the live preview.
+  </Step>
+
+  <Step title="Try AI workflows">
+    Explore screenshot generation or app discovery.
+  </Step>
+
+  <Step title="Upgrade when ready to ship">
+    Move to Starter when you need deployment, custom domains, code download, or mobile publishing.
+  </Step>
+</Steps>
+
+### Shipping a web app
+
+<Steps>
+  <Step title="Upgrade to Starter">
+    Unlock deployment, code download, custom domains, and unlimited projects.
+  </Step>
+
+  <Step title="Build the app">
+    Create your web app, dashboard, SaaS MVP, landing page, or internal tool.
+  </Step>
+
+  <Step title="Test and refine">
+    Use preview and testing to improve the app before launch.
+  </Step>
+
+  <Step title="Deploy and connect a domain">
+    Publish the project and connect your custom domain.
+  </Step>
+</Steps>
+
+### Building at higher volume
+
+<Steps>
+  <Step title="Move to Builder">
+    Get more credits and access advanced browser testing.
+  </Step>
+
+  <Step title="Use larger build loops">
+    Build more complex apps, run more iterations, and test more deeply.
+  </Step>
+
+  <Step title="Use add-ons when needed">
+    Buy extra credits when a project needs more capacity before the next reset.
+  </Step>
+</Steps>
+
+## Common questions
+
+### Can I deploy on the Free plan?
+
+No. Deployment requires a paid subscription.
+
+### Can I download code on the Free plan?
+
+No. Code download requires a paid subscription.
+
+### Can I connect a custom domain on the Free plan?
+
+No. Custom domains require a paid subscription.
+
+### Do screenshots use credits?
+
+Yes. App Store and Play Store screenshot generation uses credits.
+
+### Does AI app discovery use credits?
+
+Yes. AI app discovery and mobile AI research workflows are credit-based.
+
+### What happens if I run out of credits?
+
+You can wait for your monthly reset, buy add-on credits, or upgrade to a plan with more monthly credits.
+
+### Which paid plan should most users start with?
+
+Most users should start with Starter because it unlocks the core shipping workflow: unlimited projects, deployment, custom domains, mobile publishing, collaboration, and code download.
+
+## Account and billing checklist
+
+Before upgrading, check:
+
+- how many projects you plan to build
+- whether you need deployment
+- whether you need a custom domain
+- whether you need to download code
+- whether you are publishing to App Store or Play Store
+- how often you use screenshot generation
+- how often you use AI app discovery or mobile research
+- whether advanced browser testing matters for your workflow
+- whether you need priority support
+
+## Suggested screenshots
+
+<Note>
+Add a clean screenshot here showing the public pricing cards for Free, Starter, and Builder.
+</Note>
+
+<Note>
+Add a clean screenshot here showing the in-app upgrade modal with monthly billing selected.
+</Note>
+
+<Note>
+Add a clean screenshot here showing annual billing and the credit add-ons section.
+</Note>
+
+## Suggested screenshot filenames
+
+If you upload screenshots to Mintlify, use filenames like:
+
+```text
+/images/pricing-plans-overview.png
+/images/upgrade-plans-monthly.png
+/images/upgrade-plans-annual-add-ons.png
+```
+
+Then replace the notes above with framed screenshots:
+
+```mdx
+<Frame caption="Choose the LaunchPulse plan that matches your build speed, credit usage, and deployment needs.">
+  <img src="/images/upgrade-plans-monthly.png" alt="LaunchPulse upgrade plans showing Free, Starter, Builder, and credit add-ons" />
+</Frame>
+```
 
 ## Next steps
-- [Troubleshooting](/troubleshooting)
-- [Storage & Database](/storage-and-database)
+
+<CardGroup cols={2}>
+  <Card title="Payments & Monetisation" href="/payments-and-monetisation">
+    Learn how LaunchPulse helps you add Stripe and RevenueCat monetisation flows to apps.
+  </Card>
+
+  <Card title="Web App Development" href="/web-app-development">
+    Build websites, dashboards, SaaS products, and deployable web apps.
+  </Card>
+
+  <Card title="Mobile App Development" href="/mobile-app-development">
+    Build mobile apps and prepare them for iOS and Android publishing.
+  </Card>
+
+  <Card title="Publishing to App Store & Play Store" href="/publishing-to-app-store-and-play-store">
+    Learn how mobile publishing works after your app is ready.
+  </Card>
+
+  <Card title="App Screenshot Generator" href="/app-screenshot-generator">
+    Create polished App Store and Play Store screenshots using LaunchPulse.
+  </Card>
+
+  <Card title="Find Winning Mobile App Ideas" href="/find-winning-mobile-apps">
+    Discover mobile app ideas and turn them into LaunchPulse builds.
+  </Card>
+</CardGroup>
