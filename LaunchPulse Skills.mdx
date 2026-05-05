@@ -1,88 +1,306 @@
 ---
 title: "LaunchPulse Skills"
-description: "Discover and manage LaunchPulse Skills to extend what your agents and projects can do."
+description: "Reusable build abilities for LaunchPulse projects. Coming soon."
 ---
 
 # LaunchPulse Skills
 
-LaunchPulse Skills are reusable capability packs that help agents perform specific jobs more reliably.
+LaunchPulse Skills is a coming-soon feature that will let users add reusable abilities to their LaunchPulse projects.
 
-Skills can include:
+Instead of explaining the same complex behavior every time, you will be able to use Skills to give LaunchPulse stronger project-specific capabilities, workflows, and instructions that can be reused across builds.
 
-- workflow instructions
-- domain-specific guardrails
-- reusable prompts
-- output formats
-- tool usage guidance
+<Info>
+LaunchPulse Skills is currently coming soon. Availability, pricing, supported skill types, and setup flows may change before release.
+</Info>
 
-## Why use Skills?
+## What are LaunchPulse Skills?
 
-Skills help teams scale quality by giving agents pre-defined behavior for common tasks.
+LaunchPulse Skills are reusable capabilities that help LaunchPulse understand how to perform a specific type of task.
 
-<CardGroup cols={2}>
-  <Card title="Faster setup">
-    Reuse proven configurations instead of rewriting instructions for every new project.
+A Skill can describe:
+
+- how a workflow should work
+- how a feature should behave
+- how a business process should be handled
+- how a specific integration should be used
+- how a design or product pattern should be repeated
+- how a project should follow certain rules or standards
+
+Think of Skills as reusable instructions that make LaunchPulse better at building the kind of software you want.
+
+## Why Skills matter
+
+When building software, some tasks repeat again and again.
+
+For example:
+
+- every SaaS app needs onboarding
+- every marketplace needs listings and profiles
+- every internal tool needs tables, filters, roles, and permissions
+- every mobile app needs clean screens and tap-friendly flows
+- every AI app needs safe prompts, outputs, and saved results
+- every payment product needs paid and free states
+
+LaunchPulse Skills will help make these repeated patterns easier to reuse.
+
+<CardGroup cols={3}>
+  <Card title="Build faster">
+    Reuse proven instructions instead of rewriting the same prompt every time.
   </Card>
 
-  <Card title="More consistency">
-    Keep output style, safety boundaries, and workflow logic aligned across teams.
+  <Card title="Stay consistent">
+    Keep features, workflows, and design patterns aligned across your projects.
   </Card>
 
-  <Card title="Easier onboarding">
-    New builders can start with approved Skills and ship faster.
+  <Card title="Improve quality">
+    Give LaunchPulse clearer guidance for complex or repeated tasks.
   </Card>
 
-  <Card title="Safer operations">
-    Define what agents should and should not do for each task.
+  <Card title="Reduce mistakes">
+    Define expected behavior once, then reuse it across similar builds.
+  </Card>
+
+  <Card title="Create reusable workflows">
+    Turn repeated business processes into skills that LaunchPulse can apply again.
+  </Card>
+
+  <Card title="Scale your building process">
+    Move from one-off prompts to reusable build systems.
   </Card>
 </CardGroup>
 
-## Common Skill types
+## Example Skills
 
-| Skill type | What it helps with |
+LaunchPulse Skills could be used for many different build patterns.
+
+| Skill type | Example |
 |---|---|
-| Support Skills | Triage, FAQ handling, escalation handoffs |
-| Research Skills | Summaries, comparisons, structured briefs |
-| Product Skills | Spec drafting, QA checklists, release notes |
-| Sales Skills | Qualification flows, discovery questions, follow-ups |
-| Operations Skills | Intake workflows, classification, reporting templates |
+| SaaS onboarding skill | Create sign-up, workspace setup, empty states, and first-user guidance |
+| Marketplace skill | Create listings, seller profiles, buyer flows, search, and booking logic |
+| Admin dashboard skill | Create tables, filters, role-based access, and record detail pages |
+| Mobile game skill | Create character selection, game loop, scoring, rewards, and replay flow |
+| Payment skill | Create pricing, checkout, paid access, billing status, and upgrade flows |
+| AI assistant skill | Create prompt inputs, AI outputs, saved results, safety rules, and usage limits |
+| Internal tool skill | Create approval flows, status tracking, assignments, and activity history |
+| App store skill | Create screenshot concepts, app descriptions, and publishing preparation |
 
-## Suggested setup flow
+## When to use LaunchPulse Skills
+
+Use Skills when you want to:
+
+- reuse the same workflow across multiple projects
+- create more consistent app behavior
+- avoid repeating long prompts
+- build faster with known patterns
+- define how a feature should work before LaunchPulse builds it
+- give LaunchPulse stronger context about your product style
+- create repeatable systems for SaaS, mobile, games, dashboards, or internal tools
+
+<Tip>
+Skills will be most useful for workflows you expect to repeat. If you only need something once, a normal prompt may be enough.
+</Tip>
+
+## How Skills may work
 
 <Steps>
-  <Step title="Define the job">
-    Start with one clear outcome the Skill should achieve.
+  <Step title="Create a Skill">
+    Define the reusable capability, workflow, or build pattern you want LaunchPulse to understand.
   </Step>
 
-  <Step title="Add constraints">
-    Document boundaries, escalation rules, and prohibited actions.
+  <Step title="Describe the behavior">
+    Explain what the Skill should do, what it should avoid, and how success should look.
   </Step>
 
-  <Step title="Create examples">
-    Add strong examples of expected inputs and outputs.
+  <Step title="Add examples">
+    Provide example inputs, outputs, screens, flows, or rules so LaunchPulse can follow the pattern more accurately.
   </Step>
 
-  <Step title="Test and iterate">
-    Validate on realistic scenarios, then refine before wider use.
+  <Step title="Attach the Skill to a project">
+    Use the Skill when building or improving a LaunchPulse project.
+  </Step>
+
+  <Step title="Reuse it across builds">
+    Apply the Skill again when you build similar apps, features, or workflows.
+  </Step>
+
+  <Step title="Improve the Skill over time">
+    Update the Skill as you learn what works best.
   </Step>
 </Steps>
+
+## Good Skill design
+
+A good Skill should be clear, focused, and reusable.
+
+| Area | What to define |
+|---|---|
+| Purpose | What the Skill helps LaunchPulse do |
+| Use case | When the Skill should be used |
+| Inputs | What information the Skill needs |
+| Output | What LaunchPulse should create or improve |
+| Rules | What the Skill should always follow |
+| Boundaries | What the Skill should not do |
+| Examples | Good examples LaunchPulse can copy from |
+| Success criteria | How to know the Skill worked |
+
+## Example Skill definition
+
+```text
+Skill name:
+SaaS onboarding flow
+
+Purpose:
+Help LaunchPulse create a strong onboarding experience for new SaaS users.
+
+Use when:
+A SaaS product needs sign-up, first workspace setup, empty states, and a clear first action.
+
+The Skill should create:
+- welcome screen
+- account setup
+- workspace creation
+- first project or first record flow
+- helpful empty states
+- progress indicators
+- next-step guidance
+
+Rules:
+- keep onboarding short
+- reduce typing
+- make the first action obvious
+- explain empty states clearly
+- avoid overwhelming users with too many steps
+
+Success means:
+A new user can sign up, understand the product, and complete the first meaningful action without confusion.
+```
+
+## Skills vs prompts
+
+Skills and prompts are different.
+
+| Normal prompt | LaunchPulse Skill |
+|---|---|
+| Used for one task | Reused across many tasks |
+| Written during a build | Created as a reusable capability |
+| Good for specific changes | Good for repeated patterns |
+| Can be short or detailed | Should be structured and reusable |
+| Works inside one request | Can guide future work |
+
+## Skills vs Custom Agents
+
+LaunchPulse Skills are different from Custom Agents.
+
+| Feature | Custom Agents | LaunchPulse Skills |
+|---|---|---|
+| Main purpose | Agent behavior and assistance | Reusable build capability |
+| Best for | A helper with a role | A repeatable workflow or pattern |
+| Example | “Act as my QA agent” | “Build a SaaS onboarding flow this way” |
+| Scope | Agent personality, tasks, and guidance | Build rules, patterns, and reusable instructions |
+| Status | Available as part of agent workflows | Coming soon |
+
+## Best first Skills
+
+When LaunchPulse Skills become available, good first Skills may include:
+
+<CardGroup cols={2}>
+  <Card title="SaaS MVP foundation">
+    Reusable instructions for landing page, auth, dashboard, settings, and paid access.
+  </Card>
+
+  <Card title="Internal tool dashboard">
+    Reusable instructions for tables, filters, records, roles, status flows, and activity history.
+  </Card>
+
+  <Card title="Mobile app core flow">
+    Reusable instructions for onboarding, mobile navigation, main screen, saved state, and app-store prep.
+  </Card>
+
+  <Card title="Mobile game loop">
+    Reusable instructions for character selection, gameplay, scoring, rewards, and replayability.
+  </Card>
+
+  <Card title="Stripe web payments">
+    Reusable instructions for pricing, checkout, success states, billing settings, and premium access.
+  </Card>
+
+  <Card title="RevenueCat mobile paywall">
+    Reusable instructions for mobile subscriptions, restore purchases, entitlements, and paywall flows.
+  </Card>
+</CardGroup>
+
+## What to avoid
+
+Avoid creating Skills that are too vague.
+
+| Weak Skill | Better Skill |
+|---|---|
+| “Make apps better” | “Improve SaaS dashboard usability with summary cards, filters, empty states, and clear actions” |
+| “Build a game” | “Create a mobile battle game loop with character selection, health bars, scoring, and replay” |
+| “Add payments” | “Add Stripe subscriptions for a web SaaS with pricing, checkout, billing status, and premium feature gates” |
+| “Make it nice” | “Apply a clean premium dashboard layout with spacing, cards, responsive tables, and clear CTAs” |
+
+<Warning>
+Do not use Skills as a place to store passwords, API keys, private customer data, or sensitive credentials.
+</Warning>
+
+## Coming soon status
+
+LaunchPulse Skills is still being developed.
+
+Before public release, the LaunchPulse team may update:
+
+- how Skills are created
+- which Skill types are supported
+- where Skills can be attached
+- whether Skills are workspace-level or project-level
+- how Skills interact with agents
+- pricing or plan availability
+- permissions and access controls
+- how Skills are tested and versioned
+
+<Note>
+This page will be updated as LaunchPulse Skills moves closer to release.
+</Note>
+
+## Suggested screenshots
+
+<Note>
+Add a clean screenshot here when the LaunchPulse Skills workspace is available.
+</Note>
+
+<Note>
+Add a clean screenshot here showing a Skill being created or attached to a project.
+</Note>
+
+<Note>
+Add a clean screenshot here showing LaunchPulse using a Skill during a build.
+</Note>
 
 ## Next steps
 
 <CardGroup cols={2}>
   <Card title="Custom Agents" href="/custom-agents">
-    Attach Skills to project-specific agents.
+    Learn how agents help guide project behavior inside LaunchPulse.
+  </Card>
+
+  <Card title="AI Services" href="/ai-services">
+    Add AI assistants, generation, summaries, and smart workflows to apps.
   </Card>
 
   <Card title="Write a good prompt" href="/write-a-good-prompt">
-    Improve instruction quality for every Skill.
+    Learn how to structure instructions before turning them into reusable Skills.
   </Card>
 
-  <Card title="Testing Agent" href="/testing-agent">
-    Validate Skills against edge cases before production.
+  <Card title="Build a SaaS MVP" href="/build-a-saas-mvp">
+    See an example of a repeatable build pattern that could become a Skill.
+  </Card>
+
+  <Card title="Build an Internal Tool" href="/build-an-internal-tool">
+    Learn how repeatable internal workflows can become structured build patterns.
   </Card>
 
   <Card title="LaunchPulseClaw" href="/launchpulseclaw">
-    Explore hosted agent workflows that can benefit from Skills.
+    Explore the upcoming hosted Clawbot extension for standalone agents.
   </Card>
 </CardGroup>
