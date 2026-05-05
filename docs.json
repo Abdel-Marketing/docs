@@ -26,13 +26,6 @@
             ]
           },
           {
-            "group": "Operations & admin",
-            "pages": [
-              "Troubleshooting",
-              "accounts-and-subscriptions"
-            ]
-          },
-          {
             "group": "Build with LaunchPulse",
             "pages": [
               "autonomous-ai-software-engineer",
@@ -80,8 +73,7 @@
           {
             "group": "Account & billing",
             "pages": [
-              "accounts-and-subscriptions",
-              "untitled-page"
+              "accounts-and-subscriptions"
             ]
           },
           {

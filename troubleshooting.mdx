@@ -1,32 +1,782 @@
 ---
 title: "Troubleshooting"
-description: "Fix common LaunchPulse blockers with practical diagnosis and recovery steps."
+description: "Fix common LaunchPulse issues with building, previewing, publishing, payments, storage, database, domains, credits, and API keys."
 ---
+
 # Troubleshooting
 
-When velocity drops, this guide helps you identify the likely cause quickly and recover without guesswork.
+Most LaunchPulse issues can be fixed by checking the build state, preview, credits, subscription, connected services, or project configuration.
 
-## When to use this
-- Build appears stuck
-- Billing/credits block progress
-- Deploy or publish flow fails
+Use this page when something does not work as expected while building, testing, deploying, publishing, or managing your LaunchPulse project.
 
-## How it works
-1. Reproduce issue clearly
-2. Match to issue category
-3. Apply one fix at a time
-4. Escalate with context if still blocked
+<Info>
+The fastest way to debug a LaunchPulse project is to describe the exact issue inside the project chat, include what you expected to happen, and ask LaunchPulse to inspect the relevant area.
+</Info>
 
-## Common issues
+## Start here
 
-| Issue | Likely cause | First fix |
-| --- | --- | --- |
-| Build stuck | Credits depleted or interrupted run | Check credits and rerun from latest approved step |
-| Preview stale | Build in progress or failed task | Review build status then refresh preview |
-| Domain not live | DNS mismatch/propagation | Verify records and wait propagation window |
+Before going deep, try these quick checks.
 
-## Support handoff checklist
-- Project ID
-- Exact steps to reproduce
-- Expected vs actual behaviour
-- Timestamp and affected environment
+<CardGroup cols={3}>
+  <Card title="Refresh the preview">
+    Refresh the live preview after a build finishes. Some changes may not appear until the preview reloads.
+  </Card>
+
+  <Card title="Check the latest task">
+    Look at the latest agent message and confirm whether the task completed, failed, or needs a follow-up.
+  </Card>
+
+  <Card title="Test the main flow">
+    Try the exact user journey that is broken, such as sign-up, upload, checkout, publish, or save.
+  </Card>
+
+  <Card title="Check credits">
+    If AI actions stop working, review your credit balance and plan.
+  </Card>
+
+  <Card title="Check your plan">
+    Deployment, custom domains, code download, and some shipping features require a paid subscription.
+  </Card>
+
+  <Card title="Ask for a focused fix">
+    Instead of saying “fix everything,” describe one broken flow and ask LaunchPulse to repair it.
+  </Card>
+</CardGroup>
+
+## Quick diagnosis table
+
+| Problem | First thing to check |
+|---|---|
+| App changes are not showing | Refresh the preview and confirm the latest task completed |
+| App looks broken | Ask LaunchPulse to inspect layout, console issues, and responsive behavior |
+| Login does not work | Check Authentication, users, redirects, and test credentials |
+| Uploaded files disappear | Check Storage and whether files are connected to database records |
+| Data disappears after refresh | Check Database persistence |
+| Payments are not working | Check whether the app is web or mobile, then use Stripe or RevenueCat correctly |
+| Cannot deploy | Check subscription status and deployment requirements |
+| Cannot download code | Check subscription status |
+| Custom domain does not work | Check paid plan, DNS setup, and domain configuration |
+| Mobile publishing fails | Check App Store / Play Store setup, credentials, package name, and checklist |
+| AI actions stop working | Check credits, add-ons, and plan limits |
+| API key fails | Check scopes, expiration, and whether the key was copied correctly |
+
+## App changes are not showing
+
+Sometimes the app has been updated, but the preview is still showing an older version.
+
+Try this first:
+
+<Steps>
+  <Step title="Check the latest agent message">
+    Confirm that LaunchPulse says the task is complete or the preview has been updated.
+  </Step>
+
+  <Step title="Refresh the preview">
+    Reload the live preview. If needed, do a hard refresh in the browser.
+  </Step>
+
+  <Step title="Check the correct project">
+    Make sure you are looking at the same project you asked LaunchPulse to update.
+  </Step>
+
+  <Step title="Ask for a direct verification">
+    Ask LaunchPulse to confirm whether the requested change exists in the current build.
+  </Step>
+</Steps>
+
+Use this prompt:
+
+```text
+Check whether the latest changes were applied to this project.
+
+I expected:
+[describe what should have changed]
+
+But I currently see:
+[describe what you see]
+
+Please inspect the current app, confirm whether the change exists, and fix it if it was not applied.
+```
+
+## The app looks broken or unfinished
+
+If a page feels empty, visually weak, or unfinished, ask for a focused UI improvement rather than a general rewrite.
+
+Use this prompt:
+
+```text
+Improve this page so it feels polished, useful, and production-ready.
+
+Focus on:
+- clearer hero section
+- stronger layout
+- better spacing
+- cards instead of long plain text
+- helpful empty states
+- clear primary action
+- responsive design
+- better copy
+- realistic sample data if needed
+
+Do not change the core product idea. Improve the user experience and visual structure.
+```
+
+<Tip>
+For best results, name the exact page or screen that feels weak.
+</Tip>
+
+## The agent misunderstood the task
+
+This usually happens when the prompt is too broad or asks for too many changes at once.
+
+Instead of asking LaunchPulse to “update everything,” break the work into phases.
+
+| Weak prompt | Better prompt |
+|---|---|
+| “Make the app better” | “Improve the dashboard layout with summary cards, table filters, and a clearer empty state.” |
+| “Fix the mobile app” | “Fix the character selection screen so users can choose a character and start a battle.” |
+| “Add payments” | “Add Stripe checkout for the Pro plan and lock premium analytics for free users.” |
+| “Add storage” | “Let users upload profile avatars and save the image URL to the user profile record.” |
+
+Use this prompt:
+
+```text
+The previous change was too broad. Let’s fix one thing at a time.
+
+Current issue:
+[describe one issue]
+
+Expected behavior:
+[describe what should happen]
+
+Please only update this specific flow and avoid changing unrelated screens.
+```
+
+## Login or authentication is not working
+
+Authentication issues usually come from missing users, broken redirects, incomplete auth setup, or test credentials not matching the app state.
+
+Check:
+
+- sign-up flow
+- login flow
+- logout flow
+- protected pages
+- redirect after login
+- user profile creation
+- session persistence after refresh
+- test user credentials
+
+Use this prompt:
+
+```text
+Debug the authentication flow.
+
+Check:
+- sign-up
+- login
+- logout
+- protected routes
+- redirect after login
+- user profile creation
+- session persistence after refresh
+- test credentials
+
+Fix any issue that prevents a user from signing in and reaching the correct dashboard.
+```
+
+## Storage uploads are not working
+
+Use Storage when your app needs files, images, documents, avatars, screenshots, PDFs, or media.
+
+Common issues:
+
+- file uploads fail
+- uploaded file does not appear in the app
+- file disappears after refresh
+- avatar does not update
+- uploaded file is not linked to the right user or record
+- file size is too large
+- missing upload error state
+
+Use this prompt:
+
+```text
+Fix the file upload flow.
+
+Users should be able to:
+- select a file from their computer
+- upload it successfully
+- see upload progress or loading state
+- see a success state
+- see a helpful error if upload fails
+- view the uploaded file after refresh
+
+Use Storage for the file.
+If the file belongs to a user or record, save the file URL or metadata in the Database.
+```
+
+<Warning>
+Do not upload private customer files, secrets, API keys, passwords, or sensitive documents into public test projects.
+</Warning>
+
+## Database data disappears after refresh
+
+If data disappears after refreshing the app, it may only be stored in local state instead of the Database.
+
+This often affects:
+
+- tasks
+- users
+- profiles
+- products
+- bookings
+- messages
+- goals
+- game progress
+- AI results
+- saved outputs
+- uploaded file references
+
+Use this prompt:
+
+```text
+Make this data persistent.
+
+The app currently loses this data after refresh:
+[describe the data]
+
+Create or update the Database tables needed.
+Save the data to the Database.
+Load the data from the Database when the page opens.
+Add loading, empty, and error states.
+```
+
+## Payments are not working
+
+LaunchPulse recommends:
+
+- **Stripe for web apps**
+- **RevenueCat for mobile apps**
+
+Use Stripe for web checkout, SaaS subscriptions, billing portals, one-time payments, and paid web features.
+
+Use RevenueCat for mobile subscriptions, in-app purchases, restore purchases, entitlements, paywalls, and mobile game monetisation.
+
+## Stripe issues
+
+Common Stripe issues:
+
+- checkout button does nothing
+- user returns from checkout but premium access is not unlocked
+- subscription status does not update
+- billing page is missing
+- free users can access paid features
+- paid users still see locked states
+
+Use this prompt:
+
+```text
+Debug the Stripe payment flow.
+
+Check:
+- pricing page
+- checkout button
+- checkout redirect
+- success page
+- cancelled checkout state
+- subscription status
+- billing settings
+- premium feature access
+- locked states for free users
+
+Use Stripe for this web app payment flow.
+Fix anything that prevents paid users from unlocking the correct features.
+```
+
+## RevenueCat issues
+
+Common RevenueCat issues:
+
+- paywall does not open
+- purchase does not unlock premium access
+- restore purchases does not work
+- subscription status is missing
+- mobile app shows the wrong paid/free state
+- game unlocks do not persist
+
+Use this prompt:
+
+```text
+Debug the RevenueCat mobile monetisation flow.
+
+Check:
+- paywall screen
+- monthly and yearly options
+- purchase success state
+- restore purchases
+- entitlement status
+- locked premium features
+- subscription status in settings
+- app behavior after refresh or restart
+
+Use RevenueCat for iOS and Android monetisation.
+Fix anything that prevents premium access from unlocking correctly.
+```
+
+## Deployment is blocked
+
+Deployment requires a paid subscription.
+
+If you cannot deploy, check:
+
+- your current plan
+- whether the project is ready to publish
+- whether the build has errors
+- whether the main flow has been tested
+- whether the deployment button is available
+- whether the project has a custom domain requirement
+
+<Warning>
+Free users can explore and preview, but deployment requires a paid subscription.
+</Warning>
+
+Use this prompt:
+
+```text
+Prepare this project for deployment.
+
+Check:
+- build errors
+- broken pages
+- main user journey
+- responsive layout
+- empty states
+- environment or integration issues
+- deployment blockers
+
+List anything that must be fixed before deployment.
+```
+
+## Code download is blocked
+
+Code download requires a paid subscription.
+
+If the download option is unavailable, check whether you are on a plan that includes code download.
+
+<Info>
+Starter and Builder are designed for users who want to ship, deploy, and download code.
+</Info>
+
+## Custom domain is not working
+
+Custom domains require a paid subscription.
+
+Common issues:
+
+- domain is not connected
+- DNS records are missing
+- DNS changes have not propagated yet
+- domain is connected to the wrong project
+- HTTPS is not ready yet
+- old records conflict with the new setup
+
+Use this prompt:
+
+```text
+Help me troubleshoot my custom domain setup.
+
+Domain:
+[enter domain]
+
+Check:
+- whether the domain is connected to the correct project
+- required DNS records
+- possible conflicting records
+- HTTPS status
+- whether anything is still propagating
+
+Explain exactly what I need to change.
+```
+
+## Mobile app preview does not work
+
+Mobile previews can fail if the app has broken navigation, unsupported device layout, missing data, or incomplete mobile-specific setup.
+
+Check:
+
+- mobile navigation
+- tap targets
+- responsive layout
+- app loading state
+- login state
+- storage and database access
+- game or app state after refresh
+- QR code or device preview path
+
+Use this prompt:
+
+```text
+Debug the mobile preview.
+
+Check:
+- mobile layout
+- navigation
+- touch targets
+- app loading state
+- login state
+- data persistence
+- broken screens
+- console or runtime errors
+
+Fix the app so it works smoothly on a real mobile device.
+```
+
+## App Store or Play Store publishing is blocked
+
+The mobile publishing flow has four major steps:
+
+1. Platforms
+2. Store setup
+3. Access
+4. Publish
+
+Common blockers:
+
+| Blocker | What to check |
+|---|---|
+| Missing app name | Add the iOS or Android app name |
+| Missing bundle ID | Confirm the iOS bundle ID |
+| Missing package name | Confirm the Android package name |
+| Missing app icon | Upload or generate an app icon |
+| Missing Apple access | Add Apple developer email, 2FA flow, or App Store Connect API key |
+| Missing Google access | Upload Google Play service account JSON |
+| Missing screenshots | Prepare App Store or Play Store screenshots |
+| App not tested | Test on a real device before submitting |
+
+Use this prompt:
+
+```text
+Run a mobile publishing readiness check.
+
+Check:
+- selected storefronts
+- app name
+- bundle ID
+- Android package name
+- app icon
+- store screenshots
+- Apple developer access
+- Google Play service account access
+- release track
+- privacy and permissions
+- main app flow
+- mobile layout
+- payment or subscription flow if included
+
+List blockers and fix anything that can be fixed inside the app.
+```
+
+## Screenshot generator issues
+
+The App Screenshot Generator uses credits and works best when the app has real screens or clear visual references.
+
+Common issues:
+
+- screenshots look too generic
+- screenshots do not match the app
+- text is too small
+- design is not consistent
+- real app screens were not uploaded
+- screenshots include unfinished or broken screens
+- not enough credits
+
+Use this prompt:
+
+```text
+Improve the app store screenshots.
+
+Use the real app screens and create a more polished screenshot set.
+
+Focus on:
+- clear benefit per screenshot
+- readable headline text
+- consistent design
+- app-store-ready layout
+- no private data
+- no broken or unfinished screens
+- strong first screenshot
+
+Create variations I can choose from.
+```
+
+## AI app discovery issues
+
+AI App Discovery and mobile AI research are credit-based workflows.
+
+Common issues:
+
+- no results appear
+- API or access is not configured
+- results are too broad
+- idea does not become a strong project brief
+- credits run out
+- the selected idea is too vague
+
+Use this prompt:
+
+```text
+Turn this app idea into a stronger LaunchPulse build brief.
+
+Idea:
+[paste idea]
+
+Create:
+- target user
+- problem
+- core app flow
+- first MVP features
+- monetisation angle
+- technical requirements
+- design direction
+- first LaunchPulse build prompt
+
+Keep it focused and buildable.
+```
+
+## Credits or plan limits
+
+AI credits are used across LaunchPulse workflows, including:
+
+- app building
+- app updates
+- screenshot generation
+- AI app discovery
+- mobile AI research
+- larger iterations
+
+If AI actions stop working, check:
+
+- credit balance
+- monthly reset
+- plan type
+- add-on credits
+- whether the current task is unusually large
+
+Use this prompt:
+
+```text
+Help me reduce credit usage for this project.
+
+Suggest a phased build plan that uses smaller focused tasks instead of one large request.
+Prioritize the most important features first.
+```
+
+## API key problems
+
+API keys are used for LaunchPulse CLI, OpenClaw, automations, and approved workflows.
+
+Common issues:
+
+| Problem | What to check |
+|---|---|
+| Key does not work | Confirm it was copied correctly |
+| Permission denied | Check scopes |
+| Automation cannot read projects | Enable Read projects |
+| Automation cannot update projects | Enable Write projects |
+| Automation cannot run actions | Enable Run iterations |
+| Key expired | Create a new key |
+| Security concern | Revoke the key immediately |
+
+<Warning>
+Never commit API keys to GitHub, paste them into public docs, or expose them in frontend code.
+</Warning>
+
+## LaunchPulseClaw issues
+
+LaunchPulseClaw is in closed beta.
+
+If you cannot access it, check:
+
+- whether your account has beta access
+- whether the feature is enabled for your workspace
+- whether your API key scopes are correct
+- whether your Clawbot instructions are clear
+- whether access controls are configured
+- whether the workflow needs human review
+
+Use this prompt:
+
+```text
+Help me prepare a safe LaunchPulseClaw beta setup.
+
+I want a Clawbot that:
+[describe the Clawbot]
+
+Please define:
+- role
+- target users
+- allowed actions
+- knowledge it should use
+- boundaries
+- escalation rules
+- testing checklist
+- required API key scopes
+```
+
+## LaunchPulse Skills issues
+
+LaunchPulse Skills is coming soon.
+
+If you are preparing for Skills, focus on creating clear reusable instructions.
+
+A good Skill should define:
+
+- purpose
+- when to use it
+- inputs
+- outputs
+- rules
+- boundaries
+- examples
+- success criteria
+
+Use this prompt:
+
+```text
+Turn this repeated workflow into a future LaunchPulse Skill.
+
+Workflow:
+[describe workflow]
+
+Create:
+- skill name
+- purpose
+- when to use it
+- inputs needed
+- expected output
+- rules
+- boundaries
+- examples
+- success criteria
+```
+
+## Better troubleshooting prompts
+
+Use focused prompts. The more specific you are, the better the fix.
+
+<CardGroup cols={2}>
+  <Card title="Fix one broken flow">
+    Ask LaunchPulse to inspect one flow from start to finish, then repair only what is broken.
+  </Card>
+
+  <Card title="Ask for expected behavior">
+    Explain what should happen and what currently happens.
+  </Card>
+
+  <Card title="Mention the exact page">
+    Name the page, screen, button, modal, or feature that is broken.
+  </Card>
+
+  <Card title="Ask for testing">
+    Ask LaunchPulse to test after fixing and list what was changed.
+  </Card>
+</CardGroup>
+
+## Universal fix prompt
+
+Use this when you are not sure what is wrong:
+
+```text
+Something is not working correctly in this LaunchPulse project.
+
+Issue:
+[describe the issue]
+
+Expected behavior:
+[what should happen]
+
+Current behavior:
+[what happens instead]
+
+Please:
+1. Inspect the relevant screen and logic
+2. Identify the root cause
+3. Fix the issue
+4. Add loading, empty, and error states if needed
+5. Test the flow after fixing
+6. Summarize what changed
+```
+
+## Final pre-launch checklist
+
+Before sharing or launching a project, check:
+
+- main user journey works
+- app loads without obvious errors
+- sign-up and login work if included
+- database records persist after refresh
+- file uploads work if included
+- payments work if included
+- mobile layout works if mobile app
+- store publishing checklist is complete if mobile
+- screenshots are clean and do not expose private data
+- custom domain is connected if needed
+- deployment works if needed
+- paid plan is active for shipping features
+- API keys and secrets are not exposed
+
+## What to avoid
+
+Avoid:
+
+- asking LaunchPulse to fix too many unrelated things at once
+- publishing before testing the main flow
+- using real private data in screenshots
+- adding payments before the product value is clear
+- giving API keys broad scopes unnecessarily
+- deploying unfinished screens
+- relying on local state when data should persist
+- using Storage for structured records
+- using Database for large uploaded files
+- exposing credentials in docs, screenshots, or public repos
+
+## When to contact support
+
+Contact the LaunchPulse team when:
+
+- a billing or subscription issue blocks access
+- credits did not apply correctly
+- deployment fails after the app is ready
+- mobile publishing is blocked by account access
+- a beta feature is unavailable
+- a payment provider connection cannot be completed
+- an issue repeats after multiple focused fixes
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Write a good prompt" href="/write-a-good-prompt">
+    Learn how to ask LaunchPulse for clearer, more reliable changes.
+  </Card>
+
+  <Card title="Storage & Database" href="/storage-and-database">
+    Understand how files, tables, records, and persistent app data work.
+  </Card>
+
+  <Card title="Payments & Monetisation" href="/payments-and-monetisation">
+    Troubleshoot Stripe, RevenueCat, subscriptions, paywalls, and premium access.
+  </Card>
+
+  <Card title="Publishing to App Store & Play Store" href="/publishing-to-app-store-and-play-store">
+    Review the mobile publishing flow and checklist.
+  </Card>
+
+  <Card title="Accounts & Subscriptions" href="/accounts-and-subscriptions">
+    Learn which features require a paid plan and how credits work.
+  </Card>
+
+  <Card title="API Keys" href="/api-keys">
+    Create and manage API keys for CLI, OpenClaw, and automations.
+  </Card>
+</CardGroup>
