@@ -1,28 +1,545 @@
 ---
 title: "Payments & Monetisation"
-description: "Design and implement practical monetisation flows for web and mobile LaunchPulse products."
+description: "Add payments, subscriptions, checkout, and revenue flows to LaunchPulse web and mobile apps using Stripe and RevenueCat."
 ---
+
 # Payments & Monetisation
 
-Monetisation is part of product design, not just checkout. LaunchPulse supports web and mobile payment paths so you can validate revenue early.
+LaunchPulse helps you add payment and monetisation flows to the apps you build.
 
-## When to use this
-- Subscription or paid feature models
-- Revenue experiments for MVPs
+For web apps, LaunchPulse recommends **Stripe**. For mobile apps, LaunchPulse recommends **RevenueCat**. Both are connected smoothly in the background so you can focus on building the product experience instead of starting from payment infrastructure.
 
-## How it works
-- Define plans/access model in your prompt
-- LaunchPulse wires core payment and gating logic
-- Validate purchase and access flows end-to-end
+<Info>
+Use Stripe for web app payments and subscriptions. Use RevenueCat for mobile app subscriptions, in-app purchases, and app-store monetisation flows.
+</Info>
 
-## Provider paths
+## Which payment system should I use?
 
-| Platform path | Provider |
-| --- | --- |
-| Web | Stripe |
-| Mobile | RevenueCat |
+<CardGroup cols={2}>
+  <Card title="Stripe for web apps">
+    Best for SaaS subscriptions, checkout pages, customer portals, one-time payments, invoices, billing, and web-based monetisation.
+  </Card>
 
-## Example prompt
+  <Card title="RevenueCat for mobile apps">
+    Best for iOS and Android subscriptions, in-app purchases, entitlements, paywalls, trials, and app-store revenue management.
+  </Card>
+</CardGroup>
+
+| Product type | Recommended provider | Best for |
+|---|---|---|
+| Web app | Stripe | SaaS subscriptions, checkout, billing, invoices, customer portals |
+| SaaS dashboard | Stripe | Monthly plans, paid access, usage-based billing, account billing |
+| Internal tool | Stripe, if monetised | Client billing, paid portals, invoicing, service payments |
+| Mobile app | RevenueCat | iOS and Android subscriptions, trials, in-app purchases |
+| Mobile game | RevenueCat | Premium upgrades, consumables, subscriptions, unlocks |
+| Cross-platform product | Stripe + RevenueCat | Web checkout plus mobile app entitlements |
+
+<Tip>
+If the product is mainly used in a browser, start with Stripe. If the product is published to the App Store or Play Store, start with RevenueCat.
+</Tip>
+
+## What you can monetise
+
+<CardGroup cols={3}>
+  <Card title="Subscriptions">
+    Add monthly or yearly plans for SaaS products, mobile apps, AI tools, dashboards, and premium features.
+  </Card>
+
+  <Card title="One-time payments">
+    Charge once for access, digital products, services, reports, templates, or premium tools.
+  </Card>
+
+  <Card title="Premium features">
+    Lock advanced features behind a paid plan, upgrade screen, or subscription entitlement.
+  </Card>
+
+  <Card title="Usage-based access">
+    Monetise credits, generations, tasks, projects, exports, or usage limits.
+  </Card>
+
+  <Card title="Mobile in-app purchases">
+    Add mobile purchases, subscriptions, unlocks, consumables, or app-store-native upgrade flows.
+  </Card>
+
+  <Card title="Customer billing portals">
+    Let users manage plans, invoices, payment methods, renewals, and cancellations.
+  </Card>
+</CardGroup>
+
+## How LaunchPulse handles payments
+
+LaunchPulse does not ask you to manually wire payment infrastructure from scratch.
+
+Instead, you describe the monetisation model you want, and LaunchPulse helps create the payment experience inside your app.
+
+<Steps>
+  <Step title="Choose the app type">
+    Start by deciding whether you are building a web app, mobile app, SaaS product, game, internal tool, or cross-platform product.
+  </Step>
+
+  <Step title="Pick the monetisation model">
+    Choose whether users should pay through subscriptions, one-time checkout, credits, premium access, in-app purchases, or usage limits.
+  </Step>
+
+  <Step title="Use the right provider">
+    Use Stripe for web-based checkout and billing. Use RevenueCat for mobile subscriptions and in-app purchases.
+  </Step>
+
+  <Step title="Create the payment flow">
+    LaunchPulse helps add pricing pages, upgrade screens, checkout flows, paid states, and billing areas.
+  </Step>
+
+  <Step title="Connect access control">
+    Paid users should unlock the right features, plans, screens, limits, or entitlements.
+  </Step>
+
+  <Step title="Test before launch">
+    Test checkout, upgrade, cancellation, subscription status, locked states, and success screens before publishing.
+  </Step>
+</Steps>
+
+## Stripe for web apps
+
+Use Stripe when your users pay through a web app or browser-based product.
+
+Stripe is a strong fit for:
+
+- SaaS subscriptions
+- web checkout
+- customer billing portals
+- invoices
+- one-time payments
+- paid dashboards
+- account upgrades
+- usage-based billing
+- paid access to web features
+- client portals and business tools
+
+## Common Stripe web flows
+
+| Flow | Example |
+|---|---|
+| Pricing page | User chooses Free, Pro, or Business |
+| Checkout | User pays for a plan or one-time purchase |
+| Upgrade flow | User unlocks premium features |
+| Billing portal | User manages plan, card, invoices, or cancellation |
+| Subscription status | App shows whether the user is active, trialing, cancelled, or past due |
+| Paid feature gate | App blocks premium features until the user upgrades |
+
+## Example Stripe prompt for a web app
+
 ```text
-Add Free, Pro Monthly, and Pro Annual plans. Gate advanced analytics behind Pro.
+Add Stripe subscriptions to my SaaS web app.
+
+The app should have:
+- pricing page with Free and Pro plans
+- upgrade button from the dashboard
+- Stripe checkout flow
+- success page after payment
+- billing settings page
+- subscription status inside account settings
+- locked premium features for free users
+
+Use Stripe for the web payment flow.
+Keep the experience clean, simple, and easy to test.
 ```
+
+## RevenueCat for mobile apps
+
+Use RevenueCat when your app is published to iOS, Android, or both.
+
+RevenueCat is a strong fit for:
+
+- mobile subscriptions
+- in-app purchases
+- free trials
+- paywalls
+- premium unlocks
+- mobile app entitlements
+- consumables
+- mobile games
+- iOS and Android monetisation
+- cross-platform subscription access
+
+## Common RevenueCat mobile flows
+
+| Flow | Example |
+|---|---|
+| Paywall | User sees monthly and yearly plan options |
+| Trial | User starts a free trial before subscribing |
+| Entitlements | User unlocks premium features after subscribing |
+| Restore purchases | User restores a previous app-store purchase |
+| Subscription status | App shows active, expired, trialing, or cancelled access |
+| Mobile game unlock | User unlocks characters, levels, boosts, or premium mode |
+
+## Example RevenueCat prompt for a mobile app
+
+```text
+Add RevenueCat subscriptions to my mobile app.
+
+The app should have:
+- mobile paywall screen
+- monthly and yearly subscription options
+- free trial messaging
+- premium feature lock
+- restore purchases button
+- subscription status in settings
+- success state after upgrade
+
+Use RevenueCat for iOS and Android monetisation.
+Keep the paywall simple, clear, and app-store friendly.
+```
+
+## Mobile game monetisation
+
+LaunchPulse can also help monetise mobile games.
+
+For mobile games, use RevenueCat for app-store-native purchase flows such as subscriptions, unlocks, premium modes, consumables, or paid content.
+
+<CardGroup cols={2}>
+  <Card title="Premium unlocks">
+    Unlock extra characters, levels, themes, game modes, or special content.
+  </Card>
+
+  <Card title="Consumables">
+    Sell coins, boosts, energy, lives, hints, or in-game resources.
+  </Card>
+
+  <Card title="Subscriptions">
+    Offer premium access, daily rewards, ad-free mode, or member-only content.
+  </Card>
+
+  <Card title="One-time upgrades">
+    Let users pay once to unlock a full game, premium pack, or special mode.
+  </Card>
+</CardGroup>
+
+## Example mobile game monetisation prompt
+
+```text
+Add RevenueCat monetisation to my mobile battle game.
+
+Include:
+- premium upgrade screen
+- unlockable characters
+- coin pack purchase option
+- restore purchases button
+- clear locked states
+- success screen after purchase
+
+Use RevenueCat for mobile in-app purchases.
+Do not make the game pay-to-win. Keep the free version playable and fun.
+```
+
+## Web vs mobile monetisation
+
+| Question | Web app answer | Mobile app answer |
+|---|---|---|
+| Where does the user pay? | Website or web app | iOS or Android app |
+| Recommended provider | Stripe | RevenueCat |
+| Best payment type | Checkout, subscriptions, invoices, billing portal | In-app purchases, subscriptions, trials, entitlements |
+| Best for | SaaS, dashboards, portals, business tools | Consumer apps, games, mobile subscriptions |
+| Launch concern | Web checkout and account billing | App Store / Play Store purchase rules |
+| User access | Paid account or plan status | App entitlement or active subscription |
+
+## Cross-platform products
+
+Some products have both a web app and a mobile app.
+
+For example:
+
+- a SaaS dashboard with a companion mobile app
+- a coaching platform with web admin and mobile client app
+- an AI product with web billing and mobile access
+- a game with web account management and mobile purchases
+
+For cross-platform products, LaunchPulse can help structure the monetisation model clearly.
+
+| Scenario | Suggested setup |
+|---|---|
+| Web-first SaaS with mobile companion | Stripe for web billing, RevenueCat for mobile entitlements if needed |
+| Mobile-first app with optional web dashboard | RevenueCat for mobile subscriptions, Stripe for web-only billing if needed |
+| Mobile game | RevenueCat for in-app purchases and subscriptions |
+| Web customer portal | Stripe for checkout and billing |
+| AI app with credits | Stripe for web credits, RevenueCat for mobile subscriptions or purchases |
+
+<Warning>
+Mobile app-store purchase rules can affect how digital products are sold inside iOS and Android apps. Test the monetisation flow carefully before publishing.
+</Warning>
+
+## What a good payment experience includes
+
+A good payment flow should be clear before, during, and after purchase.
+
+| Area | What to include |
+|---|---|
+| Pricing | Clear plan names, benefits, and price differences |
+| Upgrade trigger | A logical moment where users understand why they should pay |
+| Checkout or paywall | Simple purchase screen with no confusing copy |
+| Success state | Confirmation that payment worked and access is unlocked |
+| Access control | Paid users get the right features immediately |
+| Billing settings | Users can understand their plan or subscription status |
+| Error states | Failed payment, cancelled checkout, or unavailable purchase states |
+| Restore purchases | Important for mobile apps using app-store purchases |
+
+## Payment flow checklist
+
+Before launching payments, check:
+
+- users understand what they are paying for
+- pricing is easy to compare
+- checkout or paywall copy is clear
+- free and paid states are different
+- locked premium features explain how to upgrade
+- successful payment unlocks the right access
+- failed or cancelled payments are handled
+- users can view subscription or billing status
+- mobile users can restore purchases
+- payments are tested before launch
+
+<Tip>
+Do not add payments before the core product value is clear. Users are more likely to pay when they understand the outcome they are getting.
+</Tip>
+
+## Pricing page best practices
+
+A good pricing page helps users choose quickly.
+
+Include:
+
+- clear plan names
+- monthly or yearly price
+- simple feature comparison
+- one recommended plan
+- upgrade button
+- short benefit-focused copy
+- FAQ section if needed
+- cancellation or billing note if relevant
+
+Avoid:
+
+- too many plans
+- confusing limits
+- hidden fees
+- vague feature names
+- overpromising outcomes
+- long paragraphs on the pricing page
+
+## Paywall best practices
+
+A good mobile paywall should be simple and honest.
+
+Include:
+
+- clear premium benefit
+- monthly and yearly options
+- trial details if included
+- restore purchases button
+- short bullets
+- easy close or back behavior where appropriate
+- accurate pricing and plan language
+
+Avoid:
+
+- hiding important terms
+- unclear trial messaging
+- tiny pricing text
+- confusing plan comparison
+- making the free app unusable without explanation
+- misleading claims
+
+## Example payment models
+
+<CardGroup cols={3}>
+  <Card title="Free + Pro">
+    Users start free, then upgrade to unlock advanced features.
+  </Card>
+
+  <Card title="Subscription only">
+    Users subscribe to access the product after onboarding or trial.
+  </Card>
+
+  <Card title="One-time purchase">
+    Users pay once for access, a report, a template, or a digital product.
+  </Card>
+
+  <Card title="Credits">
+    Users buy credits for AI generations, exports, tasks, or usage.
+  </Card>
+
+  <Card title="Usage-based">
+    Users pay based on activity, volume, seats, or actions.
+  </Card>
+
+  <Card title="Premium unlocks">
+    Users pay to unlock content, characters, modes, or premium tools.
+  </Card>
+</CardGroup>
+
+## Build payments in phases
+
+Do not add every payment feature at once.
+
+| Phase | Goal | Example prompt |
+|---|---|---|
+| Plan | Decide what users pay for | “Help me define Free and Pro plans for this app.” |
+| Pricing | Add pricing or paywall UI | “Create a simple pricing page with Free and Pro plans.” |
+| Checkout | Connect the purchase flow | “Add Stripe checkout for the Pro plan.” |
+| Access | Lock and unlock features | “Only Pro users should access advanced analytics.” |
+| Billing | Add account billing status | “Show the current plan in account settings.” |
+| Testing | Check the full flow | “Test upgrade, success, cancellation, and locked states.” |
+| Launch | Prepare for real users | “Run a final payment readiness check before publishing.” |
+
+## Strong follow-up prompts
+
+### Add Stripe to a web app
+
+```text
+Add Stripe payments to this web app.
+
+Use Stripe for:
+- pricing page
+- checkout
+- subscription status
+- billing settings
+- locked premium features
+
+Plans:
+- Free
+- Pro monthly
+- Pro yearly
+
+After payment, users should return to a success page and unlock Pro features.
+Keep the existing app design and only update payment-related screens.
+```
+
+### Add RevenueCat to a mobile app
+
+```text
+Add RevenueCat monetisation to this mobile app.
+
+Use RevenueCat for:
+- mobile paywall
+- monthly subscription
+- yearly subscription
+- free trial messaging
+- restore purchases
+- premium entitlement
+- subscription status in settings
+
+After purchase, premium features should unlock immediately.
+Keep the flow simple and app-store friendly.
+```
+
+### Add a paid feature gate
+
+```text
+Add a premium feature gate.
+
+Free users should see:
+- what the premium feature does
+- why it is valuable
+- upgrade button
+
+Paid users should:
+- access the feature immediately
+- not see the upgrade message
+
+Keep the copy clear and avoid being too aggressive.
+```
+
+### Test the payment flow
+
+```text
+Test the full payment flow.
+
+Check:
+- pricing or paywall screen
+- checkout or purchase flow
+- success state
+- cancelled payment state
+- failed payment state
+- subscription status
+- premium access unlock
+- locked states for free users
+- restore purchases for mobile if applicable
+
+Fix anything that blocks the user from upgrading or accessing paid features.
+```
+
+## Common mistakes
+
+| Mistake | Why it hurts | Better approach |
+|---|---|---|
+| Adding payments too early | Users may not understand the value yet | Build the core flow first |
+| Using Stripe for mobile in-app digital purchases | App-store rules may require native billing flows | Use RevenueCat for mobile monetisation |
+| Using RevenueCat for a simple web SaaS checkout | Web billing may be easier with Stripe | Use Stripe for browser-based payments |
+| No success state | Users are unsure if payment worked | Add a clear confirmation screen |
+| No locked state | Free users do not understand why they cannot access something | Explain the premium value clearly |
+| No restore purchases | Mobile users may lose access after reinstalling | Add restore purchases for mobile apps |
+| Vague pricing copy | Users do not know what they get | Use benefit-focused plan descriptions |
+| No testing | Payment bugs are costly | Test before launch |
+
+## What the workspace looks like
+
+<Note>
+Add a clean screenshot here showing a Stripe-powered pricing or checkout flow in a LaunchPulse web app.
+</Note>
+
+<Note>
+Add a clean screenshot here showing a RevenueCat-powered mobile paywall or subscription screen.
+</Note>
+
+<Note>
+Add a clean screenshot here showing account billing or subscription status.
+</Note>
+
+<Note>
+Add a clean screenshot here showing a premium feature locked state.
+</Note>
+
+## Final monetisation checklist
+
+Before launching payments, confirm:
+
+- correct provider is selected for the app type
+- Stripe is used for web app checkout or billing
+- RevenueCat is used for mobile app subscriptions or in-app purchases
+- pricing copy is clear
+- premium features are explained
+- payment success state works
+- failed or cancelled payment states work
+- paid access unlocks correctly
+- free users see helpful upgrade messaging
+- billing or subscription status is visible
+- mobile restore purchases is available
+- store rules are reviewed for mobile apps
+- payment flow has been tested end-to-end
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Web App Development" href="/web-app-development">
+    Build a web app that can use Stripe checkout, subscriptions, and billing.
+  </Card>
+
+  <Card title="Mobile App Development" href="/mobile-app-development">
+    Build mobile apps that can use RevenueCat for subscriptions and in-app purchases.
+  </Card>
+
+  <Card title="Build a SaaS MVP" href="/build-a-saas-mvp">
+    Learn how to monetise a SaaS product in phases.
+  </Card>
+
+  <Card title="Build a Mobile App MVP" href="/build-a-mobile-app-mvp">
+    Learn how to add subscriptions, premium unlocks, and app-store monetisation to mobile apps.
+  </Card>
+
+  <Card title="Publishing to App Store & Play Store" href="/publishing-to-app-store-and-play-store">
+    Prepare mobile apps for store publishing after monetisation is tested.
+  </Card>
+
+  <Card title="Write a good prompt" href="/write-a-good-prompt">
+    Learn how to ask LaunchPulse for focused payment features and testing.
+  </Card>
+</CardGroup>
