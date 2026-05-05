@@ -1,30 +1,359 @@
 ---
 title: "LaunchPulseClaw"
-description: "Early extension for hosting OpenClaw agents with LaunchPulse."
+description: "Create and host OpenClaw-powered Clawbots with LaunchPulse. Currently available in closed beta."
 ---
+
 # LaunchPulseClaw
 
-<Warning>
-New/early extension: details may change. Please verify availability with the LaunchPulse team.
-</Warning>
+LaunchPulseClaw is a closed beta extension for creating and hosting OpenClaw-powered agents from LaunchPulse.
 
-## Overview
-LaunchPulseClaw is an extension layer for hosting OpenClaw agents with LaunchPulse.
+With LaunchPulseClaw, users will be able to create their own hosted **Clawbot**: a standalone AI agent designed to help with support, workflows, customer interactions, internal operations, and repeatable business tasks.
 
-## When to use it
-- You need a more standalone agent than a project-level Custom Agent
-- You want hosted agent behavior tied to LaunchPulse workflows
+Instead of only building an agent inside one LaunchPulse project, LaunchPulseClaw is designed for more independent agents that can run as hosted services and connect into broader workflows.
+
+<Info>
+LaunchPulseClaw is currently in closed beta. Availability, pricing, access controls, and supported deployment options may change before wider release.
+</Info>
+
+## What is a Clawbot?
+
+A Clawbot is a hosted AI agent created through LaunchPulseClaw.
+
+It can be designed to follow instructions, use knowledge, support users, complete workflows, and behave like a dedicated agent for a specific job.
+
+<CardGroup cols={3}>
+  <Card title="Support Clawbots">
+    Create agents that answer common questions, guide users, and help customers find the right next step.
+  </Card>
+
+  <Card title="Workflow Clawbots">
+    Build agents that help move repeatable business processes forward, such as intake, triage, summaries, and follow-ups.
+  </Card>
+
+  <Card title="Operations Clawbots">
+    Create internal agents that help teams manage requests, classify work, generate updates, or prepare handoffs.
+  </Card>
+
+  <Card title="Sales Clawbots">
+    Build agents that qualify leads, answer product questions, collect requirements, and route interested users.
+  </Card>
+
+  <Card title="Research Clawbots">
+    Create agents that gather information, summarize findings, compare options, and prepare structured reports.
+  </Card>
+
+  <Card title="Custom Clawbots">
+    Design specialized agents for your own business, niche, workflow, or customer experience.
+  </Card>
+</CardGroup>
+
+## How LaunchPulseClaw is different from Custom Agents
+
+LaunchPulse already supports Custom Agents inside projects. LaunchPulseClaw is different because it is designed for more standalone hosted agents.
+
+| Feature | Custom Agents | LaunchPulseClaw |
+|---|---|---|
+| Best for | Project-level help inside a LaunchPulse build | Hosted standalone Clawbots |
+| Scope | Works around a specific project or app | Can support broader workflows or external-facing use cases |
+| Setup | Used inside the LaunchPulse project workflow | Designed as a separate hosted agent layer |
+| Audience | Builders improving a product | Users, customers, teams, or external workflows |
+| Status | Core LaunchPulse capability | Closed beta extension |
+| Ideal use | Add project-specific agent behavior | Create a hosted Clawbot with a defined job |
+
+<Tip>
+Use Custom Agents when the agent belongs inside one LaunchPulse project. Use LaunchPulseClaw when the agent needs to behave more like a standalone hosted service.
+</Tip>
+
+## When to use LaunchPulseClaw
+
+Use LaunchPulseClaw when you want to create an agent that:
+
+- has a dedicated role or personality
+- supports users outside a single project
+- follows a repeatable workflow
+- answers questions from a defined knowledge base
+- handles customer or internal requests
+- can be reused across teams or processes
+- needs clearer access controls and operating rules
+- should behave like a hosted Clawbot, not just a project helper
 
 ## How it works
-You prepare an OpenClaw agent definition, then host it through LaunchPulseClaw (where available).
 
-## Example use cases
-- Dedicated hosted support agent
-- Reusable external-facing workflow agent
+<Steps>
+  <Step title="Define the Clawbot role">
+    Start by describing what the Clawbot should do, who it helps, and what success looks like.
+  </Step>
 
-## Related pages
-- [Custom Agents](/custom-agents)
-- [AI Services](/ai-services)
+  <Step title="Write the agent instructions">
+    Give the Clawbot clear instructions, boundaries, tone, workflows, and escalation rules.
+  </Step>
 
-## TODO for LaunchPulse team review
-- Confirm availability, billing model, and access controls before GA messaging.
+  <Step title="Add knowledge and context">
+    Provide the information the Clawbot should use, such as product docs, FAQs, business rules, workflows, or support material.
+  </Step>
+
+  <Step title="Configure access and permissions">
+    Decide what the Clawbot can access, what it can do, and what actions require human review.
+  </Step>
+
+  <Step title="Test in a safe environment">
+    Run realistic conversations and workflows before using the Clawbot with real users or business data.
+  </Step>
+
+  <Step title="Host through LaunchPulseClaw">
+    When approved for beta access, host the Clawbot through LaunchPulseClaw and monitor how it performs.
+  </Step>
+</Steps>
+
+## Example Clawbot use cases
+
+<CardGroup cols={2}>
+  <Card title="Customer support Clawbot">
+    Answer common product questions, guide users through setup, and escalate complex issues to the team.
+  </Card>
+
+  <Card title="Lead qualification Clawbot">
+    Ask prospects structured questions, collect requirements, qualify interest, and prepare a sales handoff.
+  </Card>
+
+  <Card title="Internal operations Clawbot">
+    Help teams triage requests, summarize updates, assign next steps, and keep internal workflows moving.
+  </Card>
+
+  <Card title="Booking and intake Clawbot">
+    Collect customer details, understand the request, suggest the next action, and prepare a booking or intake record.
+  </Card>
+
+  <Card title="Research assistant Clawbot">
+    Gather information, summarize findings, compare options, and prepare structured research briefs.
+  </Card>
+
+  <Card title="Workflow automation Clawbot">
+    Help complete repeatable tasks such as drafting replies, classifying requests, creating checklists, or preparing reports.
+  </Card>
+</CardGroup>
+
+## Good Clawbot design
+
+A good Clawbot should have a clear job.
+
+| Area | What to define |
+|---|---|
+| Role | What the Clawbot is responsible for |
+| Audience | Who the Clawbot helps |
+| Knowledge | What information it should use |
+| Actions | What it is allowed to do |
+| Boundaries | What it must not do |
+| Escalation | When a human should take over |
+| Tone | How it should communicate |
+| Review | What needs testing before launch |
+
+<Warning>
+Do not give a Clawbot broad access or unclear permissions. Start with the smallest useful scope, test it, then expand carefully.
+</Warning>
+
+## Example Clawbot prompt
+
+```text
+Create a LaunchPulseClaw support Clawbot for my SaaS product.
+
+The Clawbot should help users:
+- understand what the product does
+- answer common setup questions
+- explain pricing and plan differences
+- guide users to the right documentation
+- collect details before escalating support issues
+
+Tone:
+Friendly, clear, concise, and professional.
+
+Boundaries:
+- Do not promise refunds
+- Do not provide legal, medical, or financial advice
+- Do not make commitments on behalf of the company
+- Escalate billing, account access, and security issues to a human
+
+Success means:
+Users can get helpful answers quickly, and complex issues are routed to the right person with useful context.
+```
+
+## Clawbot setup checklist
+
+Before creating a Clawbot, prepare:
+
+- the Clawbot name
+- the target users
+- the main job it should do
+- the knowledge it should rely on
+- the tone and personality
+- the workflows it should support
+- the actions it can take
+- the topics it should avoid
+- the escalation rules
+- the human owner responsible for reviewing it
+
+## Recommended beta workflow
+
+Because LaunchPulseClaw is in closed beta, start carefully.
+
+<Steps>
+  <Step title="Start with one narrow use case">
+    Choose one clear workflow, such as answering FAQs, qualifying leads, or preparing support handoffs.
+  </Step>
+
+  <Step title="Test with internal users first">
+    Run the Clawbot with your own team before letting customers or external users interact with it.
+  </Step>
+
+  <Step title="Review outputs">
+    Check if the Clawbot is accurate, safe, helpful, and aligned with your brand.
+  </Step>
+
+  <Step title="Tighten instructions">
+    Add clearer rules, examples, boundaries, and escalation paths based on test results.
+  </Step>
+
+  <Step title="Expand gradually">
+    Add more workflows only after the first one works reliably.
+  </Step>
+</Steps>
+
+## Safety and access controls
+
+Hosted agents can be powerful, so LaunchPulseClaw should be configured with care.
+
+Before using a Clawbot with real users or business data, confirm:
+
+- what data it can access
+- what actions it can perform
+- who can edit its instructions
+- who can review conversations or outputs
+- what should trigger human escalation
+- how sensitive information is handled
+- whether the Clawbot is internal-only or external-facing
+- whether the Clawbot is allowed to connect to other tools
+
+<Warning>
+Never paste passwords, API keys, private customer data, or confidential business information into public examples or screenshots.
+</Warning>
+
+## Clawbot examples by team
+
+| Team | Example Clawbot | What it helps with |
+|---|---|---|
+| Support | Product support Clawbot | Answers FAQs and prepares support handoffs |
+| Sales | Lead qualification Clawbot | Collects prospect needs and routes qualified leads |
+| Operations | Request triage Clawbot | Classifies requests and suggests next steps |
+| Marketing | Campaign assistant Clawbot | Drafts briefs, summaries, and content ideas |
+| Research | Market research Clawbot | Summarizes findings and compares opportunities |
+| Customer success | Onboarding Clawbot | Guides new users through setup |
+
+## What to avoid
+
+Avoid launching a Clawbot that:
+
+- has no clear owner
+- has vague instructions
+- can access too much data
+- has no escalation path
+- handles sensitive decisions without review
+- gives unsupported promises
+- uses outdated knowledge
+- is tested only with perfect examples
+- is exposed to customers before internal testing
+
+## Common mistakes
+
+| Mistake | Better approach |
+|---|---|
+| Creating a general “do everything” agent | Give the Clawbot one clear job |
+| Skipping boundaries | Define what the Clawbot should not do |
+| Giving broad access too early | Start with limited access and expand later |
+| No escalation rules | Decide when a human should take over |
+| No testing | Run real examples before launch |
+| Using private data in examples | Use safe demo data only |
+| Treating beta as GA | Set expectations clearly while the feature is still closed beta |
+
+## Closed beta status
+
+LaunchPulseClaw is currently in closed beta.
+
+During beta, the LaunchPulse team may still adjust:
+
+- availability
+- setup process
+- supported OpenClaw configurations
+- pricing
+- hosting limits
+- access controls
+- monitoring
+- deployment options
+- support model
+
+<Note>
+If you are interested in using LaunchPulseClaw, contact the LaunchPulse team to confirm beta access and current availability.
+</Note>
+
+## What the workspace looks like
+
+<Note>
+Add a clean screenshot here showing the LaunchPulseClaw beta workspace when available.
+</Note>
+
+<Note>
+Add a clean screenshot here showing a Clawbot setup screen with safe demo data.
+</Note>
+
+<Note>
+Add a clean screenshot here showing a hosted Clawbot test conversation or workflow preview.
+</Note>
+
+## Best first Clawbot
+
+For the first LaunchPulseClaw beta setup, start with something narrow and useful.
+
+<CardGroup cols={2}>
+  <Card title="Good first Clawbot">
+    A support Clawbot that answers common questions and escalates complex issues.
+  </Card>
+
+  <Card title="Harder first Clawbot">
+    A fully autonomous business operator with broad access to tools, customers, and private data.
+  </Card>
+
+  <Card title="Good first workflow">
+    Collect user details, answer known questions, and prepare a handoff.
+  </Card>
+
+  <Card title="Harder first workflow">
+    Make decisions, trigger actions, and handle sensitive edge cases without review.
+  </Card>
+</CardGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Custom Agents" href="/custom-agents">
+    Learn how project-level agents work inside LaunchPulse.
+  </Card>
+
+  <Card title="AI Services" href="/ai-services">
+    Add AI assistants, summaries, recommendations, and smart workflows to apps.
+  </Card>
+
+  <Card title="Write a good prompt" href="/write-a-good-prompt">
+    Learn how to describe agent behavior, boundaries, and workflows clearly.
+  </Card>
+
+  <Card title="Build an Internal Tool" href="/build-an-internal-tool">
+    Build internal dashboards and workflows that can work alongside Clawbots.
+  </Card>
+
+  <Card title="Troubleshooting" href="/troubleshooting">
+    Learn what to check when something does not behave as expected.
+  </Card>
+
+  <Card title="Accounts & Subscriptions" href="/accounts-and-subscriptions">
+    Review billing and plan details as LaunchPulseClaw availability evolves.
+  </Card>
+</CardGroup>
