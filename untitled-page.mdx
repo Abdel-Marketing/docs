@@ -1,0 +1,351 @@
+---
+title: "LaunchPulse API Keys"
+description: "Create and manage personal API keys for LaunchPulse CLI, OpenClaw, automations, and project workflows."
+---
+
+# API Keys
+
+LaunchPulse API keys let you connect LaunchPulse to approved developer workflows, CLI usage, OpenClaw, and automation tools.
+
+Use API keys when you need programmatic access to LaunchPulse without signing in through the normal dashboard every time.
+
+<Info>
+API keys are powerful. Treat them like passwords. Only create keys for tools and workflows you trust.
+</Info>
+
+## What API keys are used for
+
+API keys can be used to connect LaunchPulse with:
+
+<CardGroup cols={3}>
+  <Card title="LaunchPulse CLI">
+    Use API keys to authenticate command-line workflows and developer tooling.
+  </Card>
+
+  <Card title="OpenClaw">
+    Connect OpenClaw or Clawbot workflows to LaunchPulse where supported.
+  </Card>
+
+  <Card title="Automations">
+    Run approved automation workflows without manually signing in each time.
+  </Card>
+
+  <Card title="Project workflows">
+    Read project data, update projects, or trigger supported project actions.
+  </Card>
+
+  <Card title="Team operations">
+    Support repeatable internal workflows that need controlled access to LaunchPulse.
+  </Card>
+
+  <Card title="Advanced integrations">
+    Connect LaunchPulse to external systems where API access is enabled.
+  </Card>
+</CardGroup>
+
+## Creating an API key
+
+To create a new API key, open the **API Keys** page from your LaunchPulse account settings.
+
+You will need to choose:
+
+- key name
+- expiration period
+- access scopes
+- whether the key is for CLI, OpenClaw, automation, or another workflow
+
+<Steps>
+  <Step title="Name the key">
+    Give the key a clear name, such as `OpenClaw automation`, `CLI local development`, or `Internal workflow runner`.
+  </Step>
+
+  <Step title="Choose an expiration">
+    Select how long the key should remain active. Shorter expiration periods are safer.
+  </Step>
+
+  <Step title="Select scopes">
+    Choose only the permissions the key needs. Avoid giving broad access unless it is required.
+  </Step>
+
+  <Step title="Create the key">
+    Click **Create key** and copy the key immediately. You may not be able to view the full key again later.
+  </Step>
+
+  <Step title="Store it securely">
+    Save the key in a secure place, such as an environment variable or secrets manager.
+  </Step>
+</Steps>
+
+## API key scopes
+
+Scopes control what an API key is allowed to do.
+
+| Scope | What it allows | Use when |
+|---|---|---|
+| Read projects | View project information | A tool only needs to inspect project data |
+| Write projects | Update project information | A tool needs to edit or sync project data |
+| Run iterations | Start supported build or automation iterations | A workflow needs to trigger LaunchPulse actions |
+| Admin actions | Perform higher-risk account or workspace actions | Only for trusted admin workflows |
+
+<Warning>
+Use the smallest set of scopes needed. Do not enable admin actions unless the workflow truly requires it.
+</Warning>
+
+## Recommended scope combinations
+
+| Use case | Recommended scopes |
+|---|---|
+| Read-only reporting tool | Read projects |
+| CLI project sync | Read projects, Write projects |
+| OpenClaw automation | Read projects, Write projects, Run iterations |
+| Internal workflow runner | Read projects, Write projects, Run iterations |
+| Admin automation | Admin actions only when absolutely required |
+
+<Tip>
+Start with read-only access first. Add write or run permissions only when the integration needs them.
+</Tip>
+
+## Expiration periods
+
+API keys should not stay active forever.
+
+Choose an expiration that matches the workflow:
+
+| Expiration | Best for |
+|---|---|
+| 7 days | Short tests or temporary debugging |
+| 30 days | Short-term integrations |
+| 90 days | Standard automation or CLI workflows |
+| 180 days | Longer-running internal workflows |
+| Custom / longer access | Only for trusted production systems, if supported |
+
+## API key table
+
+After creating keys, the API Keys page shows a list of your active and expired keys.
+
+| Column | Meaning |
+|---|---|
+| Name | The label you gave the key |
+| Prefix | The visible beginning of the key, used to identify it safely |
+| Scopes | The permissions attached to the key |
+| Last used | When the key was last used |
+| Expires | When the key will stop working |
+| Status | Whether the key is active, expired, or revoked |
+| Actions | Options such as revoke or manage the key |
+
+## Security best practices
+
+API keys can access your LaunchPulse account or projects, so handle them carefully.
+
+Do:
+
+- use clear key names
+- choose short expiration periods
+- use only the required scopes
+- store keys in environment variables
+- rotate keys regularly
+- revoke keys you no longer use
+- create separate keys for separate tools
+- check last-used activity
+- remove old or unused keys
+
+Do not:
+
+- paste API keys into public chats
+- commit API keys to GitHub
+- share keys with other people
+- put keys inside public documentation
+- use one key for every workflow
+- give admin scopes to normal automation
+- keep old keys active forever
+
+<Warning>
+Never commit API keys to a repository. If a key is exposed, revoke it immediately and create a new one.
+</Warning>
+
+## Example key names
+
+Use names that make the purpose obvious.
+
+Good examples:
+
+```text
+OpenClaw automation
+CLI local development
+Production workflow runner
+Support operations sync
+Staging project automation
+```
+
+Weak examples:
+
+```text
+test
+key
+new key
+launchpulse
+admin
+```
+
+## Using API keys safely
+
+A typical workflow is:
+
+```text
+Create key → choose limited scopes → copy key once → store securely → use in trusted tool → rotate or revoke when done
+```
+
+For local development, store the key in an environment variable:
+
+```bash
+LAUNCHPULSE_API_KEY="your_api_key_here"
+```
+
+For production workflows, use a secure secrets manager or your hosting platform’s encrypted environment variables.
+
+<Warning>
+Do not hard-code API keys directly into frontend code, mobile apps, public repositories, or shared files.
+</Warning>
+
+## When to revoke a key
+
+Revoke an API key when:
+
+- the key was exposed
+- the key was copied into the wrong place
+- a teammate or contractor no longer needs access
+- the tool using it is no longer active
+- the key has more scopes than needed
+- you are replacing it with a new key
+- the workflow has moved from testing to production
+- you do not recognize recent key activity
+
+## API keys for OpenClaw
+
+LaunchPulse API keys can be used for OpenClaw-related workflows where supported.
+
+A typical OpenClaw key may need:
+
+- Read projects
+- Write projects
+- Run iterations
+
+Use a clear name such as:
+
+```text
+OpenClaw automation
+```
+
+<Info>
+For OpenClaw or LaunchPulseClaw workflows, only enable the scopes required by the specific agent or automation.
+</Info>
+
+## API keys for CLI
+
+For CLI usage, API keys help authenticate local development and project operations.
+
+A CLI key may need:
+
+- Read projects
+- Write projects
+
+If the CLI workflow triggers builds or iterations, it may also need:
+
+- Run iterations
+
+Use a name such as:
+
+```text
+CLI local development
+```
+
+## API keys for automation
+
+Automation keys are useful when a workflow needs to run without manual login.
+
+Examples include:
+
+<CardGroup cols={2}>
+  <Card title="Project sync">
+    Keep project information updated between LaunchPulse and another internal system.
+  </Card>
+
+  <Card title="Build workflow">
+    Trigger supported LaunchPulse actions from an approved automation workflow.
+  </Card>
+
+  <Card title="OpenClaw agent workflow">
+    Allow an agent to read or update approved LaunchPulse project information.
+  </Card>
+
+  <Card title="Internal operations">
+    Connect LaunchPulse to internal dashboards, support workflows, or reporting tools.
+  </Card>
+</CardGroup>
+
+## Troubleshooting API keys
+
+| Problem | What to check |
+|---|---|
+| Key does not work | Confirm the key is active and copied correctly |
+| Permission error | Check whether the key has the required scope |
+| Key expired | Create a new key or extend access if supported |
+| Automation stopped working | Check expiration, revoked status, and last-used activity |
+| Tool cannot update projects | Make sure Write projects is enabled |
+| Tool cannot run an iteration | Make sure Run iterations is enabled |
+| Security concern | Revoke the key and create a new one |
+
+## What the API Keys page looks like
+
+<Note>
+Add a clean screenshot here showing the LaunchPulse API Keys page with safe demo data.
+</Note>
+
+## Suggested screenshot filename
+
+Upload your screenshot to Mintlify as:
+
+```text
+/images/api-keys-page.png
+```
+
+Then replace the note above with:
+
+```mdx
+<Frame caption="Create personal API keys for CLI, OpenClaw, and approved automation workflows.">
+  <img src="/images/api-keys-page.png" alt="LaunchPulse API Keys page showing key name, expiration, scopes, and key management table" />
+</Frame>
+```
+
+## Final checklist
+
+Before using an API key, confirm:
+
+- the key has a clear name
+- the expiration is appropriate
+- only required scopes are enabled
+- the key is stored securely
+- the key is not exposed in frontend code
+- the key is not committed to GitHub
+- old keys are revoked
+- admin scopes are avoided unless truly needed
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="LaunchPulseClaw" href="/launchpulseclaw">
+    Learn how hosted Clawbots may use LaunchPulse workflows.
+  </Card>
+
+  <Card title="Custom Agents" href="/custom-agents">
+    Create project-level agents inside LaunchPulse.
+  </Card>
+
+  <Card title="LaunchPulse Skills" href="/launchpulse-skills">
+    Learn about reusable build abilities coming soon.
+  </Card>
+
+  <Card title="Troubleshooting" href="/troubleshooting">
+    Check common issues when something does not work as expected.
+  </Card>
+</CardGroup>
