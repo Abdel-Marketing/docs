@@ -73,7 +73,8 @@
           {
             "group": "Account & billing",
             "pages": [
-              "accounts-and-subscriptions"
+              "accounts-and-subscriptions",
+              "api-key"
             ]
           },
           {
