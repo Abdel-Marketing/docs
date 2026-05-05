@@ -26,15 +26,6 @@
             ]
           },
           {
-            "group": "Core concepts",
-            "pages": [
-              "Projects",
-              "Agents",
-              "Storage",
-              "QA Agent"
-            ]
-          },
-          {
             "group": "Operations & admin",
             "pages": [
               "Troubleshooting",

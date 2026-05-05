@@ -1,24 +1,488 @@
 ---
 title: "Storage & Database"
-description: "Managed storage and database support for LaunchPulse apps."
+description: "Use LaunchPulse storage and database tools to manage files, uploads, tables, users, app data, and persistent state."
 ---
+
 # Storage & Database
 
-## Overview
-LaunchPulse provides managed storage and database support for your project data.
+LaunchPulse gives every project a built-in place to manage app data.
 
-## When to use it
-- File uploads/downloads
-- App data that grows over time
+Use **Storage** for uploaded files, images, documents, and media. Use **Database** for structured app data such as users, profiles, products, game progress, orders, messages, bookings, and records.
 
-## How it works
-LaunchPulse manages storage, schemas, and environment separation so you can focus on product behavior.
+<Info>
+Storage is for files. Database is for structured data. Most real apps need both.
+</Info>
 
-## Example use cases
-- User profile images and documents
-- CRM records and operational data
+## What Storage & Database are for
 
-## Related pages
-- [Accounts & Subscriptions](/accounts-and-subscriptions)
-- [Authentication](/authentication)
-- [Web App Development](/web-app-development)
+<CardGroup cols={2}>
+  <Card title="Storage">
+    Store and manage uploaded files, images, documents, avatars, screenshots, PDFs, and other media used by your app.
+  </Card>
+
+  <Card title="Database">
+    View and manage structured app data such as users, tables, records, product catalogs, game scores, tasks, orders, and customer information.
+  </Card>
+</CardGroup>
+
+## Storage vs Database
+
+| Use this | When you need to store | Examples |
+|---|---|---|
+| Storage | Files and media | Profile pictures, PDFs, images, screenshots, videos, uploaded documents |
+| Database | Structured records | Users, tasks, orders, bookings, products, messages, game progress |
+| Both | Files connected to records | User avatar linked to a user profile, product image linked to a product, document linked to a client record |
+
+<Tip>
+If the thing is a file, put it in Storage. If the thing is information your app needs to search, filter, update, or connect to users, put it in the Database.
+</Tip>
+
+## How LaunchPulse handles app data
+
+LaunchPulse is designed so users do not need to manually set up storage and database infrastructure from scratch.
+
+When your app needs persistent data, LaunchPulse can help create the right structure and connect it to your project.
+
+<Steps>
+  <Step title="Describe what your app needs to remember">
+    Tell LaunchPulse what data should persist, such as users, posts, orders, bookings, uploaded images, game progress, or saved AI outputs.
+  </Step>
+
+  <Step title="LaunchPulse creates the structure">
+    LaunchPulse can create the database tables, storage upload areas, and the app logic needed to save and retrieve data.
+  </Step>
+
+  <Step title="Manage data from the project workspace">
+    Use the Storage and Database panels to inspect files, view tables, check records, and understand how your app data is organized.
+  </Step>
+
+  <Step title="Test the full flow">
+    Upload files, create records, refresh the app, and confirm the data is still there.
+  </Step>
+</Steps>
+
+## Storage
+
+Storage lets your app accept and manage uploaded files.
+
+Use Storage for:
+
+- profile avatars
+- app screenshots
+- user-uploaded documents
+- images and media
+- PDFs
+- attachments
+- product photos
+- generated files
+- downloadable assets
+
+## What the Storage panel shows
+
+The Storage panel helps you understand how much file storage your project is using.
+
+You can see:
+
+- storage usage
+- number of files stored
+- storage quota
+- upload area
+- existing uploaded files
+- file buckets when users upload files
+
+Based on the current LaunchPulse workspace, the Storage area supports drag-and-drop uploads and file selection, with a visible project storage quota and per-file upload limit.
+
+<Note>
+Your current workspace shows a **100 MB quota** and a **50 MB max file size per upload**. These limits may vary by plan or future product updates.
+</Note>
+
+## Example Storage use cases
+
+<CardGroup cols={3}>
+  <Card title="User avatars">
+    Let users upload profile photos and store them safely in the project.
+  </Card>
+
+  <Card title="Product images">
+    Store images for ecommerce products, listings, marketplaces, or catalogs.
+  </Card>
+
+  <Card title="Documents">
+    Allow users to upload PDFs, forms, contracts, resumes, or files.
+  </Card>
+
+  <Card title="Generated assets">
+    Save AI-generated files, exports, screenshots, or reports.
+  </Card>
+
+  <Card title="Mobile app media">
+    Store uploaded images, game assets, or user-generated content.
+  </Card>
+
+  <Card title="Internal tools">
+    Attach files to customers, tasks, tickets, approvals, or records.
+  </Card>
+</CardGroup>
+
+## Database
+
+The Database panel lets you inspect structured app data.
+
+Use Database for:
+
+- users
+- profiles
+- projects
+- tasks
+- orders
+- products
+- bookings
+- messages
+- comments
+- subscriptions
+- game characters
+- achievements
+- scores
+- saved AI outputs
+- workflow records
+
+## What the Database panel shows
+
+The Database panel lets you view tables and inspect app data.
+
+You can see:
+
+- database tables
+- row counts
+- column counts
+- selected table data
+- app records
+- structured data created by the app
+
+For example, a game app might have tables for:
+
+- characters
+- achievements
+- goals
+- quest completions
+- milestones
+- users
+
+A SaaS app might have tables for:
+
+- users
+- organizations
+- subscriptions
+- projects
+- invoices
+- messages
+- settings
+
+## Storage and Database together
+
+Many real apps need both storage and database.
+
+| App feature | Storage role | Database role |
+|---|---|---|
+| Profile avatar | Stores the uploaded image | Stores the user profile and image reference |
+| Product catalog | Stores product images | Stores product name, price, category, and stock |
+| Client portal | Stores documents and attachments | Stores client records, tasks, and permissions |
+| Mobile game | Stores media or generated assets | Stores characters, progress, scores, and unlocks |
+| AI app | Stores exported files | Stores prompts, results, saved outputs, and usage history |
+| Marketplace | Stores listing images | Stores listings, users, messages, bookings, and payments |
+
+## When your app needs a database
+
+Your app probably needs a database if users need to:
+
+- sign in
+- save progress
+- create accounts
+- manage profiles
+- save records
+- view history
+- search or filter data
+- edit information later
+- access the same data across devices
+- share data with other users
+- manage admin dashboards
+- track payments or subscriptions
+
+<Tip>
+If refreshing the browser should not erase the information, the app probably needs a database.
+</Tip>
+
+## When your app needs storage
+
+Your app probably needs storage if users need to:
+
+- upload images
+- upload documents
+- save profile pictures
+- attach files to records
+- upload screenshots
+- store generated files
+- manage media
+- save exports
+- share downloadable files
+
+## Common data patterns
+
+<CardGroup cols={2}>
+  <Card title="User profiles">
+    Store user details in the database and avatar images in storage.
+  </Card>
+
+  <Card title="Admin dashboards">
+    Store records in tables so admins can view, filter, update, and manage data.
+  </Card>
+
+  <Card title="Marketplaces">
+    Store listing images in storage and listing data in database tables.
+  </Card>
+
+  <Card title="Games">
+    Store player progress, characters, scores, achievements, and unlocks in the database.
+  </Card>
+
+  <Card title="AI tools">
+    Store prompts, generated outputs, saved results, and file exports.
+  </Card>
+
+  <Card title="Internal tools">
+    Store clients, approvals, documents, notes, statuses, and activity history.
+  </Card>
+</CardGroup>
+
+## Example prompt: add user avatars
+
+```text
+Add profile avatar uploads to my app.
+
+Users should be able to:
+- open their profile settings
+- upload an image from their computer
+- preview the selected image
+- save it as their profile avatar
+- see the avatar in the dashboard and navigation
+
+Use Storage for the uploaded image.
+Use the Database to save the avatar URL against the user profile.
+
+Also add:
+- loading state
+- upload error state
+- file size validation
+- safe fallback avatar if no image exists
+```
+
+## Example prompt: add persistent app data
+
+```text
+Add persistent database storage to this app.
+
+The app should save:
+- users
+- projects
+- tasks
+- task status
+- created date
+- updated date
+- assigned user
+
+Create the database tables needed for this.
+Update the app so records are saved and still appear after refresh.
+Add basic empty states and error handling.
+```
+
+## Example prompt: add files to records
+
+```text
+Add file attachments to customer records.
+
+Users should be able to:
+- open a customer profile
+- upload files or documents
+- see uploaded files on the customer record
+- download or remove attachments
+
+Use Storage for the uploaded files.
+Use the Database to link each file to the correct customer.
+```
+
+## Example prompt: add game progress
+
+```text
+Add persistent game progress.
+
+The app should save:
+- player profile
+- selected character
+- battle history
+- high score
+- achievements
+- unlocked characters
+
+Use the Database so progress remains after refresh and across sessions.
+```
+
+## Best practices
+
+| Best practice | Why it matters |
+|---|---|
+| Store files in Storage | Keeps large uploads separate from structured app records |
+| Store records in Database | Makes data searchable, editable, and connected |
+| Link files to records | Keeps uploaded files connected to the right user, product, or task |
+| Use safe demo data | Avoid exposing private customer information |
+| Add empty states | Users should know what to do when no data exists yet |
+| Add error states | Upload or database failures should be clear |
+| Test after refresh | Confirms that data is truly persistent |
+| Keep permissions clear | Users should only access data they are allowed to see |
+
+## Common mistakes
+
+| Mistake | Better approach |
+|---|---|
+| Saving uploaded files only in the browser | Use Storage so files persist |
+| Saving app records only in local state | Use Database so records survive refresh |
+| Mixing files and structured records | Store files in Storage and metadata in Database |
+| No upload validation | Add size, type, and error handling |
+| No empty states | Explain what users should do when there are no files or records |
+| No permission checks | Make sure users only see their own data unless intended |
+| No fallback UI | Add placeholders for missing images or empty tables |
+
+## Storage checklist
+
+Before launching a feature that uses Storage, check:
+
+- files upload correctly
+- file size limits are handled
+- unsupported file types show an error
+- uploaded files appear in the app
+- files stay available after refresh
+- private files are not exposed publicly
+- users can remove files if needed
+- fallback UI exists when no file is uploaded
+
+## Database checklist
+
+Before launching a feature that uses Database, check:
+
+- records save correctly
+- records load after refresh
+- edit and delete actions work
+- empty states are clear
+- error states are handled
+- user permissions are correct
+- tables are named clearly
+- test data does not expose private information
+
+## What the workspace looks like
+
+<Note>
+Add a clean screenshot here showing the LaunchPulse Storage panel with storage usage, upload area, quota, and file list.
+</Note>
+
+<Note>
+Add a clean screenshot here showing the LaunchPulse Database panel with tables, rows, columns, and selected table area.
+</Note>
+
+## Suggested screenshot filenames
+
+Upload your screenshots to Mintlify with names like:
+
+```text
+/images/storage-panel.png
+/images/database-panel.png
+```
+
+Then replace the notes above with:
+
+```mdx
+<Frame caption="Use Storage to manage uploaded files, images, documents, and media for your app.">
+  <img src="/images/storage-panel.png" alt="LaunchPulse Storage panel showing storage usage, upload area, and file storage list" />
+</Frame>
+
+<Frame caption="Use Database to inspect tables, rows, columns, and structured app data.">
+  <img src="/images/database-panel.png" alt="LaunchPulse Database panel showing app tables and structured project data" />
+</Frame>
+```
+
+## Strong follow-up prompts
+
+### Add storage uploads
+
+```text
+Add file upload storage to this app.
+
+Users should be able to upload files from their computer.
+Use Storage for the uploaded files.
+Show upload progress, success, error, and empty states.
+Display uploaded files in the correct part of the app.
+```
+
+### Add database persistence
+
+```text
+Add database persistence to this app.
+
+Identify the data that should survive refresh.
+Create the database tables needed.
+Update the app so records are saved, loaded, edited, and deleted from the database.
+Add loading, empty, and error states.
+```
+
+### Connect storage and database
+
+```text
+Connect uploaded files to database records.
+
+Use Storage for the files.
+Use the Database to save file metadata and connect each file to the correct user or record.
+Make sure users only see files they are allowed to access.
+```
+
+### Review data model
+
+```text
+Review the app data model.
+
+Check:
+- tables
+- fields
+- relationships
+- user permissions
+- file storage needs
+- empty states
+- data that should persist after refresh
+
+Suggest improvements before launch.
+```
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Authentication" href="/authentication">
+    Add sign-up, login, users, and account access before saving user-specific data.
+  </Card>
+
+  <Card title="AI Services" href="/ai-services">
+    Store AI prompts, generated outputs, saved results, and user history.
+  </Card>
+
+  <Card title="Payments & Monetisation" href="/payments-and-monetisation">
+    Store subscription status, billing states, and paid access logic.
+  </Card>
+
+  <Card title="Build an Internal Tool" href="/build-an-internal-tool">
+    Create dashboards with tables, records, filters, and file attachments.
+  </Card>
+
+  <Card title="Web App Development" href="/web-app-development">
+    Build web apps that use persistent data, uploads, and user records.
+  </Card>
+
+  <Card title="Mobile App Development" href="/mobile-app-development">
+    Build mobile apps that save user progress, media, and structured records.
+  </Card>
+</CardGroup>
