@@ -1,158 +1,180 @@
 ---
 title: "Quickstart: ship your first app"
-description: "Create your first LaunchPulse project, preview it live, improve it with prompts, and prepare it for launch."
 ---
 
-# Quickstart: ship your first app
+This Quickstart shows you **how to build an app with LaunchPulse**, from your first prompt to a working MVP. You describe the app in plain language, LaunchPulse builds the functional foundation, and you refine it until it is ready to test, deploy and share.
 
-LaunchPulse helps you go from a rough idea to a working product without starting from a blank codebase. Describe what you want to build, choose the right app type, preview the result, improve it with prompts, and publish when the core experience is ready.
-
-This guide walks you through your first LaunchPulse build.
+Unlike tools that only generate screens, LaunchPulse builds real backend logic, persistent data and authentication, so what you create here is software that runs.
 
 <Info>
-Best for first-time users who want to build a web app, mobile app, dashboard, game, workflow tool, SaaS MVP, or custom software product.
+  **Key takeaways**
+
+  - Build by describing your app in plain language, then refining with follow-up prompts.
+  - The first build is a running app with real data and logic, not a mockup.
+  - Strong prompts name the users, the core actions and the data the app stores.
+  - Add authentication, storage, payments and AI services as your app grows.
+  - Always run the testing agent before you deploy or share.
 </Info>
 
-## What you’ll do
+## What you will build
 
-<CardGroup cols={3}>
-  <Card title="Choose what to build">
-    Start with a web app, mobile app, dashboard, game, workflow, or product idea from the AI app catalog.
+By the end of this guide you will have a working app with a real data model, a usable interface and a clear path to add accounts, payments and AI features.
+
+<CardGroup cols={2}>
+  <Card title="Write a good prompt" icon="pen-nib" href="/write-a-good-prompt">
+    The single biggest factor in build quality.
   </Card>
 
-  <Card title="Write your first prompt">
-    Tell LaunchPulse who the app is for, what it should do, and what the first version needs.
-  </Card>
-
-  <Card title="Preview the product">
-    Watch your app take shape in the live preview and test the main user journey.
-  </Card>
-
-  <Card title="Improve with follow-ups">
-    Ask LaunchPulse to add screens, fix flows, improve design, or adjust the product logic.
-  </Card>
-
-  <Card title="Prepare to launch">
-    Publish a web app, connect a custom domain, or prepare a mobile app for iOS and Android.
-  </Card>
-
-  <Card title="Keep iterating">
-    Treat your first version as the start. Improve one focused feature at a time.
+  <Card title="Manage your projects" icon="table-columns" href="/projects-dashboard">
+    Revisit and manage every app you build.
   </Card>
 </CardGroup>
 
-## Before you start
+## What do you need before you start?
 
-A great first build starts with a clear product idea.
+You only need a clear idea and an account. Have these ready:
 
-You do not need a full product spec, but you should know:
+- A one-line description of what the app does
+- The main type of user, for example admin, customer or team member
+- The two or three core actions users must be able to take
 
-- who the app is for
-- what problem it solves
-- whether it should be a web app or mobile app
-- the 3–5 most important features
-- what the first successful version should do
+<Note>
+  You do not need wireframes, code or a chosen tech stack. LaunchPulse decides the structure and builds the foundation from your description.
+</Note>
 
-<Tip>
-Keep your first version focused. LaunchPulse works best when you start with one clear product flow, then improve it step by step.
-</Tip>
+## How do you build your first app?
 
-## Choose your build path
+The flow is simple: prompt, review, refine, then ship.
 
-| If you want to build... | Choose... | Good examples |
-|---|---|---|
-| SaaS dashboard, admin panel, internal tool, customer portal | Web App | CRM, booking dashboard, analytics tool, client portal |
-| Consumer app, mobile MVP, game, coaching app, app-store product | Mobile App | Fitness app, marketplace app, habit tracker, mobile game |
-| A polished product idea from a researched niche | AI App Ideas | AI tutor, hiring copilot, finance assistant, workflow tool |
-| Store-ready marketing visuals | App Screenshot Generator | App Store screenshots, Play Store screenshots, launch visuals |
-
-## Step-by-step guide
+```mermaid
+flowchart LR
+    A[Write your prompt] --> B[Agents build the app]
+    B --> C[Review the running preview]
+    C --> D[Refine with follow-up prompts]
+    D --> E[Add auth, data and payments]
+    E --> F[Test and deploy]
+```
 
 <Steps>
-  <Step title="Create a new project">
-    Open your LaunchPulse dashboard and start a new project. Give it a clear name so you can easily find it later.
+  <Step title="Describe your app in a prompt">
+    Open a new project and write what you want in plain language. Name the app, the users and the core workflow.
 
-    Good project names:
-    - Fitness coach mobile app
-    - Real estate agency dashboard
-    - AI customer support portal
-    - Restaurant booking workflow
+    ```text title="Example first prompt"
+    A client portal where customers log in, submit support tickets and track ticket status.
+    ```
   </Step>
-
-  <Step title="Choose Web App or Mobile App">
-    Pick the app type that matches how users will experience the product.
-
-    Choose **Web App** for dashboards, SaaS tools, portals, admin systems, and internal workflows.
-
-    Choose **Mobile App** for app-store products, mobile-first experiences, games, and consumer apps.
+  <Step title="Let the agents build the foundation">
+    LaunchPulse [AI agents](/agents) generate the data model, backend logic and screens. The [autonomous AI software engineer](/autonomous-ai-software-engineer) assembles a working version, not a static mockup.
   </Step>
-
-  <Step title="Write your first prompt">
-    Describe the app like you are briefing a product team.
-
-    Include:
-    - target users
-    - main problem
-    - must-have features
-    - design direction
-    - what version one should achieve
+  <Step title="Review the running app">
+    Open the preview and use it. Click through the core workflow to confirm the logic and data behave as expected.
   </Step>
+  <Step title="Refine with follow-up prompts">
+    Add, change or remove features by prompting one change at a time.
 
-  <Step title="Review the first plan">
-    LaunchPulse may structure your idea into pages, features, flows, and product logic. Review the plan before expanding the scope.
+    ```text title="Example follow-up prompt"
+    Add a priority field to tickets and sort the dashboard by priority.
+    ```
 
-    Remove anything that is not needed for version one.
+    Use the [feature builder](/feature-builder) for larger additions.
   </Step>
-
-  <Step title="Generate the first version">
-    Let LaunchPulse create the initial app experience. This may include screens, flows, UI, data structure, and app logic depending on the product.
+  <Step title="Add real capabilities">
+    Layer in [authentication](/authentication), [storage and databases](/storage-and-database), [AI services](/ai-services) and [payments](/payments-and-monetisation) as needed.
   </Step>
-
-  <Step title="Preview and test">
-    Use the live preview to click through the app.
-
-    Test the main flow first. For example:
-    - Can a user sign up?
-    - Can they complete the key action?
-    - Does the dashboard make sense?
-    - Does the mobile app feel good on a phone?
-  </Step>
-
-  <Step title="Improve with focused prompts">
-    Ask for one meaningful improvement at a time.
-
-    Examples:
-    - “Improve the onboarding screen and make it feel more premium.”
-    - “Add a client profile page with notes, status, and recent activity.”
-    - “Fix the booking flow so users can choose a date before payment.”
-  </Step>
-
-  <Step title="Publish or prepare for launch">
-    When the core experience works, prepare the app for launch.
-
-    For web apps, publish and connect a custom domain when ready.
-
-    For mobile apps, prepare for iOS and Android publishing.
+  <Step title="Test, deploy and share">
+    Run the [testing agent](/testing-agent), then deploy on [LaunchPulse Cloud](/launchpulse-cloud) and optionally connect a [custom domain](/custom-domain).
   </Step>
 </Steps>
 
-## Example first prompts
+## What does a good first prompt look like?
 
-Use one of these as a starting point.
+The clearer your prompt, the stronger the build. Compare these examples by app type.
 
-### Web app example
+<Tabs>
+  <Tab title="Booking app">
+    ```text
+    A booking app where clients pick a service, choose a time slot and pay a deposit. Owners see all bookings on a calendar.
+    ```
+  </Tab>
+  <Tab title="CRM">
+    ```text
+    A CRM where sales reps add leads, log calls and move deals through stages from new to won. Managers see a pipeline dashboard.
+    ```
+  </Tab>
+  <Tab title="Internal tool">
+    ```text
+    An internal tool where staff submit expenses with a receipt photo and managers approve or reject them.
+    ```
+  </Tab>
+</Tabs>
 
-```text
-Build a SaaS dashboard for real estate agencies to manage properties, tenants, inquiries, and monthly performance.
+For a full guide, see [how to write a good prompt](/write-a-good-prompt).
 
-Start with:
-- landing page
-- sign-up and login
-- agency dashboard
-- property management
-- tenant profiles
-- inquiry tracking
-- admin settings
-- clean responsive design
+## Quickstart checklist
 
-The app should feel modern, premium, and easy for non-technical real estate teams to use. 
+<Check>
+  Work through these before sharing your MVP.
+</Check>
+
+- Describe the app, the users and the core workflow
+- Generate the first build and use the running preview
+- Refine features with clear follow-up prompts
+- Add authentication and persistent data
+- Test the app with the testing agent
+- Deploy to LaunchPulse Cloud
+
+## Common mistakes to avoid
+
+- **Vague prompts.** "Make a marketplace" gives the agents too little. Name the users and actions.
+- **Skipping the test pass.** Always run the [testing agent](/testing-agent) before sharing.
+- **Polishing UI before logic works.** Get the workflow and data right first, then refine design.
+- **Adding everything at once.** Build the core workflow, confirm it works, then layer features.
+
+<Tip>
+  Treat building as a conversation. Each prompt should make one clear change so you can see its effect and stay in control of the result.
+</Tip>
+
+## Related documentation
+
+- [What is LaunchPulse?](/what-is-launchpulse)
+- [How to write a good prompt](/write-a-good-prompt)
+- [Plan features with the feature builder](/feature-builder)
+- [Build a SaaS MVP with AI](/build-a-saas-mvp)
+- [Deploy on LaunchPulse Cloud](/launchpulse-cloud)
+- [Fix common issues in troubleshooting](/troubleshooting)
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="How do I build an app with LaunchPulse?">
+    Describe the app in a plain-language prompt, let the AI agents build a working foundation, refine features with follow-up prompts, add capabilities like authentication and payments, then test and deploy.
+  </Accordion>
+
+  <Accordion title="Do I need to know how to code?">
+    No. You build by describing what you want. LaunchPulse handles the backend logic, data and structure, and you guide it through prompts.
+  </Accordion>
+
+  <Accordion title="How long does the first build take?">
+    The first working version is generated automatically after your prompt. Most of your time goes into refining features and capabilities rather than setup.
+  </Accordion>
+
+  <Accordion title="Is the first build a real app or a mockup?">
+    It is a real, running app with working logic and data, not a static mockup. You can use the preview and add accounts, payments and AI services as you go.
+  </Accordion>
+
+  <Accordion title="What should my first prompt include?">
+    The app name, the main type of user and the two or three core actions users must be able to take. Specific actions produce stronger builds.
+  </Accordion>
+
+  <Accordion title="What do I do if the app is not what I expected?">
+    Re-prompt with more specific roles, actions and data, and change one thing at a time. See [troubleshooting](/troubleshooting) for common fixes.
+  </Accordion>
+
+  <Accordion title="Can I build a mobile app in the Quickstart?">
+    Yes. The same prompt-and-refine flow applies to mobile. See [build a mobile app MVP](/build-a-mobile-app-mvp) for mobile-specific guidance.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Write your first prompt" icon="pen-nib" href="/write-a-good-prompt">
+  The quality of your build starts with the prompt. Learn how to describe features clearly.
+</Card>
