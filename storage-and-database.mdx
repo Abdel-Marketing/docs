@@ -1,6 +1,7 @@
 ---
-title: "Storage & Database"
-description: "Use LaunchPulse storage and database tools to manage files, uploads, tables, users, app data, and persistent state."
+title: "App Storage and Database: Persistent Data in LaunchPulse"
+description: "Add app storage and a database in LaunchPulse so your app keeps persistent data, user records and files between every session."
+icon: "database"
 ---
 
 # Storage & Database
@@ -10,7 +11,7 @@ LaunchPulse gives every project a built-in place to manage app data.
 Use **Storage** for uploaded files, images, documents, and media. Use **Database** for structured app data such as users, profiles, products, game progress, orders, messages, bookings, and records.
 
 <Info>
-Storage is for files. Database is for structured data. Most real apps need both.
+  Storage is for files. Database is for structured data. Most real apps need both.
 </Info>
 
 ## What Storage & Database are for
@@ -28,13 +29,13 @@ Storage is for files. Database is for structured data. Most real apps need both.
 ## Storage vs Database
 
 | Use this | When you need to store | Examples |
-|---|---|---|
+| --- | --- | --- |
 | Storage | Files and media | Profile pictures, PDFs, images, screenshots, videos, uploaded documents |
 | Database | Structured records | Users, tasks, orders, bookings, products, messages, game progress |
 | Both | Files connected to records | User avatar linked to a user profile, product image linked to a product, document linked to a client record |
 
 <Tip>
-If the thing is a file, put it in Storage. If the thing is information your app needs to search, filter, update, or connect to users, put it in the Database.
+  If the thing is a file, put it in Storage. If the thing is information your app needs to search, filter, update, or connect to users, put it in the Database.
 </Tip>
 
 ## How LaunchPulse handles app data
@@ -47,15 +48,12 @@ When your app needs persistent data, LaunchPulse can help create the right struc
   <Step title="Describe what your app needs to remember">
     Tell LaunchPulse what data should persist, such as users, posts, orders, bookings, uploaded images, game progress, or saved AI outputs.
   </Step>
-
   <Step title="LaunchPulse creates the structure">
     LaunchPulse can create the database tables, storage upload areas, and the app logic needed to save and retrieve data.
   </Step>
-
   <Step title="Manage data from the project workspace">
     Use the Storage and Database panels to inspect files, view tables, check records, and understand how your app data is organized.
   </Step>
-
   <Step title="Test the full flow">
     Upload files, create records, refresh the app, and confirm the data is still there.
   </Step>
@@ -93,7 +91,7 @@ You can see:
 Based on the current LaunchPulse workspace, the Storage area supports drag-and-drop uploads and file selection, with a visible project storage quota and per-file upload limit.
 
 <Note>
-Your current workspace shows a **100 MB quota** and a **50 MB max file size per upload**. These limits may vary by plan or future product updates.
+  Your current workspace shows a **100 MB quota** and a **50 MB max file size per upload**. These limits may vary by plan or future product updates.
 </Note>
 
 ## Example Storage use cases
@@ -183,7 +181,7 @@ A SaaS app might have tables for:
 Many real apps need both storage and database.
 
 | App feature | Storage role | Database role |
-|---|---|---|
+| --- | --- | --- |
 | Profile avatar | Stores the uploaded image | Stores the user profile and image reference |
 | Product catalog | Stores product images | Stores product name, price, category, and stock |
 | Client portal | Stores documents and attachments | Stores client records, tasks, and permissions |
@@ -209,7 +207,7 @@ Your app probably needs a database if users need to:
 - track payments or subscriptions
 
 <Tip>
-If refreshing the browser should not erase the information, the app probably needs a database.
+  If refreshing the browser should not erase the information, the app probably needs a database.
 </Tip>
 
 ## When your app needs storage
@@ -329,7 +327,7 @@ Use the Database so progress remains after refresh and across sessions.
 ## Best practices
 
 | Best practice | Why it matters |
-|---|---|
+| --- | --- |
 | Store files in Storage | Keeps large uploads separate from structured app records |
 | Store records in Database | Makes data searchable, editable, and connected |
 | Link files to records | Keeps uploaded files connected to the right user, product, or task |
@@ -342,7 +340,7 @@ Use the Database so progress remains after refresh and across sessions.
 ## Common mistakes
 
 | Mistake | Better approach |
-|---|---|
+| --- | --- |
 | Saving uploaded files only in the browser | Use Storage so files persist |
 | Saving app records only in local state | Use Database so records survive refresh |
 | Mixing files and structured records | Store files in Storage and metadata in Database |
@@ -376,37 +374,6 @@ Before launching a feature that uses Database, check:
 - user permissions are correct
 - tables are named clearly
 - test data does not expose private information
-
-## What the workspace looks like
-
-<Note>
-Add a clean screenshot here showing the LaunchPulse Storage panel with storage usage, upload area, quota, and file list.
-</Note>
-
-<Note>
-Add a clean screenshot here showing the LaunchPulse Database panel with tables, rows, columns, and selected table area.
-</Note>
-
-## Suggested screenshot filenames
-
-Upload your screenshots to Mintlify with names like:
-
-```text
-/images/storage-panel.png
-/images/database-panel.png
-```
-
-Then replace the notes above with:
-
-```mdx
-<Frame caption="Use Storage to manage uploaded files, images, documents, and media for your app.">
-  <img src="/images/storage-panel.png" alt="LaunchPulse Storage panel showing storage usage, upload area, and file storage list" />
-</Frame>
-
-<Frame caption="Use Database to inspect tables, rows, columns, and structured app data.">
-  <img src="/images/database-panel.png" alt="LaunchPulse Database panel showing app tables and structured project data" />
-</Frame>
-```
 
 ## Strong follow-up prompts
 
@@ -486,3 +453,39 @@ Suggest improvements before launch.
     Build mobile apps that save user progress, media, and structured records.
   </Card>
 </CardGroup>
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Does my LaunchPulse app keep data permanently?">
+    Yes. LaunchPulse builds a real database, so records, user data and files persist between sessions rather than resetting on reload.
+  </Accordion>
+
+  <Accordion title="Can my app store files and images?">
+    Yes. You can add file storage for uploads such as images and documents by prompting for it.
+  </Accordion>
+
+  <Accordion title="How do I keep each user's data private?">
+    Combine storage with [authentication](/authentication) and scope records to the user who created them, so people only see their own data.
+  </Accordion>
+
+  <Accordion title="Do I need to design the database myself?">
+    No. Describe the records and relationships in plain language and LaunchPulse builds the data model and connects it to your app.
+  </Accordion>
+
+  <Accordion title="Can stored data power AI features?">
+    Yes. Stored records can feed AI services like search, generation and assistants, so your data works with your AI features.
+  </Accordion>
+
+  <Accordion title="How do I link records together?">
+    Describe the relationship in your prompt, for example "each order belongs to a customer". LaunchPulse builds the link so you can look records up across the app.
+  </Accordion>
+
+  <Accordion title="How much data should I model at the start?">
+    Only what your core workflow needs. Add fields and records later as the app grows, rather than modelling everything upfront.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Add AI features to your data" icon="wand-magic-sparkles" href="/ai-services">
+  Turn stored data into smart features. Explore AI services like search, generation and assistants.
+</Card>

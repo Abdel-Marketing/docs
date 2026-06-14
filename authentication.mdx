@@ -1,27 +1,150 @@
 ---
-title: "Authentication"
-description: "Built-in authentication flows for LaunchPulse apps."
+title: "App Authentication: User Login and Sign-Up in LaunchPulse"
+description: "Add app authentication in LaunchPulse with secure sign-up, login and user accounts so each user sees only their own data."
+icon: "lock"
 ---
-# Authentication
 
-## Overview
-LaunchPulse includes built-in authentication flows as part of app builds.
+**App authentication** in LaunchPulse gives your app real user accounts: secure sign-up, login and per-user data access. Instead of a fake login screen, LaunchPulse builds working authentication flows, so each user has a genuine account and sees only the data that belongs to them.
 
-## When to use it
-- Login-protected apps
-- User accounts with gated screens
+Authentication is one of the foundations that separates a real app from a prototype, and it is a core capability in every LaunchPulse build that needs users.
 
-## How it works
-Ask for the auth flow you want (email/password, social, or passwordless), and LaunchPulse wires screens and logic into your app.
+<Info>
+  **Key takeaways**
 
-## Example use cases
-- Member dashboard requiring login
-- Admin-only pages with restricted access
+  - Authentication gives users secure sign-up, login and their own private data.
+  - It enables roles, permissions, personalised dashboards and paid plans.
+  - Define your user roles in the prompt before building permissions.
+  - Always scope records to a user so data never leaks between accounts.
+  - LaunchPulse builds real auth flows, not a login screen with no logic behind it.
+</Info>
 
-## Related pages
-- [Payments & Monetisation](/payments-and-monetisation)
-- [Collaboration](/collaboration)
-- [Troubleshooting](/troubleshooting)
+## Why does authentication matter?
 
-## TODO for LaunchPulse team review
-- Confirm final public list of supported auth providers.
+Most functional apps need to know who the user is. Authentication enables personalised dashboards, saved data, permissions and billing. Without it, you cannot safely onboard real users or charge them. With it, your MVP becomes a product people can log into and trust.
+
+<CardGroup cols={2}>
+  <Card title="Scope data to users" icon="database" href="/storage-and-database">
+    Tie persistent data to each authenticated user.
+  </Card>
+
+  <Card title="Tie plans to accounts" icon="credit-card" href="/payments-and-monetisation">
+    Connect subscriptions to user accounts.
+  </Card>
+</CardGroup>
+
+## What does authentication enable?
+
+- Secure sign-up and login for users
+- Per-user data, so people only see their own records
+- Roles and permissions, such as admin versus member
+- Personalised dashboards and settings
+- A foundation for subscriptions and paid plans
+
+## How do you add authentication?
+
+```mermaid
+flowchart LR
+    A[Define roles in your prompt] --> B[Add sign-up and login]
+    B --> C[Scope data to each user]
+    C --> D[Set role permissions]
+    D --> E[Test the auth flows]
+```
+
+<Steps>
+  <Step title="Describe who logs in">
+    In your prompt, name the roles and what each can access.
+
+    ```text title="Roles prompt"
+    Add two roles: customers can view their own orders; admins can view and manage all orders.
+    ```
+  </Step>
+  <Step title="Add sign-up and login">
+    Prompt LaunchPulse to add authentication so users can create accounts and sign in securely.
+  </Step>
+  <Step title="Scope data to each user">
+    Connect [storage and the database](/storage-and-database) so records are tied to the logged-in user.
+  </Step>
+  <Step title="Set permissions">
+    Define what each role can see and do, such as "only admins can manage users".
+  </Step>
+  <Step title="Test the flows">
+    Run the [testing agent](/testing-agent) to confirm sign-up, login and access controls work as intended.
+  </Step>
+</Steps>
+
+## Authentication best practices
+
+- Define roles in your prompt before building permissions.
+- Scope every record to a user so data never leaks between accounts.
+- Keep the sign-up flow short to reduce drop-off.
+- Add password reset and account recovery for real users.
+- Test login and logout before sharing the app.
+
+<Tip>
+  Decide your roles early. "Admin" and "member" lead to very different dashboards, permissions and data access, so naming them upfront produces a cleaner build.
+</Tip>
+
+## Common authentication mistakes
+
+- **Adding auth too late.** Build accounts before layering features that depend on knowing the user.
+- **No per-user data scoping.** Without scoping, users can see each other's records.
+- **Skipping account recovery.** Real users forget passwords, so add reset flows.
+- **Vague roles.** Undefined roles make permissions and dashboards inconsistent.
+
+## When should you add authentication?
+
+Add authentication whenever your app has user-specific data, dashboards, paid plans or admin functions. SaaS products, customer portals, internal tools and most mobile apps all need it.
+
+## Key terms
+
+<Expandable title="Authentication terms used on this page">
+  - **Authentication** — verifying who a user is through secure sign-up and login.
+  - **Authorisation** — controlling what an authenticated user is allowed to do, based on their role.
+  - **Role** — a user type, such as admin or member, that determines access and permissions.
+  - **Data scoping** — restricting records so each user only sees data tied to their account.
+</Expandable>
+
+## Related documentation
+
+- [Build a SaaS MVP with AI](/build-a-saas-mvp)
+- [Set up storage and database](/storage-and-database)
+- [Connect payments and monetisation](/payments-and-monetisation)
+- [Manage accounts and subscriptions](/accounts-and-subscriptions)
+- [Add team collaboration](/collaboration)
+- [How to write a good prompt](/write-a-good-prompt)
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="How do I add login to my app?">
+    Prompt LaunchPulse to add authentication and name the user roles. It builds secure sign-up and login flows and scopes data to each user.
+  </Accordion>
+
+  <Accordion title="Is the authentication real or just a screen?">
+    It is real. LaunchPulse builds working authentication with genuine user accounts and per-user data access, not a visual login screen.
+  </Accordion>
+
+  <Accordion title="Can I have different user roles?">
+    Yes. Define roles such as admin and member in your prompt, and set what each can see and do.
+  </Accordion>
+
+  <Accordion title="Does authentication work with payments?">
+    Yes. User accounts are the foundation for subscriptions, so you can tie paid plans to authenticated users.
+  </Accordion>
+
+  <Accordion title="How do users reset their password?">
+    Add a password reset and account recovery flow by prompting for it, so real users can regain access to their accounts.
+  </Accordion>
+
+  <Accordion title="Can users only see their own data?">
+    Yes. By scoping records to the authenticated user, each account sees only its own data and cannot access other users' records.
+  </Accordion>
+
+  <Accordion title="Do mobile apps support authentication too?">
+    Yes. Authentication works for both web and mobile apps, so mobile MVPs can also have secure accounts and per-user data.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Connect persistent data" icon="database" href="/storage-and-database">
+  Now that users can log in, store their data securely. Set up storage and your database.
+</Card>
