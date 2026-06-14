@@ -1,16 +1,17 @@
 ---
-title: "Write a good prompt"
-description: "Learn how to prompt LaunchPulse in phases: start with a strong foundation, then build features, polish, test, and prepare for launch."
+title: "How to Write a Good Prompt for the AI App Builder"
+description: "Write a strong AI app builder prompt for LaunchPulse so it builds the right features, data and workflows the first time."
+icon: "pen-nib"
 ---
 
 # Write a good prompt
 
 A good LaunchPulse prompt does not need to be technical. It needs to be clear.
 
-The best way to build with LaunchPulse is to think in **phases**. Your first prompt should create the foundation. After that, you improve the product step by step: add features, refine flows, polish the design, test the experience, and prepare for launch.
+The rule is simple. Describe outcomes and actions, not styling. LaunchPulse handles functionality first, so a precise prompt produces a stronger, more usable MVP. The best way to build with LaunchPulse is to think in **phases**. Your first prompt should create the foundation. After that, you improve the product step by step: add features, refine flows, polish the design, test the experience, and prepare for launch.
 
 <Info>
-Do not try to build the entire final product in one prompt. Start with a focused first version, then build momentum with smaller follow-up prompts.
+  Do not try to build the entire final product in one prompt. Start with a focused first version, then build momentum with smaller follow-up prompts.
 </Info>
 
 ## The LaunchPulse prompting mindset
@@ -36,7 +37,7 @@ When you ask for everything at once, the app can become too large, unclear, or d
 A stronger approach is:
 
 | Phase | Goal | Example |
-|---|---|---|
+| --- | --- | --- |
 | Foundation | Create the first working version | “Build a web app for real estate agencies to manage properties and inquiries.” |
 | Plan refinement | Tighten the scope | “Remove advanced analytics for now and focus on listings, inquiries, and dashboard.” |
 | Feature build | Add one important feature | “Add tenant profiles with notes and inquiry history.” |
@@ -46,7 +47,7 @@ A stronger approach is:
 | Launch prep | Get ready to share | “Prepare this web app for publishing and custom domain setup.” |
 
 <Tip>
-Think of LaunchPulse like a product team. Your prompt is the brief. The clearer your brief, the better the first version.
+  Think of LaunchPulse like a product team. Your prompt is the brief. The clearer your brief, the better the first version.
 </Tip>
 
 ## The first prompt should build the foundation
@@ -184,23 +185,18 @@ Once LaunchPulse creates the first version, use follow-up prompts to improve one
   <Step title="Phase 1: Foundation">
     Create the first working version with the core pages, screens, and flows.
   </Step>
-
   <Step title="Phase 2: Scope refinement">
     Remove unnecessary features, simplify the product, and make sure the MVP is focused.
   </Step>
-
   <Step title="Phase 3: Feature building">
     Add one feature at a time, such as payments, authentication, dashboards, AI services, or mobile screens.
   </Step>
-
   <Step title="Phase 4: Flow improvement">
     Improve the user journey so people understand what to do next.
   </Step>
-
   <Step title="Phase 5: Design polish">
     Improve layout, spacing, typography, colors, buttons, cards, responsiveness, and overall product feel.
   </Step>
-
   <Step title="Phase 6: Testing and launch prep">
     Test the main flow, fix issues, publish, connect a custom domain, or prepare mobile app publishing.
   </Step>
@@ -347,7 +343,7 @@ Then suggest what should be fixed before publishing.
 ## Weak prompts vs strong prompts
 
 | Weak prompt | Why it is weak | Stronger version |
-|---|---|---|
+| --- | --- | --- |
 | “Build me an app.” | Too vague | “Build a mobile app for fitness coaches to manage clients, workouts, bookings, and subscriptions.” |
 | “Make a SaaS.” | No user or problem | “Build a SaaS dashboard for real estate agencies to manage properties, renters, and inquiries.” |
 | “Add payments.” | No context | “Add monthly subscription payments for coaches, with a pricing page and upgrade flow.” |
@@ -370,7 +366,7 @@ A good prompt usually answers these questions:
 ## What to avoid
 
 <Warning>
-The fastest way to slow down a build is to ask for too much before the foundation works.
+  The fastest way to slow down a build is to ask for too much before the foundation works.
 </Warning>
 
 Avoid prompts like:
@@ -396,7 +392,7 @@ Instead, use prompts like:
 ## Prompting by product type
 
 | Product type | First prompt should focus on | Add later |
-|---|---|---|
+| --- | --- | --- |
 | SaaS MVP | dashboard, users, core workflow | billing, analytics, teams, advanced roles |
 | Mobile app | main mobile journey, simple navigation | app store assets, subscriptions, deeper settings |
 | Internal tool | forms, records, statuses, admin views | permissions, automations, reporting |
@@ -457,3 +453,39 @@ Before you send a prompt to LaunchPulse, check:
     Understand how LaunchPulse uses agents to plan, build, review, and improve apps.
   </Card>
 </CardGroup>
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What makes a good AI app builder prompt?">
+    A good prompt names the app, the user roles, the core actions, the key data and what happens after each action. Specific actions produce stronger, more functional builds.
+  </Accordion>
+
+  <Accordion title="Should I describe the design or the features first?">
+    Describe features and workflows first. LaunchPulse builds functionality first, then you refine the UI through follow-up prompts once the logic works.
+  </Accordion>
+
+  <Accordion title="How detailed should my prompt be?">
+    Detailed enough that a developer could build it from your sentence. Name concrete actions, roles and data instead of abstract goals.
+  </Accordion>
+
+  <Accordion title="Can I change the app after the first prompt?">
+    Yes. Building is iterative. Use focused follow-up prompts to add, change or remove features one at a time.
+  </Accordion>
+
+  <Accordion title="Why did LaunchPulse build something different from what I expected?">
+    Usually the prompt was too broad. Re-prompt with specific roles, actions and data, and change one thing at a time to stay in control.
+  </Accordion>
+
+  <Accordion title="How do I prompt for design changes?">
+    Once the logic works, describe the visual change you want, such as "use a card layout for the dashboard" or "make the primary colour dark blue". The UI is fully promptable.
+  </Accordion>
+
+  <Accordion title="Can one prompt include multiple roles?">
+    Yes, but name each role and what it can do. Defining roles clearly produces cleaner permissions and dashboards than leaving them implied.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Put your prompt to work" icon="bolt" href="/quickstart">
+  Ready to build? Start a project and turn your prompt into a working app.
+</Card>
