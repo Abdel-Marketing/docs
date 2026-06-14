@@ -1,344 +1,175 @@
 ---
-title: "Build a SaaS MVP"
-description: "Use LaunchPulse to turn a SaaS idea into a focused MVP with dashboards, authentication, payments, workflows, and launch-ready foundations."
+title: "How to Build a SaaS MVP with AI Using LaunchPulse"
+description: "Build a SaaS MVP with AI in LaunchPulse, with real auth, persistent data, dashboards and Stripe payments, not just a prototype."
+icon: "layer-group"
 ---
 
-# Build a SaaS MVP
+You can **build a SaaS MVP with AI** in LaunchPulse by describing your product in plain language and letting the agents assemble a working foundation: user accounts, persistent data, a dashboard and a path to subscription billing. The result is a real product you can launch and charge for, not a clickable prototype.
 
-LaunchPulse helps you turn a SaaS idea into a working first version without starting from a blank codebase.
-
-Instead of trying to build the full product in one step, the best approach is to create a focused MVP first: one clear user, one clear problem, and a few core features that prove the product can work.
+This page explains what a SaaS MVP needs, how LaunchPulse builds it and how to avoid the gaps that stall most early products.
 
 <Info>
-A strong SaaS MVP is not the final product. It is the first useful version that helps you test demand, collect feedback, and decide what to build next.
+  **Key takeaways**
+
+  - A launchable SaaS MVP needs accounts, persistent data, a dashboard and a billing path.
+  - LaunchPulse builds these as real backend capabilities, so users can sign up and pay.
+  - Build the core value first, then add auth, data and payments in focused prompts.
+  - "Minimum viable" means cutting scope, not cutting the backend.
+  - Deploy on LaunchPulse Cloud and connect a custom domain when you are ready to launch.
 </Info>
 
-## What you can build
+## Why does LaunchPulse suit SaaS MVPs?
 
-<CardGroup cols={3}>
-  <Card title="Customer dashboards">
-    Build dashboards where users can view data, manage activity, and complete key actions.
+A SaaS product lives or dies on its backend: accounts, data, permissions and billing. LaunchPulse builds these as real, functional foundations, so your MVP can take signups and payments from day one rather than faking the parts that matter.
+
+<CardGroup cols={2}>
+  <Card title="Add authentication" icon="lock" href="/authentication">
+    Sign-up, login and secure user accounts.
   </Card>
 
-  <Card title="Admin panels">
-    Create internal admin areas to manage users, records, settings, and product activity.
+  <Card title="Set up the database" icon="database" href="/storage-and-database">
+    Persistent data that survives every session.
   </Card>
 
-  <Card title="Subscription products">
-    Build SaaS products with pricing pages, upgrade flows, paid access, and account-based experiences.
+  <Card title="Connect payments" icon="credit-card" href="/payments-and-monetisation">
+    Stripe subscriptions and billing paths.
   </Card>
 
-  <Card title="Client portals">
-    Give customers a secure place to log in, view information, submit requests, and manage their account.
-  </Card>
-
-  <Card title="Workflow tools">
-    Turn repeated business processes into structured flows with statuses, forms, approvals, and dashboards.
-  </Card>
-
-  <Card title="AI-powered SaaS">
-    Add assistants, summaries, content generation, recommendations, or smart workflows to your SaaS idea.
+  <Card title="Deploy to the web" icon="cloud" href="/launchpulse-cloud">
+    Ship your SaaS to a live URL.
   </Card>
 </CardGroup>
 
-## When to use this use case
+## What does every SaaS MVP need?
 
-Use this guide if you want to build:
+A launchable SaaS MVP almost always includes these building blocks.
 
-- a SaaS dashboard
-- a B2B software product
-- a subscription-based web app
-- a customer portal
-- an internal business platform
-- an AI-powered SaaS tool
-- a workflow automation product
-- an MVP for a startup idea
+| Building block | Why it matters | LaunchPulse feature |
+| --- | --- | --- |
+| Sign-up and login | Know who the user is | [Authentication](/authentication) |
+| Core workflow | Deliver the main value | Prompting and the [feature builder](/feature-builder) |
+| Dashboard | Let users see their data | Built from your prompts |
+| Persistent data | Nothing resets on reload | [Storage and database](/storage-and-database) |
+| Billing | Charge for plans | [Payments and monetisation](/payments-and-monetisation) |
+| Deployment | A shareable URL | [LaunchPulse Cloud](/launchpulse-cloud) |
 
-<Tip>
-Start with the smallest useful version. Your first SaaS MVP should prove the main workflow before adding advanced features.
-</Tip>
+## How do you build a SaaS MVP?
 
-## The SaaS MVP build path
+```mermaid
+flowchart LR
+    A[Define the core value] --> B[Build the core workflow]
+    B --> C[Add accounts and permissions]
+    C --> D[Connect persistent data]
+    D --> E[Add subscriptions]
+    E --> F[Test, deploy and launch]
+```
 
 <Steps>
-  <Step title="Define the user and problem">
-    Start with one target user and one problem. Avoid building for everyone at the beginning.
-  </Step>
+  <Step title="Define the core value">
+    Describe the one job your SaaS does for users.
 
-  <Step title="Choose the core workflow">
-    Decide the main action users need to complete. This could be managing clients, tracking projects, booking services, creating reports, or using an AI assistant.
+    ```text title="Starting prompt"
+    A scheduling SaaS where coaches set their availability and clients book and pay for sessions.
+    ```
   </Step>
-
-  <Step title="Build the foundation">
-    Create the first version with authentication, dashboard structure, key pages, and the main workflow.
+  <Step title="Build the core workflow first">
+    Prompt the main flow end to end before adding extras. Use the [feature builder](/feature-builder) for larger pieces.
   </Step>
-
-  <Step title="Add only must-have features">
-    Add 3–5 features that are required for the MVP to be useful. Save advanced features for later.
+  <Step title="Add accounts and permissions">
+    Layer in [authentication](/authentication) so each user has a secure account and sees only their data.
   </Step>
-
-  <Step title="Preview and test">
-    Use the live preview to test the product like a real user. Check the main journey before adding more.
+  <Step title="Connect persistent data">
+    Use [storage and the database](/storage-and-database) so user records, settings and history persist.
   </Step>
-
-  <Step title="Add payments or subscriptions">
-    Once the core product works, add pricing, checkout, subscriptions, or paid access if your SaaS needs monetisation.
+  <Step title="Add subscriptions">
+    Connect [payments and monetisation](/payments-and-monetisation) to charge for plans with Stripe.
   </Step>
-
-  <Step title="Publish and connect a domain">
-    When the MVP is ready, publish the web app and connect a custom domain for a more professional launch.
+  <Step title="Test, deploy and refine">
+    Run the [testing agent](/testing-agent), deploy on [LaunchPulse Cloud](/launchpulse-cloud) and connect a [custom domain](/custom-domain).
   </Step>
 </Steps>
 
-## What a good SaaS MVP includes
+## SaaS MVP launch checklist
 
-| Area | What to include in v1 | What to save for later |
-|---|---|---|
-| User accounts | Sign-up, login, basic account area | Advanced roles and permissions |
-| Dashboard | Main overview and key actions | Complex analytics |
-| Core workflow | The main thing users came to do | Multiple secondary workflows |
-| Data | Essential records, lists, and details | Advanced filters and automation |
-| Payments | Basic pricing and subscription flow if needed | Complex billing rules |
-| Admin | Simple management tools | Full enterprise admin system |
-| Design | Clean, usable, responsive UI | Heavy animation and advanced branding |
+<Check>
+  Confirm each item before you open signups.
+</Check>
 
-## Example SaaS MVP prompt
+- Core workflow works end to end
+- Users can sign up and log in securely
+- Data persists and is scoped to each user
+- A dashboard shows users their own data
+- At least one paid plan is connected
+- The app is deployed to a live URL
+- The build has passed a test pass
 
-```text
-Build a SaaS dashboard for real estate agencies to manage properties, tenant inquiries, and monthly performance.
+## What are the common mistakes when building a SaaS MVP?
 
-The app helps small real estate teams keep listings, renter leads, and follow-ups in one place.
-
-For version one, include:
-1. Landing page
-2. Sign-up and login
-3. Agency dashboard
-4. Property management
-5. Tenant inquiry tracking
-6. Basic account settings
-
-The main user journey should be:
-1. Agency signs up
-2. Adds properties
-3. Receives or adds tenant inquiries
-4. Tracks inquiry status
-5. Reviews monthly performance from the dashboard
-
-Design style:
-Modern, premium, clean, and easy for non-technical real estate teams to use.
-
-For v1, success means:
-An agency can add properties, manage inquiries, and understand what needs follow-up from one dashboard.
-```
-
-## SaaS MVP examples
-
-<CardGroup cols={2}>
-  <Card title="Real estate agency SaaS">
-    Manage property listings, tenant inquiries, viewing requests, and agency performance from one dashboard.
-  </Card>
-
-  <Card title="Fitness coach SaaS">
-    Manage clients, workout plans, bookings, progress notes, and subscription payments.
-  </Card>
-
-  <Card title="AI customer support SaaS">
-    Help businesses answer customer questions, summarize tickets, and manage support workflows.
-  </Card>
-
-  <Card title="Recruiting SaaS">
-    Track candidates, interview stages, feedback, hiring workflows, and team collaboration.
-  </Card>
-
-  <Card title="Invoice and finance SaaS">
-    Manage clients, invoices, payments, reports, and reminders for small businesses.
-  </Card>
-
-  <Card title="Creator membership SaaS">
-    Let creators manage paid content, members, subscriptions, and private resources.
-  </Card>
-</CardGroup>
-
-## Build in phases
-
-Do not try to build the final SaaS product in one prompt.
-
-Use this phased approach:
-
-| Phase | Goal | Example prompt |
-|---|---|---|
-| Foundation | Create the first usable product structure | “Build the dashboard, login, and main workflow first.” |
-| Feature one | Add the most important feature | “Add property management with create, edit, and status fields.” |
-| Feature two | Add the next required workflow | “Add inquiry tracking with follow-up status.” |
-| Monetisation | Add pricing or subscriptions | “Add a pricing page and monthly subscription checkout.” |
-| Polish | Improve product feel | “Make the dashboard feel more premium and easier to scan.” |
-| Testing | Check the main flow | “Test the agency sign-up to inquiry tracking flow and fix issues.” |
-| Launch | Prepare for public use | “Prepare the app for publishing and custom domain setup.” |
-
-## Strong follow-up prompts
-
-### Add a feature
-
-```text
-Add property management to the SaaS dashboard.
-
-Users should be able to:
-- create a property
-- edit property details
-- set availability status
-- view all properties in a table
-- open a property detail page
-
-Keep the design clean and consistent with the existing dashboard.
-```
-
-### Improve the dashboard
-
-```text
-Improve the main dashboard so it is easier to understand.
-
-Add:
-- summary cards
-- recent activity
-- clear next actions
-- better spacing
-- empty states for new users
-
-Do not add new major features. Focus on clarity and usability.
-```
-
-### Add payments
-
-```text
-Add subscription payments to this SaaS app.
-
-Include:
-- pricing page
-- monthly subscription option
-- upgrade button
-- billing status inside account settings
-- paid access for dashboard features
-
-Keep the flow simple for version one.
-```
-
-### Prepare for launch
-
-```text
-Prepare this SaaS MVP for launch.
-
-Check:
-- sign-up and login
-- main dashboard flow
-- core feature pages
-- payment flow if included
-- mobile responsiveness
-- broken buttons or links
-- empty states
-- public-facing copy
-
-Fix clear issues and list anything that still needs manual review.
-```
-
-## Common SaaS MVP mistakes
-
-| Mistake | Why it hurts | Better approach |
-|---|---|---|
-| Building too many features | The MVP becomes hard to test | Start with 3–5 must-have features |
-| Targeting everyone | The product feels vague | Pick one clear customer type |
-| Adding payments too early | The core value may not be proven | Build the main workflow first |
-| Skipping dashboard clarity | Users do not know what to do | Add clear actions and useful empty states |
-| Building advanced roles too soon | Complexity grows quickly | Start with simple account access |
-| Publishing without testing | Users may hit broken flows | Test the main journey before launch |
-
-## SaaS MVP checklist
-
-Before publishing, check that you have:
-
-- one clear target user
-- one clear problem
-- a working sign-up/login flow if needed
-- a dashboard or main workspace
-- one strong core workflow
-- useful empty states
-- basic settings or account area
-- payment/subscription flow if needed
-- clean responsive design
-- tested main user journey
-- custom domain plan for launch
+- **Faking the backend.** A demo with no real data or accounts cannot onboard real users. Build these first.
+- **Too many features at launch.** Ship the core value, then expand. An MVP is the smallest thing people will pay for.
+- **No billing path.** A SaaS without a way to charge is hard to validate. Add payments early.
+- **Skipping permissions.** Users must only see their own data. Define roles in your prompts.
+- **Polishing UI before logic.** Refine design after the workflow and data are solid.
 
 <Warning>
-Do not judge your MVP by how many features it has. Judge it by whether the main user can complete the main job without confusion.
+  "MVP" means minimum viable, not minimum visible. Cut scope, not the backend. The parts that make it viable, accounts, data and billing, are the parts to keep.
 </Warning>
 
-## What the workspace looks like
+## When should you use this approach?
 
-<Note>
-Add a clean screenshot here showing a SaaS dashboard built in LaunchPulse.
-</Note>
+Build a SaaS MVP with LaunchPulse when you want to validate a paid product quickly without assembling a full engineering stack, and when you need real users to sign up, use the product and pay, not just click through a demo.
 
-<Note>
-Add a clean screenshot here showing the live web app preview.
-</Note>
+## Key terms
 
-<Note>
-Add a clean screenshot here showing a published web app or custom domain setup.
-</Note>
+<Expandable title="SaaS terms used on this page">
+  - **SaaS** — software as a service: an app users access online, usually on a subscription.
+  - **MVP** — minimum viable product: the smallest version that delivers real, payable value.
+  - **Subscription billing** — recurring charges for a plan, handled here through Stripe.
+  - **Per-user data scoping** — restricting records so each user sees only their own data.
+</Expandable>
 
-## Recommended first build
+## Related documentation
 
-For most SaaS MVPs, start with this foundation:
+- [What is LaunchPulse?](/what-is-launchpulse)
+- [Quickstart: build your first app](/quickstart)
+- [How to write a good prompt](/write-a-good-prompt)
+- [Add authentication](/authentication)
+- [Set up storage and database](/storage-and-database)
+- [Connect payments and monetisation](/payments-and-monetisation)
+- [Deploy on LaunchPulse Cloud](/launchpulse-cloud)
 
-<CardGroup cols={2}>
-  <Card title="Landing page">
-    Explain the product, target user, main benefit, and call to action.
-  </Card>
+## Frequently asked questions
 
-  <Card title="Authentication">
-    Let users sign up, log in, and access their workspace.
-  </Card>
+<AccordionGroup>
+  <Accordion title="Can I really build a SaaS MVP with AI?">
+    Yes. LaunchPulse builds the real foundations a SaaS needs, including authentication, persistent data, dashboards and subscription payments, from your plain-language prompts.
+  </Accordion>
 
-  <Card title="Dashboard">
-    Give users a central place to understand status and take action.
-  </Card>
+  <Accordion title="Does the MVP support payments and subscriptions?">
+    Yes. You can connect Stripe-based payments and subscription billing so your MVP can charge users for plans. See [payments and monetisation](/payments-and-monetisation).
+  </Accordion>
 
-  <Card title="Core workflow">
-    Build the main action that makes the product valuable.
-  </Card>
+  <Accordion title="Is this a prototype or a real product?">
+    It is a real, functional product. LaunchPulse builds working backend logic and data rather than a static prototype, so you can onboard real users.
+  </Accordion>
 
-  <Card title="Settings">
-    Add basic account, profile, or workspace settings.
-  </Card>
+  <Accordion title="What should my SaaS MVP include at launch?">
+    A working core workflow, secure sign-up and login, persistent data scoped to each user, a dashboard, at least one paid plan and a deployed URL.
+  </Accordion>
 
-  <Card title="Payment flow">
-    Add subscriptions or checkout when the product is ready to monetise.
-  </Card>
-</CardGroup>
+  <Accordion title="How do I deploy my SaaS MVP?">
+    Deploy on [LaunchPulse Cloud](/launchpulse-cloud) to get a live URL, then optionally connect a [custom domain](/custom-domain) for your brand.
+  </Accordion>
 
-## Next steps
+  <Accordion title="How small should my first version be?">
+    As small as possible while still delivering real value. Build the single workflow people would pay for, then expand based on user feedback.
+  </Accordion>
 
-<CardGroup cols={2}>
-  <Card title="Quickstart" href="/quickstart">
-    Learn how to start your first LaunchPulse build.
-  </Card>
+  <Accordion title="Can multiple users have separate data?">
+    Yes. Combine authentication with the database to scope records per user, so each account only sees its own data.
+  </Accordion>
+</AccordionGroup>
 
-  <Card title="Write a good prompt" href="/write-a-good-prompt">
-    Learn how to prompt in phases instead of asking for everything at once.
-  </Card>
-
-  <Card title="Web App Development" href="/web-app-development">
-    Build, preview, publish, and connect a custom domain for your SaaS web app.
-  </Card>
-
-  <Card title="Authentication" href="/authentication">
-    Add sign-up, login, and private user areas.
-  </Card>
-
-  <Card title="Payments & Monetisation" href="/payments-and-monetisation">
-    Add subscriptions, checkout, paid access, or monetisation flows.
-  </Card>
-
-  <Card title="Custom Domain" href="/custom-domain">
-    Connect a branded domain when your SaaS MVP is ready to share.
-  </Card>
-</CardGroup>
+<Card title="Set up payments for your SaaS" icon="credit-card" href="/payments-and-monetisation">
+  Turn your MVP into a paid product. Connect subscriptions and billing.
+</Card>
